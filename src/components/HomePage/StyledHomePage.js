@@ -11,7 +11,6 @@ const StyledHomePage = styled.section`
     overflow: hidden;
     height: 100vh;
     width: 100vw;
-    background-color: black;
     position: relative;
 
         img {
@@ -33,7 +32,6 @@ const StyledHomePage = styled.section`
             color: #FFFFFF;
             font-size: 4.4em;
             font-family: 'Lato', sans-serif;
-            font-weight: 500;
         }
         .container-titres h2, h3 {
             color: #FFFFFF;
@@ -59,6 +57,7 @@ const StyledHomePage = styled.section`
             height: 62px;
             top: 20px;
             left: 20px;
+            z-index: 1;
         }
 
         span {

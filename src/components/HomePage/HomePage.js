@@ -9,7 +9,7 @@ import StyledHomePage from './StyledHomePage';
 export const HomePage = () => {
     return (
         <StyledHomePage>
-            <img src='https://i.goopics.net/N3nmR.png' />
+            <img src='https://i.goopics.net/n4PP1.jpg' />
         </StyledHomePage>
     )
 }

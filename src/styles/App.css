@@ -1,4 +1,10 @@
 /* ///////////////////////////////// */
+/* //////////// POLICES ////////////// */
+/* ///////////////////////////////// */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+/* ///////////////////////////////// */
 /* //////////// RESET ////////////// */
 /* ///////////////////////////////// */
 
@@ -14,7 +20,7 @@
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: sans-serif;
+  font-family: 'Source sans pro',sans-serif;
 }
 
 html {
@@ -27,8 +33,9 @@ body {
     flex-direction: column;
     padding:0;
 	margin: 0;
-    font-family: sans-serif;
+    font-family: 'Source sans pro', sans-serif;
     background-repeat: no-repeat;
+    background-color: rgb(3, 0, 19);
 }
 
 body > #root > div {
@@ -40,3 +47,32 @@ ol, ul {
 	list-style: none;
 }
 
+/* ///////////////////////////////// */
+/* //////////// LOADING ////////////// */
+/* ///////////////////////////////// */
+
+.loader {
+    position: absolute;
+    top: calc(50% - 4em);
+    left: calc(50% - 4em);
+    width: 6em;
+    height: 6em;
+    border: 1.1em solid rgba(253, 253, 253, 0.2);
+    border-left: 1.1em solid #b8b8b8;
+    border-radius: 50%;
+    animation: load8 1.1s infinite linear;
+    transition: opacity 0.3s;
+  }
+  
+  .loader--hide {
+    opacity: 0;
+  }
+  
+  @keyframes load8 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

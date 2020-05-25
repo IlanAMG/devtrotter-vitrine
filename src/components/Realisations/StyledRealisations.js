@@ -69,6 +69,7 @@ const StyledRealisations = styled.section`
             align-items: center;
             color: white;
             font-size: 28px;
+            transition: 500ms;
         }
 
         .filtre-hover.on {

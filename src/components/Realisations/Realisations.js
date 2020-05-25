@@ -12,7 +12,6 @@ export const Realisations = () => {
         setHover(cloneHover)
     }
     const handleLeave = (i) => {
-        console.log(i, 'leave')
         let cloneHover = [...hover]
         cloneHover[i] = false
         setHover(cloneHover)

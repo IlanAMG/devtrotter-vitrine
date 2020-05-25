@@ -31,7 +31,6 @@ const StyledHomePage = styled.section`
         .container-titres h1 {
             color: #FFFFFF;
             font-size: 4.4em;
-            font-family: 'Lato', sans-serif;
         }
         .container-titres h2, h3 {
             color: #FFFFFF;

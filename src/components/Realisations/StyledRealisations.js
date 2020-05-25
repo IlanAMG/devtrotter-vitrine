@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const StyledRealisations = styled.section`
     display: flex;
@@ -39,15 +39,42 @@ const StyledRealisations = styled.section`
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: 500ms;
         }
 
         img {
             max-height: 120%;
+            z-index: 2;
+            transition: 500ms;
+        }
+        .scale {
+            transform: scale(1.1);
+            transition: 500ms;
         }
 
-        .img:hover {
-            background-color: rgba(0,0,0,0.2);
+        .filtre-hover {
             z-index: 3;
+            width: 100%;
+            height: 0%;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+        }
+
+        .filtre-hover.on {
+            background-color: rgba(0,0,0,0.6);
+            opacity: 1;
+            visibility: visible;
+            height: 100%;
+            z-index: 3;
+            transition: 500ms;
         }
 `
 

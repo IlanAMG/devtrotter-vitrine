@@ -4,15 +4,14 @@ import React from 'react'
 //styles
 import StyledHomePage from './StyledHomePage';
 //components
-
+import { BtnMenu } from '../BtnMenu/BtnMenu'
 //images
-import logo from '../../assets/logo.png'
 
 export const HomePage = () => {
     return (
         <StyledHomePage>
-            <img alt='background' src='https://i.goopics.net/n4PP1.jpg' />
-            <img className='logo' alt='logo' src={logo} />
+            <img className='bg' alt='background' src='https://i.goopics.net/n4PP1.jpg' />
+            <BtnMenu />
             <span>FR</span>
             <section className='container-titres'>
                 <div className='wrapper-h3'>

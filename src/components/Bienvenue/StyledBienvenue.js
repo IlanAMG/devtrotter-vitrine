@@ -8,6 +8,8 @@ const StyledBienvenue = styled.section`
         width: 100vw;
         position: relative;
         flex-direction: column;
+        -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
+        z-index: 3;
 
         img {
             width: 100%;

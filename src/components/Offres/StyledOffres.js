@@ -7,6 +7,7 @@ const StyledOffres = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
 
         .container-h1 {
             width: 100vw;

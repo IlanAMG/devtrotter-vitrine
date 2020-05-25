@@ -57,7 +57,7 @@ h1 {
 /* //////////// LOADING ////////////// */
 /* ///////////////////////////////// */
 
-/* .loader {
+.loader {
     position: absolute;
     top: calc(50% - 4em);
     left: calc(50% - 4em);
@@ -72,7 +72,7 @@ h1 {
   
   .loader--hide {
     opacity: 0;
-  } */
+  }
   
   @keyframes load8 {
     0% {

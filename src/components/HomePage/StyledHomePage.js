@@ -50,15 +50,6 @@ const StyledHomePage = styled.section`
             background: radial-gradient(50% 50% at 50% 50%, rgba(194, 141, 245, 0.81) 0%, rgba(125, 104, 182, 0) 100%);
         }
 
-        .logo {
-            position: fixed;
-            width: 35px;
-            height: 62px;
-            top: 20px;
-            left: 20px;
-            z-index: 1;
-        }
-
         span {
             position: absolute;
             right: 20px;

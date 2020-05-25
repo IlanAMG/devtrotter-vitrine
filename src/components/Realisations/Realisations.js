@@ -12,11 +12,21 @@ export const Realisations = () => {
                 
             </section>
             <section className='categories'>
-                <div className='img' />
-                <div className='img' />
-                <div className='img' />
-                <div className='img' />
-                <div className='img' />
+                <div className='img'>
+                    <img alt='ecommerce' src='https://i.goopics.net/Kkwm3.jpg' />
+                </div>
+                <div className='img'>
+                    <img alt='ecommerce' src='https://i.goopics.net/Kkwm3.jpg' />
+                </div>
+                <div className='img'>
+                    <img alt='ecommerce' src='https://i.goopics.net/Kkwm3.jpg' />
+                </div>
+                <div className='img'>
+                    <img alt='ecommerce' src='https://i.goopics.net/Kkwm3.jpg' />
+                </div>
+                <div className='img'>
+                    <img alt='ecommerce' src='https://i.goopics.net/Kkwm3.jpg' />
+                </div>
             </section>
         </StyledRealisations>
     )

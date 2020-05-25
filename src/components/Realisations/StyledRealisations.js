@@ -41,11 +41,13 @@ const StyledRealisations = styled.section`
             overflow: hidden;
         }
 
-        .img:nth-child(odd) {
-            background-color: #6163FF;
+        img {
+            max-height: 120%;
         }
-        .img:nth-child(even) {
-            background-color: #C3C9E8;
+
+        .img:hover {
+            background-color: rgba(0,0,0,0.2);
+            z-index: 3;
         }
 `
 

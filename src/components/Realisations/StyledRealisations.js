@@ -42,10 +42,14 @@ const StyledRealisations = styled.section`
             position: relative;
             cursor: pointer;
             transition: 500ms;
+            z-index: 5;
+        }
+        .img img, .scale {
+            pointer-events: none;
         }
 
         img {
-            max-height: 120%;
+            height: 53vh;
             z-index: 2;
             transition: 500ms;
         }
@@ -55,7 +59,6 @@ const StyledRealisations = styled.section`
         }
 
         .filtre-hover {
-            z-index: 3;
             width: 100%;
             height: 0%;
             position: absolute;
@@ -73,7 +76,7 @@ const StyledRealisations = styled.section`
             opacity: 1;
             visibility: visible;
             height: 100%;
-            z-index: 3;
+            z-index: 6;
             transition: 500ms;
         }
 `

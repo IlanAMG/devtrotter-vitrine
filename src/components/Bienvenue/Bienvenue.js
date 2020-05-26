@@ -1,7 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import StyledBienvenue from './StyledBienvenue';
+import { useScrollDirection } from '../../utils/useScrollDirection';
 
-export const Bienvenue = ({ bgBienvenue }) => {
+export const Bienvenue = () => {
+    
+    const [bgBienvenue, setBgBienvenue] = useState(0)
+    const [scroll, setScroll] = useState(0)
+    let direction = useRef('')
+    const directionScroll = useScrollDirection()
+
+    const scrollBg = () => {
+        setScroll(window.pageYOffset)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollBg, {passive: true})
+    }, [])
+
+    useEffect(() => {
+        return () => window.removeEventListener('scroll', scrollBg)
+    }, [])
+
+    useEffect(() => {
+        direction.current = directionScroll
+    }, [directionScroll])
+    useEffect(() => {
+        if (direction.current === 'down') {
+            setBgBienvenue(bienvenue => bienvenue + 6)
+        } else if (direction.current === 'up') {
+            setBgBienvenue(bienvenue => bienvenue - 6)
+        }
+        if (bgBienvenue >= 600 || bgBienvenue <= -600) {
+            setBgBienvenue(0)
+        }
+    }, [scroll])
     return (
         <StyledBienvenue>
             <img style={{transform: `translateX(-${bgBienvenue}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />

@@ -10,6 +10,12 @@ export const Bienvenue = () => {
 
     const scrollBg = () => {
         setScroll(window.pageYOffset)
+        if (window.pageYOffset >= 2000) {
+            setBgBienvenue(0)
+        }
+        if (window.pageYOffset === 0) {
+            setBgBienvenue(0)
+        }
     }
 
     useEffect(() => {

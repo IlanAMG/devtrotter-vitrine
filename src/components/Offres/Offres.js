@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import StyledOffres from './StyledOffres';
 
-export const Offres = () => {
+export const Offres = ({ bgOffres }) => {
 
     const [hover1, setHover1] = useState(false)
     const [hover2, setHover2] = useState(false)
@@ -27,7 +27,7 @@ export const Offres = () => {
                     <span>LES OPTIONS</span>
                 </div>
             </div>
-            <img alt='background' src='https://i.goopics.net/9KpAR.png' />
+            <img style={{transform: `translateX(${bgOffres}px)`}} alt='background' src='https://i.goopics.net/xV8VW.jpg' />
         </StyledOffres>
     )
 }

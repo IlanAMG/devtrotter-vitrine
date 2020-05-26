@@ -1,10 +1,10 @@
 import React from 'react'
 import StyledBienvenue from './StyledBienvenue';
 
-export const Bienvenue = () => {
+export const Bienvenue = ({ bgBienvenue }) => {
     return (
         <StyledBienvenue>
-            <img alt='background' src='https://i.goopics.net/kdgOG.jpg' />
+            <img style={{transform: `translateX(-${bgBienvenue}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />
             <div className='container-h1'>
                 <h1>BIENVENUE CHEZ DEVTROTTER</h1>
             </div>

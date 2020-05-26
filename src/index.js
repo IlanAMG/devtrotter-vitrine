@@ -9,7 +9,7 @@ import './styles/App.css';
 //context
 import Context from './utils/context';
 //pages
-import { index } from './pages/index';
+import { Index } from './pages/Index';
 import { NotFoundPage } from './pages/404';
 
 const loader = document.querySelector('.loader');
@@ -22,7 +22,7 @@ const App = ({ hideLoader }) => {
   return (
     <Router>
       <Switch>
-        <Route exact path='/' component={index} />
+        <Route exact path='/' component={Index} />
         <Route path="/404" component={NotFoundPage} />
         <Redirect to="/404" />
       </Switch>

@@ -4,7 +4,6 @@ const StyledBienvenue = styled.section`
         display: flex;
         align-items: center;
         justify-content: start;
-        overflow: hidden;
         width: 100vw;
         position: relative;
         flex-direction: column;
@@ -12,10 +11,9 @@ const StyledBienvenue = styled.section`
         z-index: 3;
 
         img {
-            width: 100%;
             position: absolute;
             z-index: -1;
-            min-height: 100vh;
+            height: 120%;
         }
 
         .container-h1 {

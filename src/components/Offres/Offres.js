@@ -3,7 +3,7 @@ import StyledOffres from './StyledOffres';
 import Context from '../../utils/context';
 
 export const Offres = () => {
-    const { direction } = useContext(Context)
+    const { direction, nosoffres } = useContext(Context)
     const [hover1, setHover1] = useState(false)
     const [hover2, setHover2] = useState(false)
     const [bgOffres, setBgOffres] = useState(0)
@@ -35,7 +35,7 @@ export const Offres = () => {
     }, [scroll])
 
     return (
-        <StyledOffres hover1={hover1} hover2={hover2}>
+        <StyledOffres ref={nosoffres} hover1={hover1} hover2={hover2}>
             <div className='container-h1'>
                 <h1>NOS OFFRES</h1>
             </div>

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useState, useContext } from 'react'
+import Context from '../../utils/context';
 import StyledRealisations from './StyledRealisations';
 
 export const Realisations = () => {
-
+    const { realisations } = useContext(Context)
     const [hover, setHover] = useState([false, false, false, false, false])
 
     const handleHover = (e, i) => {
@@ -18,7 +18,7 @@ export const Realisations = () => {
     }
 
     return (
-        <StyledRealisations>
+        <StyledRealisations ref={realisations} >
             <div className='container-h1'>
                 <h1>RÉALISATIONS</h1>
             </div>

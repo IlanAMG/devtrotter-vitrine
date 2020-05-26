@@ -21,6 +21,34 @@ const App = ({ hideLoader }) => {
   const [openNav, setOpenNav] = useState(false)
   let direction = useRef('')
   const directionScroll = useScrollDirection()
+
+
+  // toutes les ancres pour le scroll
+
+  let accueil = useRef(null)
+  let quisommesnous = useRef(null)
+  let realisations = useRef(null)
+  let nosoffres = useRef(null)
+  let ecosysteme = useRef(null)
+  let notreequipe = useRef(null)
+  let nouscontacter = useRef(null)
+
+  const scrollToRef = (ref) => {
+    if (openNav) {
+      setOpenNav(false)
+      return setTimeout(() => {
+        window.scrollTo({
+          top: ref.current.offsetTop,
+          behavior: 'smooth'
+        })
+      }, 1000)
+    } else {
+      return window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: 'smooth'
+      })
+    }
+  }
   
   useEffect(hideLoader, []);
 
@@ -29,7 +57,7 @@ const App = ({ hideLoader }) => {
   }, [directionScroll])
 
   return (
-    <Context.Provider value={{ direction, openNav, setOpenNav }}>
+    <Context.Provider value={{ direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
       <Router>
         <Switch>
           <Route exact path='/' component={index} />

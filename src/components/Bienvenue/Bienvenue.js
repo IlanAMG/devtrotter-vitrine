@@ -4,7 +4,7 @@ import StyledBienvenue from './StyledBienvenue';
 import Context from '../../utils/context';
 
 export const Bienvenue = () => {
-    const { direction } = useContext(Context)
+    const { direction, quisommesnous } = useContext(Context)
     const [bgBienvenue, setBgBienvenue] = useState(0)
     const [scroll, setScroll] = useState(0)
 
@@ -32,7 +32,7 @@ export const Bienvenue = () => {
         }
     }, [scroll])
     return (
-        <StyledBienvenue>
+        <StyledBienvenue ref={quisommesnous}>
             <img style={{transform: `translateX(${bgBienvenue}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />
             <div className='container-h1'>
                 <h1>BIENVENUE CHEZ DEVTROTTER</h1>

@@ -87,3 +87,25 @@ li {
       transform: rotate(360deg);
     }
   }
+
+    /* /////////////////////////////////// */
+    /* //////////// SCROLLBAR ////////////// */
+    /* ///////////////////////////////////// */
+
+      ::-webkit-scrollbar {
+          width: 0px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+          width: 0px;
+      }
+      ::-webkit-scrollbar-track-piece {
+          width: 0px;
+      }
+
+      ::-webkit-scrollbar-corner {
+          width: 0px;
+      }
+      ::-webkit-scrollbar:horizontal {
+          display: none;
+      }

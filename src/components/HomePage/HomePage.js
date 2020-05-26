@@ -1,5 +1,8 @@
 //librairies externes
-import React from 'react'
+import React, { useContext } from 'react'
+
+//utils
+import Context from '../../utils/context';
 
 //styles
 import StyledHomePage from './StyledHomePage';
@@ -8,17 +11,19 @@ import { BtnMenu } from '../BtnMenu/BtnMenu'
 //images
 
 export const HomePage = () => {
+    const { accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter, scrollToRef } = useContext(Context)
+
     return (
-        <StyledHomePage>
+        <StyledHomePage ref={accueil} >
             <img className='bg' alt='background' src='https://i.goopics.net/n4PP1.jpg' />
             <BtnMenu />
             <span>FR</span>
             <div className='container-constel'>
                     <svg width="90" height="400" viewBox="0 0 13 309" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="6.5" cy="6.5" r="6.5" fill="url(#paint0_radial)" />
-                        <circle cx="6.5" cy="53.5" r="6.5" fill="url(#paint1_radial)" />
-                        <circle cx="6.5" cy="104.5" r="6.5" fill="url(#paint2_radial)" />
-                        <circle cx="6.5" cy="155.5" r="6.5" fill="url(#paint3_radial)" />
+                        <circle onClick={() => scrollToRef(accueil)} cx="6.5" cy="6.5" r="6.5" fill="url(#paint0_radial)" />
+                        <circle onClick={() => scrollToRef(quisommesnous)} cx="6.5" cy="53.5" r="6.5" fill="url(#paint1_radial)" />
+                        <circle onClick={() => scrollToRef(realisations)} cx="6.5" cy="104.5" r="6.5" fill="url(#paint2_radial)" />
+                        <circle onClick={() => scrollToRef(nosoffres)} cx="6.5" cy="155.5" r="6.5" fill="url(#paint3_radial)" />
                         <circle cx="6.5" cy="204.5" r="6.5" fill="url(#paint4_radial)" />
                         <circle cx="6.5" cy="253.5" r="6.5" fill="url(#paint5_radial)" />
                         <circle cx="6.5" cy="302.5" r="6.5" fill="url(#paint6_radial)" />

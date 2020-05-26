@@ -116,6 +116,6 @@ const StyledMenuNav = styled.section`
             margin-left: 70px;
             transition: 500ms;
         }
-`
+    `
 
 export default StyledMenuNav

@@ -9,7 +9,7 @@ import Context from '../../utils/context';
 import StyledMenuNav from './StyledMenuNav';
 
 export const MenuNavigation = () => {
-    const { openNav } = useContext(Context)
+    const { openNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter } = useContext(Context)
     const [styles, setStyles] = useState({})
 
     useEffect(() => {
@@ -82,13 +82,13 @@ export const MenuNavigation = () => {
                     </svg>
                 </div>
                 <ul>
-                    <li>ACCUEIL</li>
-                    <li>QUI SOMMES-NOUS ?</li>
-                    <li>RÉALISATIONS</li>
-                    <li>NOS OFFRES</li>
-                    <li>ECOSYSTÈME</li>
-                    <li>NOTRE ÉQUIPE</li>
-                    <li>NOUS CONTACTER</li>
+                    <li onClick={() => scrollToRef(accueil)} >ACCUEIL</li>
+                    <li onClick={() => scrollToRef(quisommesnous)} >QUI SOMMES-NOUS ?</li>
+                    <li onClick={() => scrollToRef(realisations)} >RÉALISATIONS</li>
+                    <li onClick={() => scrollToRef(nosoffres)} >NOS OFFRES</li>
+                    <li onClick={() => scrollToRef(ecosysteme)} >ECOSYSTÈME</li>
+                    <li onClick={() => scrollToRef(notreequipe)} >NOTRE ÉQUIPE</li>
+                    <li onClick={() => scrollToRef(nouscontacter)} >NOUS CONTACTER</li>
                 </ul>
             </div>
             <div className='separator'></div>

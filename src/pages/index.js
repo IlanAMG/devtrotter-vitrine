@@ -7,7 +7,6 @@ import { Offres } from '../components/Offres/Offres'
 import { MenuNavigation } from '../components/MenuNavigation/MenuNavigation';
 
 export const index = () => {
-
     return (
         <div className='App'>
             <MenuNavigation />

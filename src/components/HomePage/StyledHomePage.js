@@ -17,6 +17,11 @@ const StyledHomePage = styled.section`
             width: 100%;
             position: absolute;
         }
+        .container-constel {
+            position: fixed;
+            right: 10px;
+            z-index: 8;
+        }
 
         .container-titres {
             width: 930px;
@@ -63,6 +68,10 @@ const StyledHomePage = styled.section`
         }
         span:hover {
             color: rgba(194, 141, 245, 0.81);
+        }
+
+        circle {
+            cursor: pointer;
         }
 
 `

@@ -22,14 +22,13 @@ export const Bienvenue = () => {
     }, [])
     
     useEffect(() => {
-        if (scroll <= 1800) {
+        if (scroll <= 2000) {
             if (direction.current === 'down') {
-                setBgBienvenue(bienvenue => bienvenue + 6)
+                return setBgBienvenue(bienvenue => bienvenue + 6)
             } else if (direction.current === 'up') {
-                setBgBienvenue(bienvenue => bienvenue - 6)
-            }
-            if (bgBienvenue >= 600 || bgBienvenue <= -600) {
-                setBgBienvenue(0)
+                return setBgBienvenue(bienvenue => bienvenue - 6)
+            } else if (bgBienvenue >= 1200 || bgBienvenue <= -1200) {
+                return setBgBienvenue(0)
             }
         }
     }, [scroll])

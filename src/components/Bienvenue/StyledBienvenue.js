@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledBienvenue = styled.section`
         display: flex;
         align-items: center;
-        justify-content: start;
+        justify-content: flex-start;
         overflow: hidden;
         width: 100vw;
         position: relative;
@@ -15,6 +15,7 @@ const StyledBienvenue = styled.section`
             position: absolute;
             z-index: -1;
             height: 120%;
+            align-self: flex-start
         }
 
         .container-h1 {

@@ -9,7 +9,7 @@ export const Bienvenue = () => {
     const [scroll, setScroll] = useState(0)
 
     const scrollBg = () => {
-        setScroll(window.pageYOffset)
+        setScroll((window.pageYOffset / 5))
         if (window.pageYOffset >= 2000) {
             setBgBienvenue(0)
         }
@@ -26,20 +26,9 @@ export const Bienvenue = () => {
         return () => window.removeEventListener('scroll', scrollBg)
     }, [])
     
-    useEffect(() => {
-        if (scroll <= 2000) {
-            if (direction.current === 'down') {
-                return setBgBienvenue(bienvenue => bienvenue - 4)
-            } else if (direction.current === 'up') {
-                return setBgBienvenue(bienvenue => bienvenue + 4)
-            } else if (bgBienvenue >= 600 || bgBienvenue <= -600) {
-                return setBgBienvenue(0)
-            }
-        }
-    }, [scroll])
     return (
         <StyledBienvenue ref={quisommesnous}>
-            <img style={{transform: `translateX(${bgBienvenue}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />
+            <img style={{transform: `translateX(${scroll}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />
             <div className='container-h1'>
                 <h1>BIENVENUE CHEZ DEVTROTTER</h1>
             </div>

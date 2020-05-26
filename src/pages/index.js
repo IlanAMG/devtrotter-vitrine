@@ -7,7 +7,7 @@ import { Offres } from '../components/Offres/Offres'
 import { useScrollDirection } from '../utils/useScrollDirection';
 
 
-export const Index = () => {
+const Index = () => {
 
     const [bgBienvenue, setBgBienvenue] = useState(0)
     const [bgOffres, setBgOffres] = useState(0)
@@ -53,3 +53,5 @@ export const Index = () => {
         </div>
     )
 }
+
+export default Index

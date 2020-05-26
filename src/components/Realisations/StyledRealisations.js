@@ -49,7 +49,8 @@ const StyledRealisations = styled.section`
         }
 
         img {
-            height: 53vh;
+            width: 21vw;
+            min-height: 51vh;
             z-index: 2;
             transition: 500ms;
         }

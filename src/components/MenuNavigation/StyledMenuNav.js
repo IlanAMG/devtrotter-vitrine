@@ -5,6 +5,8 @@ const StyledMenuNav = styled.section`
     height: 100vh;
     width: 100vw;
     z-index: 9;
+    display: flex;
+    
 
         img {
             width: 100%;

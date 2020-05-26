@@ -59,6 +59,7 @@ const StyledHomePage = styled.section`
             font-weight: 100;
             font-size: 24px;
             cursor: pointer;
+            z-index: 10;
         }
         span:hover {
             color: rgba(194, 141, 245, 0.81);

@@ -13,6 +13,7 @@ export const MenuNavigation = () => {
                     <StyledMenuNav>
                         <img className='bg' alt='background' src='https://i.goopics.net/n4PP1.jpg' />
                         <div className='filtre' />
+                        
                     </StyledMenuNav>
             }
         </>

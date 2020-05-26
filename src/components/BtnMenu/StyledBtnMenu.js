@@ -33,6 +33,7 @@ const StyledBtnMenu = styled.div`
 
         .wrapper-menu {
             display: flex;
+            justify-content: center;
             transition: 500ms;
             z-index: 10;
             position: fixed;
@@ -69,6 +70,27 @@ const StyledBtnMenu = styled.div`
             width: 20px;
             height: 0.21em;
             transition: top 300ms 300ms ease, transform 300ms ease;
+        }
+
+        .wrapper-menu.wrapper-croix .ligne::before{
+            bottom: 0;
+            transform: rotate(-45deg);
+            background: linear-gradient(89.84deg, rgba(248, 248, 248, 0.15) 0.29%, #F8F8F8 23.58%, #F8F8F8 52.7%, rgba(255, 255, 255, 0.85) 78.1%, rgba(248, 248, 248, 0) 101.92%);
+            transition: bottom 300ms ease, transform 300ms 300ms ease;
+        }
+
+        .wrapper-menu.wrapper-croix .ligne {
+            background: transparent;
+            transition: 10ms;
+            left: 14px;
+        }
+
+        .wrapper-menu.wrapper-croix .ligne::after{
+            top: 0;
+            width: 35px;
+            transform: rotate(45deg);
+            background: linear-gradient(89.84deg, rgba(248, 248, 248, 0.15) 0.29%, #F8F8F8 23.58%, #F8F8F8 52.7%, rgba(255, 255, 255, 0.85) 78.1%, rgba(248, 248, 248, 0) 101.92%);
+            transition: top 300ms ease, transform 300ms 300ms ease;
         }
 `
 

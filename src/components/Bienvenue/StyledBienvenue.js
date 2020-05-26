@@ -4,6 +4,7 @@ const StyledBienvenue = styled.section`
         display: flex;
         align-items: center;
         justify-content: start;
+        overflow: hidden;
         width: 100vw;
         position: relative;
         flex-direction: column;

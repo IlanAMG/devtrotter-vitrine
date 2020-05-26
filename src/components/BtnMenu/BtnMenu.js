@@ -1,10 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useContext } from 'react'
 
 import logo from '../../assets/logo.png'
 import StyledBtnMenu from './StyledBtnMenu'
+import Context from '../../utils/context';
 
 export const BtnMenu = () => {
-
+    const { setOpenNav } = useContext(Context)
     const [rotate, setRotate] = useState(0)
 
     const useInterval = (callback, delay) => {
@@ -43,6 +44,7 @@ export const BtnMenu = () => {
     return (
         <StyledBtnMenu
             rotate={rotate}
+            onClick={() => setOpenNav(openNav => !openNav)}
         >
                 <div className='wrapper-logo'>
                     <img className='logo' alt='logo' src={logo} />

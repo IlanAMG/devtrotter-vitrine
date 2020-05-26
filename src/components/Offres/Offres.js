@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import StyledOffres from './StyledOffres';
-import { useScrollDirection } from '../../utils/useScrollDirection';
+import Context from '../../utils/context';
 
 export const Offres = () => {
-        
+    const { direction } = useContext(Context)
     const [hover1, setHover1] = useState(false)
     const [hover2, setHover2] = useState(false)
     const [bgOffres, setBgOffres] = useState(0)
     const [scroll, setScroll] = useState(0)
-    let direction = useRef('')
-    const directionScroll = useScrollDirection()
 
     const scrollBg = () => {
         setScroll(window.pageYOffset)
@@ -24,16 +22,15 @@ export const Offres = () => {
     }, [])
 
     useEffect(() => {
-        direction.current = directionScroll
-    }, [directionScroll])
-    useEffect(() => {
-        if (direction.current === 'down') {
-            setBgOffres(offres => offres + 6)
-        } else if (direction.current === 'up') {
-            setBgOffres(offres => offres - 6)
-        }
-        if (bgOffres <= -800 || bgOffres >= 800) {
-            setBgOffres(0)
+        if (scroll >= 1400 && scroll <= 3500) {
+            if (direction.current === 'down') {
+                setBgOffres(offres => offres + 6)
+            } else if (direction.current === 'up') {
+                setBgOffres(offres => offres - 6)
+            }
+            if (bgOffres <= -800 || bgOffres >= 800) {
+                setBgOffres(0)
+            }
         }
     }, [scroll])
 

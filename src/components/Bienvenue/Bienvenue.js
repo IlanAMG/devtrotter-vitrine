@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import StyledBienvenue from './StyledBienvenue';
-import { useScrollDirection } from '../../utils/useScrollDirection';
+
+import Context from '../../utils/context';
 
 export const Bienvenue = () => {
-    
+    const { direction } = useContext(Context)
     const [bgBienvenue, setBgBienvenue] = useState(0)
     const [scroll, setScroll] = useState(0)
-    let direction = useRef('')
-    const directionScroll = useScrollDirection()
 
     const scrollBg = () => {
         setScroll(window.pageYOffset)
+        console.log(window.pageYOffset)
     }
 
     useEffect(() => {
@@ -20,18 +20,17 @@ export const Bienvenue = () => {
     useEffect(() => {
         return () => window.removeEventListener('scroll', scrollBg)
     }, [])
-
+    
     useEffect(() => {
-        direction.current = directionScroll
-    }, [directionScroll])
-    useEffect(() => {
-        if (direction.current === 'down') {
-            setBgBienvenue(bienvenue => bienvenue + 6)
-        } else if (direction.current === 'up') {
-            setBgBienvenue(bienvenue => bienvenue - 6)
-        }
-        if (bgBienvenue >= 600 || bgBienvenue <= -600) {
-            setBgBienvenue(0)
+        if (scroll <= 1800) {
+            if (direction.current === 'down') {
+                setBgBienvenue(bienvenue => bienvenue + 6)
+            } else if (direction.current === 'up') {
+                setBgBienvenue(bienvenue => bienvenue - 6)
+            }
+            if (bgBienvenue >= 600 || bgBienvenue <= -600) {
+                setBgBienvenue(0)
+            }
         }
     }, [scroll])
     return (

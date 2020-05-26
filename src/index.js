@@ -9,7 +9,7 @@ import './styles/App.css';
 //context
 import Context from './utils/context';
 //pages
-import { Index } from './pages/Index';
+import { Index } from './pages/index';
 import { NotFoundPage } from './pages/404';
 
 const loader = document.querySelector('.loader');

@@ -15,7 +15,6 @@ const StyledBienvenue = styled.section`
             position: absolute;
             z-index: -1;
             height: 120%;
-            align-self: flex-start
         }
 
         .container-h1 {

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import StyledBienvenue from './StyledBienvenue';
 
 import Context from '../../utils/context';
 
 export const Bienvenue = () => {
     const { direction } = useContext(Context)
-    let bgBienvenue = useRef(0)
+    const [bgBienvenue, setBgBienvenue] = useState(0)
     const [scroll, setScroll] = useState(0)
 
     const scrollBg = () => {
@@ -22,21 +22,18 @@ export const Bienvenue = () => {
     
     useEffect(() => {
         if (scroll <= 2000) {
-            let prevBgbienvenue = bgBienvenue.current
             if (direction.current === 'down') {
-                let newBgBienvenue = prevBgbienvenue + 6
-                bgBienvenue.current = newBgBienvenue
+                return setBgBienvenue(bienvenue => bienvenue - 4)
             } else if (direction.current === 'up') {
-                let newBgBienvenue = prevBgbienvenue - 6
-                bgBienvenue.current = newBgBienvenue
-            } else if (bgBienvenue.current >= 600 || bgBienvenue.current <= -600) {
-                return bgBienvenue.current = 0
+                return setBgBienvenue(bienvenue => bienvenue + 4)
+            } else if (bgBienvenue >= 600 || bgBienvenue <= -600) {
+                return setBgBienvenue(0)
             }
         }
     }, [scroll])
     return (
         <StyledBienvenue>
-            <img style={{transform: `translateX(-${bgBienvenue.current}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />
+            <img style={{transform: `translateX(${bgBienvenue}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />
             <div className='container-h1'>
                 <h1>BIENVENUE CHEZ DEVTROTTER</h1>
             </div>

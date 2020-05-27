@@ -116,6 +116,13 @@ const StyledMenuNav = styled.section`
             margin-left: 70px;
             transition: 500ms;
         }
+        .container-constel svg {
+            position: absolute;
+            left: -60px;
+        }
+        circle {
+            transition: 400ms;
+        }
     `
 
 export default StyledMenuNav

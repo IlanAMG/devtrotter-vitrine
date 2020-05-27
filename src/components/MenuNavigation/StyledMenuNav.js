@@ -48,6 +48,7 @@ const StyledMenuNav = styled.section`
         }
         .devtrotter {
             width: 32%;
+            z-index:15;
         }
         .nav {
             width: 46%;
@@ -108,17 +109,20 @@ const StyledMenuNav = styled.section`
         ul > li {
             color: white;
             font-size: 28px;
-            padding: 15px 40px 15px 40px;
+            width: 130%;
+            text-align: center;
+            padding: 20px 0px 20px 0px;
             transition: 500ms;
             cursor: pointer;
         }
         ul > li:hover {
             margin-left: 70px;
-            transition: 1000ms;
+            transition: 500ms;
         }
         .container-constel svg {
             position: absolute;
             left: -60px;
+            pointer-events: none;
         }
         circle {
             transition: 400ms;

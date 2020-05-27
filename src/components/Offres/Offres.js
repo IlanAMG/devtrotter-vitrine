@@ -24,9 +24,9 @@ export const Offres = () => {
     useEffect(() => {
         if (scroll >= 1400 && scroll <= 3500) {
             if (direction.current === 'down') {
-                setBgOffres(offres => offres + 6)
-            } else if (direction.current === 'up') {
                 setBgOffres(offres => offres - 6)
+            } else if (direction.current === 'up') {
+                setBgOffres(offres => offres + 6)
             }
             if (bgOffres <= -800 || bgOffres >= 800) {
                 setBgOffres(0)

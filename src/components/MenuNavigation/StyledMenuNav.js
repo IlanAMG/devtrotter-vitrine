@@ -114,7 +114,7 @@ const StyledMenuNav = styled.section`
         }
         ul > li:hover {
             margin-left: 70px;
-            transition: 500ms;
+            transition: 1000ms;
         }
         .container-constel svg {
             position: absolute;

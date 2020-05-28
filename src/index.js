@@ -9,12 +9,12 @@ import './styles/App.css';
 //context
 import Context from './utils/context';
 //pages
-import { index } from './pages/index';
 import { NotFoundPage } from './pages/404';
+import { App } from './pages/App';
 //utils
 import { useScrollDirection } from './utils/useScrollDirection';
 
-const App = () => {
+const Index = () => {
   const [opacityLoading, setOpacityLoading] = useState(false)
   const [loading, setLoading] = useState(false)
   const [openNav, setOpenNav] = useState(false)
@@ -75,10 +75,10 @@ const App = () => {
   }, [])
 
   return (
-    <Context.Provider value={{ loading, setLoading, direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
+    <Context.Provider value={{ loading, opacityLoading, direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
       <Router>
         <Switch>
-          <Route exact path='/' component={() => index({loading, opacityLoading})} />
+          <Route exact path='/' component={App} />
           <Route path="/404" component={NotFoundPage} />
           <Redirect to="/404" />
         </Switch>
@@ -89,7 +89,7 @@ const App = () => {
 
   ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <Index />
     </React.StrictMode>,
     document.getElementById('root')
   );

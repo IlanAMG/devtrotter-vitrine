@@ -46,9 +46,7 @@ export const BtnMenu = () => {
     const handleOpenNav = () => {
         if (rotate === 0 || rotate === 360) {
             setRotate(180)
-            console.log(openNav)
             return setTimeout(() => {
-                console.log('ici')
                 setOpenNav(openNav => !openNav)
             }, 800)
         } else {

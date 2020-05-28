@@ -49,7 +49,7 @@ export const MenuNavigation = () => {
     useEffect(() => {
         if (openNav) {
             setStyles({ visibility: 'visible', height: '100vh', opacity: '1' })
-            setTimeout(() => {
+            let delai = setTimeout(() => {
                 document.body.style.overflow = 'hidden';
                 document.body.style.height = '100vh';
             }, 1000)

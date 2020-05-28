@@ -14,10 +14,9 @@ import { NotFoundPage } from './pages/404';
 //utils
 import { useScrollDirection } from './utils/useScrollDirection';
 
-const loader = document.querySelector('.loader');
-const hideLoader = () => loader.classList.add('loader--hide');
-
-const App = ({ hideLoader }) => {
+const App = () => {
+  const [opacityLoading, setOpacityLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [openNav, setOpenNav] = useState(false)
   let direction = useRef('')
   const directionScroll = useScrollDirection()
@@ -50,17 +49,36 @@ const App = ({ hideLoader }) => {
     }
   }
   
-  useEffect(hideLoader, []);
+  // useEffect(hideLoader, []);
 
   useEffect(() => {
     direction.current = directionScroll
   }, [directionScroll])
 
+  useEffect(() => {
+    setTimeout(() => {
+      setOpacityLoading(true)
+    }, 3700)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+
+    setTimeout(() => {
+      setLoading(true)
+      setOpacityLoading(true)
+      document.body.style.overflow = 'unset';
+      document.body.style.height = 'auto';
+    }, 4400)
+
+  }, [])
+
   return (
-    <Context.Provider value={{ direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
+    <Context.Provider value={{ loading, setLoading, direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
       <Router>
         <Switch>
-          <Route exact path='/' component={index} />
+          <Route exact path='/' component={() => index({loading, opacityLoading})} />
           <Route path="/404" component={NotFoundPage} />
           <Redirect to="/404" />
         </Switch>
@@ -69,12 +87,10 @@ const App = ({ hideLoader }) => {
   );
 }
 
-setTimeout(() => {
   ReactDOM.render(
     <React.StrictMode>
-      <App hideLoader={hideLoader} />
+        <App />
     </React.StrictMode>,
     document.getElementById('root')
   );
-}, 2500)
 

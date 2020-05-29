@@ -20,7 +20,10 @@ export const HomePage = () => {
             <span>FR</span>
             <div className='container-constel'>
                     <svg width="90" height="400" viewBox="0 0 13 309" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle onClick={() => scrollToRef(accueil)} cx="6.5" cy="6.5" r="6.5" fill="url(#paint0_radial)" />
+                        <circle onClick={() => scrollToRef(accueil)} cx="6.5" cy="6.5" r="6.5" fill="url(#paint0_radial)">
+                            <animateMotion id='anim1' dur="1.4s" begin='0s; anim2.end' path="M-30,0 30,0" fill="freeze"/>
+                            <animateMotion id='anim2' dur="1.4s" begin='anim1.end' path="M30,0 -30,0" fill="freeze"/>
+                        </circle>
                         <circle onClick={() => scrollToRef(quisommesnous)} cx="6.5" cy="53.5" r="6.5" fill="url(#paint1_radial)" />
                         <circle onClick={() => scrollToRef(realisations)} cx="6.5" cy="104.5" r="6.5" fill="url(#paint2_radial)" />
                         <circle onClick={() => scrollToRef(nosoffres)} cx="6.5" cy="155.5" r="6.5" fill="url(#paint3_radial)" />

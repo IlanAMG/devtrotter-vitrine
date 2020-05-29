@@ -53,7 +53,7 @@ export const BtnMenu = () => {
             setOpenNav(openNav => !openNav)
         }
     }
-
+    
     return (
         <StyledBtnMenu
             rotate={rotate}

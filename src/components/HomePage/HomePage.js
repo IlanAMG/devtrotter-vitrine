@@ -21,10 +21,13 @@ export const HomePage = () => {
             <div className='container-constel'>
                     <svg width="90" height="400" viewBox="0 0 13 309" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle onClick={() => scrollToRef(accueil)} cx="6.5" cy="6.5" r="6.5" fill="url(#paint0_radial)">
-                            <animateMotion id='anim1' dur="1.8s" begin='0s; anim2.end' path="M-20,0 20,0" fill="freeze"/>
-                            <animateMotion id='anim2' dur="1.8s" begin='anim1.end' path="M20,0 -20,0" fill="freeze"/>
+                            <animateMotion id='1anim1' dur="1.8s" begin='0s; 1anim2.end' path="M-20,0 20,0" fill="freeze"/>
+                            <animateMotion id='1anim2' dur="1.8s" begin='1anim1.end' path="M20,0 -20,0" fill="freeze"/>
                         </circle>
-                        <circle onClick={() => scrollToRef(quisommesnous)} cx="6.5" cy="53.5" r="6.5" fill="url(#paint1_radial)" />
+                        <circle onClick={() => scrollToRef(quisommesnous)} cx="6.5" cy="53.5" r="6.5" fill="url(#paint1_radial)">
+                            <animateMotion id='2anim1' dur="1.8s" begin='0s; 2anim2.end' path="M20,0 -20,0" fill="freeze"/>
+                            <animateMotion id='2anim2' dur="1.8s" begin='2anim1.end' path="M-20,0 20,0" fill="freeze"/>
+                        </circle>
                         <circle onClick={() => scrollToRef(realisations)} cx="6.5" cy="104.5" r="6.5" fill="url(#paint2_radial)" />
                         <circle onClick={() => scrollToRef(nosoffres)} cx="6.5" cy="155.5" r="6.5" fill="url(#paint3_radial)" />
                         <circle cx="6.5" cy="204.5" r="6.5" fill="url(#paint4_radial)" />

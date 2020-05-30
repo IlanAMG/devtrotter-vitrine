@@ -1,5 +1,6 @@
 //librairies externes
 import React, { useContext } from 'react'
+import ReactPlayer from 'react-player'
 
 //utils
 import Context from '../../utils/context';
@@ -15,22 +16,37 @@ export const HomePage = () => {
 
     return (
         <StyledHomePage ref={accueil} >
-            <img className='bg' alt='background' src='https://i.goopics.net/n4PP1.jpg' />
+            <ReactPlayer className='bg' height="115%" width='115%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={true} loop={true} controls={false} muted={true} 
+                config={{ 
+                    youtube: { 
+                        playerVars: { showinfo: 1 }
+                    } 
+                }}    
+            />
             <BtnMenu />
             <span>FR</span>
             <div className='container-constel'>
                     <svg width="90" height="400" viewBox="0 0 13 309" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle onClick={() => scrollToRef(accueil)} cx="6.5" cy="6.5" r="6.5" fill="url(#paint0_radial)">
-                            <animateMotion id='1anim1' dur="1.8s" begin='0s; 1anim2.end' path="M-20,0 20,0" fill="freeze"/>
-                            <animateMotion id='1anim2' dur="1.8s" begin='1anim1.end' path="M20,0 -20,0" fill="freeze"/>
+                            <animateMotion id='1anim1' dur="2s" begin='0s; 1anim2.end' path="M-20,0 20,0" fill="freeze"/>
+                            <animateMotion id='1anim2' dur="2s" begin='1anim1.end' path="M20,0 -20,0" fill="freeze"/>
                         </circle>
                         <circle onClick={() => scrollToRef(quisommesnous)} cx="6.5" cy="53.5" r="6.5" fill="url(#paint1_radial)">
-                            <animateMotion id='2anim1' dur="1.8s" begin='0s; 2anim2.end' path="M20,0 -20,0" fill="freeze"/>
-                            <animateMotion id='2anim2' dur="1.8s" begin='2anim1.end' path="M-20,0 20,0" fill="freeze"/>
+                            <animateMotion id='2anim1' dur="2s" begin='0s; 2anim2.end' path="M20,0 -20,0" fill="freeze"/>
+                            <animateMotion id='2anim2' dur="2s" begin='2anim1.end' path="M-20,0 20,0" fill="freeze"/>
                         </circle>
-                        <circle onClick={() => scrollToRef(realisations)} cx="6.5" cy="104.5" r="6.5" fill="url(#paint2_radial)" />
-                        <circle onClick={() => scrollToRef(nosoffres)} cx="6.5" cy="155.5" r="6.5" fill="url(#paint3_radial)" />
-                        <circle cx="6.5" cy="204.5" r="6.5" fill="url(#paint4_radial)" />
+                        <circle onClick={() => scrollToRef(realisations)} cx="6.5" cy="104.5" r="6.5" fill="url(#paint2_radial)">
+                            <animateMotion id='3anim1' dur="2s" begin='0s; 3anim2.end' path="M-20,0 20,0" fill="freeze"/>
+                            <animateMotion id='3anim2' dur="2s" begin='3anim1.end' path="M20,0 -20,0" fill="freeze"/>
+                        </circle>
+                        <circle onClick={() => scrollToRef(nosoffres)} cx="6.5" cy="155.5" r="6.5" fill="url(#paint3_radial)">
+                            <animateMotion id='4anim1' dur="2s" begin='0s; 4anim2.end' path="M20,0 -20,0" fill="freeze"/>
+                            <animateMotion id='4anim2' dur="2s" begin='4anim1.end' path="M-20,0 20,0" fill="freeze"/>
+                        </circle>
+                        <circle cx="6.5" cy="204.5" r="6.5" fill="url(#paint4_radial)">
+                            <animateMotion id='5anim1' dur="2s" begin='0s; 5anim2.end' path="M-20,0 20,0" fill="freeze"/>
+                            <animateMotion id='5anim2' dur="2s" begin='5anim1.end' path="M20,0 -20,0" fill="freeze"/>
+                        </circle>
                         <circle cx="6.5" cy="253.5" r="6.5" fill="url(#paint5_radial)" />
                         <circle cx="6.5" cy="302.5" r="6.5" fill="url(#paint6_radial)" />
                         <line x1="6.47291" y1="253" x2="6.4729" y2="303" stroke="#F6F2F2" stroke-width="0.945822" />

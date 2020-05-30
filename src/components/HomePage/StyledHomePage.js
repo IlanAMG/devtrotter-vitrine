@@ -13,9 +13,9 @@ const StyledHomePage = styled.section`
     width: 100vw;
     position: relative;
 
-        img {
-            width: 100%;
+        .bg {
             position: absolute;
+            pointer-events: none;
         }
         .container-constel {
             position: fixed;

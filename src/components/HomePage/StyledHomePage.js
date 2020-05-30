@@ -16,6 +16,12 @@ const StyledHomePage = styled.section`
         .bg {
             position: absolute;
             pointer-events: none;
+            ${'' /* min-width: 115% !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            height: 150%; */}
         }
         .container-constel {
             position: fixed;
@@ -26,7 +32,7 @@ const StyledHomePage = styled.section`
         .container-titres {
             width: 930px;
             height: 180px;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.041053921568627416) 30%, rgba(255,255,255,0.04) 70%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 70%, rgba(255,255,255,0) 100%);
             z-index: 1;
             display: flex;
             flex-direction: column;

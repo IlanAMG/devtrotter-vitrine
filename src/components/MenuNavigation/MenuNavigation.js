@@ -9,14 +9,10 @@ import Context from '../../utils/context';
 import StyledMenuNav from './StyledMenuNav';
 
 export const MenuNavigation = () => {
-    const coordCircle = [0, 40]
     const { openNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter } = useContext(Context)
     const [styles, setStyles] = useState({})
-    const [stylesCircle, setStylesCircle] = useState([0, 0, 0, 0, 0, 0, 0])
 
-    const handleHover = (i) => {
-        let cloneStylesCircle = [...stylesCircle]
-        cloneStylesCircle[i] = coordCircle[1]
+const handleHover = (i) => {
         const idm = i + 'm'
         if (i > 0 && i < 6) {
             const elements = document.getElementsByClassName(i)
@@ -27,11 +23,9 @@ export const MenuNavigation = () => {
         }
         const circle = document.getElementById(idm)
         circle.beginElement()   
-        setStylesCircle(cloneStylesCircle)
     }
-    const handleOut = (i) => {
-        let cloneStylesCircle = [...stylesCircle]
-        cloneStylesCircle[i] = coordCircle[0]
+
+const handleOut = (i) => {
         const id = i + 'bis'
         const idmbis = i + 'mbis'
         if (i > 0 && i < 6) {
@@ -43,7 +37,6 @@ export const MenuNavigation = () => {
         }
         const circle = document.getElementById(idmbis)
         circle.beginElement()   
-        setStylesCircle(cloneStylesCircle)
     }
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledHomePage = styled.section`
 
@@ -16,17 +16,44 @@ const StyledHomePage = styled.section`
         .bg {
             position: absolute;
             pointer-events: none;
-            ${'' /* min-width: 115% !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width: 100% !important;
-            height: 150%; */}
         }
+
         .container-constel {
             position: fixed;
             right: 10px;
             z-index: 8;
+            height: 435px;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            z-index: 7;
+            cursor: pointer;
+        }
+        .btn1 {
+            top: 0;
+        }
+        .btn2 {
+            top: 62px;
+        }
+        .btn3 {
+            top: 125px;
+        }
+        .btn4 {
+            top: 188px;
+        }
+        .btn5 {
+            top: 251px;
+        }
+        .btn6 {
+            top: 316px;
+        }
+        .btn7 {
+            top: 379px;
         }
 
         .container-titres {

@@ -16,7 +16,7 @@ export const HomePage = () => {
 
     return (
         <StyledHomePage ref={accueil} >
-            <ReactPlayer className='bg' width='160%' height='130%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={true} loop={true} controls={false} muted={true}
+            <ReactPlayer className='bg' width='130%' height='115%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={true} loop={true} controls={false} muted={true}
                 config={{
                     youtube: {
                         playerVars: { showinfo: 1 }

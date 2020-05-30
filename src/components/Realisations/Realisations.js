@@ -25,7 +25,7 @@ export const Realisations = () => {
                 <h1>RÉALISATIONS</h1>
             </div>
             <section className='caroussel'>
-                <Carousel>
+                <Carousel stopOnHover={false} infiniteLoop={true} autoPlay={true} transitionTime={250} swipeScrollTolerance={50} swipeable={true} emulateTouch={true} >
                     <div className='wrapper-img'>
                         <img src="https://i.goopics.net/JEoGO.png" />
                     </div>

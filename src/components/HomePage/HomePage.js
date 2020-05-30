@@ -19,8 +19,8 @@ export const HomePage = () => {
         copyHoverElement[i] = true
         setHoverElement(copyHoverElement)
     }
-    
-const handleOut = (i) => {
+
+    const handleOut = (i) => {
         let copyHoverElement = [...hoverElement]
         copyHoverElement[i] = false
         setHoverElement(copyHoverElement)
@@ -28,7 +28,7 @@ const handleOut = (i) => {
 
     return (
         <StyledHomePage
-            ref={accueil} 
+            ref={accueil}
             circle0={hoverElement[0]}
             circle1={hoverElement[1]}
             circle2={hoverElement[2]}
@@ -48,12 +48,12 @@ const handleOut = (i) => {
             <span>FR</span>
             <div className='container-constel'>
                 <div onClick={() => scrollToRef(accueil)} className='btn btn1' onMouseOver={() => handleHover(0)} onMouseOut={() => handleOut(0)} />
-                <div onClick={() => scrollToRef(quisommesnous)} className='btn btn2' onMouseOver={() => handleHover(1)} onMouseOut={() => handleOut(1)}   />
-                <div onClick={() => scrollToRef(realisations)} className='btn btn3' onMouseOver={() => handleHover(2)} onMouseOut={() => handleOut(2)}   />
-                <div onClick={() => scrollToRef(nosoffres)} className='btn btn4' onMouseOver={() => handleHover(3)} onMouseOut={() => handleOut(3)}   />
-                <div className='btn btn5' onMouseOver={() => handleHover(4)} onMouseOut={() => handleOut(4)}   />
-                <div className='btn btn6' onMouseOver={() => handleHover(5)} onMouseOut={() => handleOut(5)}   />
-                <div className='btn btn7' onMouseOver={() => handleHover(6)} onMouseOut={() => handleOut(6)}   />
+                <div onClick={() => scrollToRef(quisommesnous)} className='btn btn2' onMouseOver={() => handleHover(1)} onMouseOut={() => handleOut(1)} />
+                <div onClick={() => scrollToRef(realisations)} className='btn btn3' onMouseOver={() => handleHover(2)} onMouseOut={() => handleOut(2)} />
+                <div onClick={() => scrollToRef(nosoffres)} className='btn btn4' onMouseOver={() => handleHover(3)} onMouseOut={() => handleOut(3)} />
+                <div className='btn btn5' onMouseOver={() => handleHover(4)} onMouseOut={() => handleOut(4)} />
+                <div className='btn btn6' onMouseOver={() => handleHover(5)} onMouseOut={() => handleOut(5)} />
+                <div className='btn btn7' onMouseOver={() => handleHover(6)} onMouseOut={() => handleOut(6)} />
                 <svg id='svg' width="90" height="400" viewBox="0 0 13 309" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle stroke="white" stroke-width={hoverElement[0] ? '1' : '0'} cx="6.5" cy="6.5" r="5.8" fill="url(#paint0_radial)">
                         <animateMotion id='1anim1' dur="2s" begin='0s; 1anim2.end' path={hoverElement[0] ? 'M0,0 0,0' : "M-15,0 20,0"} fill='freeze' />
@@ -159,6 +159,13 @@ const handleOut = (i) => {
                 <h1>DEVTROTTER STUDIO</h1>
                 <h2>DÉVELOPPEMENT WEB & MOBILE | UX / UI DESIGN</h2>
             </section>
+
+            <svg onClick={() => scrollToRef(quisommesnous)} className='scroll' width="30" height="60" viewBox="0 0 30 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.28719 41L15.1436 59L29 41" stroke="#F0F0F0" />
+                <path d="M1.00008 21L14.8565 39L28.7129 21" stroke="#F0F0F0" />
+                <path d="M1.00008 0.999998L14.8565 19L28.7129 1" stroke="#F0F0F0" />
+            </svg>
+
         </StyledHomePage>
     )
 }

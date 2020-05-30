@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 const StyledRealisations = styled.section`
     display: flex;
@@ -7,11 +7,14 @@ const StyledRealisations = styled.section`
     width: 100vw;
     position: relative;
     flex-direction: column;
+    z-index: 10;
 
         .container-h1 {
             width: 60%;
             margin: 30px 0 30px 0;
             position: absolute;
+            z-index: 5;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 70%, rgba(255,255,255,0) 100%);
         }
 
         h1 {
@@ -23,12 +26,49 @@ const StyledRealisations = styled.section`
 
         .caroussel {
             width: 100%;
-            height: 50%;
+            height: 60%;
+            position: relative;
             background-color: #B3B2EB;
         }
+
+        .slider-wrapper {
+            height: 100%;
+        }
+
+        .wrapper-img {
+            jusitfy-content: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 60vh;
+        }
+        img {
+            position: absolute;
+        }
+
+        .carousel-root {
+            height: 100%;
+        }
+        .carousel.carousel-slider {
+            height: 100%;
+        }
+        .carousel.carousel-slider .control-arrow{
+            padding: 0 30px 0 30px !important ;
+            z-index: 20 !important;
+            background-color: rgba(0,0,0,0.3)
+        }
+
+        .dot {
+            width: 14px !important;
+            height: 14px !important;
+        }
+        .thumbs-wrapper.axis-vertical {
+            display: none;
+        }
+
         .categories {
             width: 100%;
-            height: 50%;
+            height: 40%;
             display: flex;
         }
 
@@ -81,6 +121,7 @@ const StyledRealisations = styled.section`
             z-index: 6;
             transition: 500ms;
         }
+
 `
 
 export default StyledRealisations

@@ -70,7 +70,7 @@ const Index = () => {
       setOpacityLoading(true)
       document.body.style.overflow = 'unset';
       document.body.style.height = 'auto';
-    }, 4400)
+    }, 5500)
 
   }, [])
 

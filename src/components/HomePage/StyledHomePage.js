@@ -29,7 +29,7 @@ const StyledHomePage = styled.section`
         .container-constel {
             position: fixed;
             right: 10px;
-            z-index: 8;
+            z-index: 9;
             height: 435px;
             display: flex;
             align-items: center;
@@ -123,7 +123,6 @@ const StyledHomePage = styled.section`
             cursor: pointer;
             transition: 500ms;
         }
-        
         .scroll:hover {
             transform: scale(1.08);
             transition: 500ms;

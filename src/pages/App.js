@@ -8,6 +8,7 @@ import { MenuNavigation } from '../components/MenuNavigation/MenuNavigation';
 import { Loading } from './Loading';
 import Context from '../utils/context';
 import { Ecosysteme } from '../components/Ecosysteme/Ecosysteme';
+import { QuiSommes } from '../components/QuiSommes/QuiSommes';
 
 export const App = () => {
     const { loading, opacityLoading } = useContext(Context)
@@ -23,6 +24,7 @@ export const App = () => {
             <Realisations />
             <Offres />
             <Ecosysteme />
+            <QuiSommes />
         </div>
     )
 }

@@ -7,7 +7,7 @@ const StyledRealisations = styled.section`
     width: 100vw;
     position: relative;
     flex-direction: column;
-    z-index: 10;
+    z-index: 5;
 
         .container-h1 {
             width: 60%;

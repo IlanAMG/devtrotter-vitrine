@@ -11,7 +11,7 @@ import { Loading } from './Loading';
 import { Ecosysteme } from '../components/Ecosysteme/Ecosysteme';
 import { QuiSommes } from '../components/QuiSommes/QuiSommes';
 import { Banderolle } from '../components/Banderolle/Banderolle'
-import { Footer } from '../components/Banderolle/Footer/Footer';
+import { Footer } from '../components/Footer/Footer';
 
 export const App = () => {
     const { loading, opacityLoading } = useContext(Context)

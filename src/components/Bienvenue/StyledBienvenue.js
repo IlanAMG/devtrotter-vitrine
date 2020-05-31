@@ -15,6 +15,7 @@ const StyledBienvenue = styled.section`
             position: absolute;
             z-index: -1;
             height: 120%;
+            right: 0;
         }
 
         .container-h1 {

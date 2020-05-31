@@ -103,10 +103,6 @@ const Index = () => {
     } else {
       clonePageActuel[6] = false
     }
-    console.log('accueil haut', notreequipeRefY)
-    console.log('accueil bas', notreequipeRef)
-    console.log('bienvenue haut', nouscontacterRefY)
-    console.log('bienvenue bas', nouscontacterRef)
 
     setPageActuel(clonePageActuel)
   }

@@ -7,11 +7,11 @@ export const Loading = ({ opacityLoading}) => {
         <StyledLoading finish={opacityLoading}>
             <svg width="40%" height="40%" viewBox="0 0 74 119" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M55.5042 21.545L37 11.2835L55.5042 0V21.545Z" fill="#afafaf">
-                    <animate attributeName="fill" from="#afafaf" to="#7EC4A4" begin="300ms" dur="300ms" fill="freeze"/>
+                    <animate attributeName="fill" from="#afafaf" to="#7EC4A4" begin="0ms" dur="300ms" fill="freeze"/>
                     {/* 1 */}
                 </path>
                 <path d="M55.5042 43.0899L37 32.8284L55.5042 21.5449V43.0899Z" fill="#6b6b6b">
-                    <animate attributeName="fill" from="#6b6b6b" to="#277E5E" begin="1400ms" dur="300ms" fill="freeze"/>
+                    <animate attributeName="fill" from="#6b6b6b" to="#277E5E" begin="900ms" dur="300ms" fill="freeze"/>
                     {/* 3 */}
                 </path>
                 <path d="M37 54.3651L18.5042 44.1035L37 32.8201V54.3651Z" fill="#a7a7a7">
@@ -43,11 +43,11 @@ export const Loading = ({ opacityLoading}) => {
                     {/* 9 */}
                 </path>
                 <path d="M37 11.2751L55.5042 21.5367L37 32.8201V11.2751Z" fill="#a4a4a4">
-                    <animate attributeName="fill" from="#a4a4a4" to="#48B48C" begin="1000ms" dur="300ms" fill="freeze"/>
+                    <animate attributeName="fill" from="#a4a4a4" to="#48B48C" begin="400ms" dur="300ms" fill="freeze"/>
                     {/* 2 */}
                 </path>
                 <path d="M37 32.8201L55.5042 43.0816L37 54.3651V32.8201Z" fill="#acacac">
-                    <animate attributeName="fill" from="#acacac" to="#3EBEE4" begin="1700ms" dur="300ms" fill="freeze"/>
+                    <animate attributeName="fill" from="#acacac" to="#3EBEE4" begin="1400ms" dur="300ms" fill="freeze"/>
                     {/* 4 */}
                 </path>
                 <path d="M18.5042 44.1121L37 54.3736L18.5042 65.657V44.1121Z" fill="#afafaf">

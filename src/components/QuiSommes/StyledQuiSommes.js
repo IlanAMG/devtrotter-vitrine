@@ -22,6 +22,12 @@ const StyledQuiSommes = styled.section`
             text-align: center;
             line-height: 75px;
         }
+        .bg {
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            z-index: -1;
+        }
 `
 
 export default StyledQuiSommes

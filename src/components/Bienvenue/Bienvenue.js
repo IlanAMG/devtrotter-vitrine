@@ -4,17 +4,14 @@ import StyledBienvenue from './StyledBienvenue';
 import Context from '../../utils/context';
 
 export const Bienvenue = () => {
-    const { direction, quisommesnous } = useContext(Context)
-    const [bgBienvenue, setBgBienvenue] = useState(0)
+    const { quisommesnous } = useContext(Context)
     const [scroll, setScroll] = useState(0)
 
     const scrollBg = () => {
-        setScroll((window.pageYOffset / 5))
-        if (window.pageYOffset >= 2000) {
-            setBgBienvenue(0)
-        }
-        if (window.pageYOffset === 0) {
-            setBgBienvenue(0)
+        if (window.pageYOffset <= 1500 && window.pageYOffset !== 0) {
+            setScroll((window.pageYOffset / 5))
+        } else {
+            setScroll(0)
         }
     }
 

@@ -35,10 +35,10 @@ body {
     width: 100vw;
     flex-direction: column;
     padding:0;
-	margin: 0;
+	  margin: 0;
     font-family: 'Source sans pro', sans-serif;
     background-repeat: no-repeat;
-    background-color: rgb(3, 0, 19);
+    background-color: #0a0a0a;
 }
 
 body > #root > div {

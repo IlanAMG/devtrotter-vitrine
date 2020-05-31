@@ -16,7 +16,7 @@ const fade = keyframes`
 const StyledLoading = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: rgb(8, 0, 29);
+    background-color: #0a0a0a;
     z-index: 50;
     position: fixed;
     display: flex;
@@ -24,7 +24,7 @@ const StyledLoading = styled.div`
     justify-content: center;
     transition: opacity 500ms;
 
-    ${props => props.finish && css `
+    ${props => props.finish && css`
         animation: ${fade} 500ms linear forwards;
     `}
         

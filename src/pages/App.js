@@ -17,10 +17,10 @@ export const App = () => {
     const { loading, opacityLoading } = useContext(Context)
     return (
         <div className='App'>
-            {
+            {/* {
                 !loading &&
                 <Loading opacityLoading={opacityLoading} />
-            }
+            } */}
             <MenuNavigation />
             <HomePage />
             <Bienvenue />

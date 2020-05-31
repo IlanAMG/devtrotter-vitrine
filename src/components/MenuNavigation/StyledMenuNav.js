@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledMenuNav = styled.section`
     position: fixed;
     width: 100vw;
-    z-index: 12;
+    z-index: 20;
     display: flex;
     top: 0;
     transition: 1000ms;

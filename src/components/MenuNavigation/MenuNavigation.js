@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { AiFillYoutube } from 'react-icons/ai'
 import { AiFillInstagram } from 'react-icons/ai'
+import { IoIosMail } from 'react-icons/io'
 
 import logo from '../../assets/logo.png'
 
@@ -171,6 +172,7 @@ const handleOut = (i) => {
                     <a rel="noopener noreferrer" href='https://twitter.com/DevTrotter_Pro' target='_blank' ><AiOutlineTwitter className='icon' /></a>
                     <a rel="noopener noreferrer" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' target='_blank' ><AiFillYoutube className='icon' /></a>
                     <a rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><AiFillInstagram className='icon' /></a>
+                    <a href='mailto:devtrotter.info@gmail.com'><IoIosMail className='icon' /></a>
                 </div>
             </div>
         </StyledMenuNav>

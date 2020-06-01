@@ -14,6 +14,7 @@ import { BtnMenu } from '../BtnMenu/BtnMenu'
 export const HomePage = () => {
     const { pageActuel, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter, scrollToRef } = useContext(Context)
     const [hoverElement, setHoverElement] = useState([false, false, false, false, false, false, false])
+    const [videoRdy, setVideoRdy] = useState(false)
 
     const handleHover = (i) => {
         let copyHoverElement = [...hoverElement]
@@ -38,7 +39,7 @@ export const HomePage = () => {
             circle5={hoverElement[5]}
             circle6={hoverElement[6]}
         >
-            <ReactPlayer className='bg' width='130%' height='115%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={true} loop={true} controls={false} muted={true}
+            <ReactPlayer className='bg' width='130%' height='115%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={videoRdy} onReady={() => setVideoRdy(true)} loop={true} controls={false} muted={true}
                 config={{
                     youtube: {
                         playerVars: { showinfo: 1 }

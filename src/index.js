@@ -116,7 +116,7 @@ const Index = () => {
   useEffect(() => {
     setTimeout(() => {
       setOpacityLoading(true)
-    }, 4500)
+    }, 5400)
   }, [])
 
   useEffect(() => {
@@ -128,7 +128,7 @@ const Index = () => {
       setOpacityLoading(true)
       document.body.style.overflow = 'unset';
       document.body.style.height = 'auto';
-    }, 5000)
+    }, 5900)
 
   }, [])
 

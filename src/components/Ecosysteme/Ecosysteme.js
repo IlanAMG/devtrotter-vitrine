@@ -23,15 +23,9 @@ export const Ecosysteme = () => {
         const yVal = e.clientY
         const yRotation = -50 * ((xVal - width / 2) / width)
         const xRotation = 50 * ((yVal - height / 2) / height)
-        const yRotationLogo = 60 * ((xVal - width / 2) / width)
-        const xRotationLogo = -60 * ((yVal - height / 2) / height)
         setStyles({
             transform: `perspective(700px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`,
             transition: '0ms'
-        })
-        setStylesLogo({
-            transform: `perspective(700px) scale(1.1) rotateX(${xRotationLogo}deg) rotateY(${yRotationLogo}deg)`,
-            transition: '100ms'
         })
     }
 
@@ -70,7 +64,7 @@ export const Ecosysteme = () => {
                     <MdSchool onMouseOver={() => handleHover(1)} onMouseOut={() => handleLeave(1)} className='icon formation' />
                     <span style={hover[1]} className='formation-span'>Formations en cours de développement</span>
                     <a rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><GrInstagram className='icon insta' /></a>
-                    <img className='logo' alt='logo' src={logo} style={stylesLogo} />
+                    <img className='logo' alt='logo' src={logo} />
                     <svg width="808" height="510" viewBox="0 0 898 567" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="28" y="174" width="67" height="67" fill="url(#pattern0)" />
                         <rect x="743" y="367" width="75" height="75" fill="url(#pattern1)" />

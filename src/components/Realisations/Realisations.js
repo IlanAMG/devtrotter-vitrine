@@ -26,21 +26,29 @@ export const Realisations = () => {
             </div>
             <section className='caroussel'>
                 <Carousel stopOnHover={false} infiniteLoop={true} autoPlay={true} transitionTime={250} swipeScrollTolerance={50} swipeable={true} emulateTouch={true} >
-                    <div className='wrapper-img'>
-                        <img src="https://i.goopics.net/JEoGO.png" />
-                    </div>
-                    <div className='wrapper-img'>
-                        <img src="https://i.goopics.net/X4Oja.png" />
-                    </div>
-                    <div className='wrapper-img'>
-                        <img src="https://i.goopics.net/OnZyl.png" />
-                    </div>
+                    <a rel="noopener noreferrer" href='https://www.devtrotter.com' target='_blank' >
+                        <div className='wrapper-img'>    
+                            <img src="https://i.goopics.net/JEoGO.png" />
+                        </div>
+                    </a>
+                    <a rel="noopener noreferrer" href='https://whatslike-app.herokuapp.com/' target='_blank' >
+                        <div className='wrapper-img'>    
+                            <img src="https://i.goopics.net/X4Oja.png" />
+                        </div>
+                    </a>
+                    <a rel="noopener noreferrer" href='https://yamiquinton.com/' target='_blank' >
+                        <div className='wrapper-img'>    
+                            <img src='https://i.goopics.net/OnZyl.png' />
+                        </div>
+                    </a>
                     <div className='wrapper-img'>
                         <img src="https://i.goopics.net/0DR83.png" />
                     </div>
-                    <div className='wrapper-img'>
-                        <img src="https://i.goopics.net/yaEJQ.png" />
-                    </div>
+                    <a rel="noopener noreferrer" href='https://ilanamzallag.com/' target='_blank' >
+                        <div className='wrapper-img'>    
+                            <img src='https://i.goopics.net/yaEJQ.png' />
+                        </div>
+                    </a>
                 </Carousel>
             </section>
             <section className='categories'>

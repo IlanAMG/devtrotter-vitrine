@@ -8,7 +8,7 @@ export const Bienvenue = () => {
     const [scroll, setScroll] = useState(0)
 
     const scrollBg = () => {
-        if (window.pageYOffset <= 2500 && window.pageYOffset !== 0) {
+        if (window.pageYOffset <= 2500 && window.pageYOffset !== 0 && window.innerWidth <= 2000) {
             setScroll((window.pageYOffset / 5))
         } else {
             setScroll(0)

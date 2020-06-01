@@ -12,15 +12,16 @@ import { Ecosysteme } from '../components/Ecosysteme/Ecosysteme';
 import { QuiSommes } from '../components/QuiSommes/QuiSommes';
 import { Banderolle } from '../components/Banderolle/Banderolle'
 import { Footer } from '../components/Footer/Footer';
+import FlecheGoTop from '../components/FlecheGoTop';
 
 export const App = () => {
     const { loading, opacityLoading } = useContext(Context)
     return (
         <div className='App'>
-            {/* {
+            {
                 !loading &&
                 <Loading opacityLoading={opacityLoading} />
-            } */}
+            }
             <MenuNavigation />
             <HomePage />
             <Bienvenue />
@@ -30,6 +31,7 @@ export const App = () => {
             <QuiSommes />
             <Banderolle />
             <Footer />
+            <FlecheGoTop />
         </div>
     )
 }

@@ -53,12 +53,75 @@ const StyledEcosysteme = styled.section`
             color: white;
             cursor: pointer;
             position: absolute;
-            left: 27px;
-            top: 160px;
             z-index: 12;
             transition: 800ms;
             opacity: 0.7
         }
+        .twitter {
+            left: 27px;
+            top: 160px;
+        }
+        .ytb {
+            left: 75px;
+            top: 335px;
+        }
+
+        .bubble {
+            left: 160px;
+            top: 30px;
+        }
+        .forum-span {
+            left: 108px;
+            z-index: 13;
+            top: -30px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black;
+            padding: 5px;
+            font-size: 11px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 500ms ease-out;
+        }
+        .formation-span {
+            right: -50px;
+            z-index: 13;
+            top: 100px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black;
+            padding: 5px;
+            font-size: 11px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 500ms ease-out;
+        }
+        .blog-span {
+            top: -30px;
+            z-index: 13;
+            right: 108px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black;
+            padding: 5px;
+            font-size: 11px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 500ms ease-out;
+        }
+
+        .blog {
+            right: 160px;
+            top: 30px;
+        }
+
+        .formation {
+            right: 27px;
+            top: 160px;
+        }
+
+        .insta {
+            right: 75px;
+            top: 335px;
+        }
+
         .icon:hover {
             transform: scale(1.1);
             transition: 800ms;

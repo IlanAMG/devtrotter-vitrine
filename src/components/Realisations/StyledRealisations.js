@@ -41,6 +41,7 @@ const StyledRealisations = styled.section`
             align-items: center;
             position: relative;
             height: 60vh;
+            cursor: pointer;
         }
         img {
             position: absolute;
@@ -70,6 +71,9 @@ const StyledRealisations = styled.section`
             width: 100%;
             height: 40%;
             display: flex;
+        }
+        .carousel button {
+            display:none;
         }
 
         .img {

@@ -42,7 +42,7 @@ export const Offres = () => {
             </div>
             <div className='container-offres'>
                 <Link
-                    to='/packs' 
+                    to='/packs'
                     onMouseLeave={() => setHover1(false)} 
                     onMouseEnter={() => setHover1(true)} 
                     className='btn-offres'>

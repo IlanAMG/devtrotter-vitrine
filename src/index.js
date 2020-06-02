@@ -117,6 +117,14 @@ const Index = () => {
   }, [directionScroll])
 
   useEffect(() => {
+    if (loading && location === '/') {
+      window.scrollTo({
+        top: nosoffres.current.offsetTop
+      })
+    }
+  }, [location])
+
+  useEffect(() => {
     window.addEventListener("load", function(event) {
       setTimeout(() => {
         setOpacityLoading(true)
@@ -139,7 +147,6 @@ const Index = () => {
   }, [])
 
   useEffect(() => {
-    console.log('index', location)
     if (location === '/') {
       window.addEventListener('scroll', refInPage, { passive: true });
     }

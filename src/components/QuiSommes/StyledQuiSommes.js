@@ -39,6 +39,10 @@ const StyledQuiSommes = styled.section`
             align-self: center;
             position: relative;
         }
+
+        .ici {
+            color: black;
+        }
 `
 
 export default StyledQuiSommes

@@ -12,14 +12,18 @@ const StyledHexagone = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
 
         ${props => props.url && css`
             background-image: ${({url}) => `url(${url})`};
         `}
 
-        ${props => props.color && css`
+        ${props => props.color === 'black' && css`
             background-color: ${({color}) => `${color}`};
-            opacity: 0.6;
+            opacity: 0.8;
+        `}
+        ${props => props.color !== 'black' && css`
+            background-color: ${({color}) => `${color}`};
         `}
 
         &:after {
@@ -87,6 +91,26 @@ const StyledHexagone = styled.div`
                 position: absolute;
                 text-align: center;
                 line-height: 22px;
+            }
+
+            a {
+                color: white;
+                z-index: 6;
+                padding: 8px 15px 8px 15px; 
+                text-align: center;
+                line-height: 22px;
+                font-size: 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 10px;
+                background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.8) 43.95%, rgba(104, 59, 205, 0.8) 99.95%);
+                transition: 500ms;
+                -webkit-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.58);
+            }
+            a:hover {
+                transform: scale(1.1);
+                background: linear-gradient(89.81deg, rgba(40, 42, 125, 1) 100%, rgba(104, 59, 205, 1) 99.95%);
+                transition: 500ms;
             }
 
 `

@@ -36,7 +36,8 @@ const StyledQuiSommes = styled.section`
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
+            align-self: center;
+            position: relative;
         }
 `
 

@@ -114,22 +114,25 @@ const Index = () => {
   }, [directionScroll])
 
   useEffect(() => {
-    setTimeout(() => {
-      setOpacityLoading(true)
-    }, 5400)
+    window.addEventListener("load", function(event) {
+      setTimeout(() => {
+        setOpacityLoading(true)
+      }, 3400)
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
+    
+      setTimeout(() => {
+        setLoading(true)
+        document.body.style.overflow = 'unset';
+        document.body.style.height = 'auto';
+      }, 3900)
+    });
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-
-    setTimeout(() => {
-      setLoading(true)
-      setOpacityLoading(true)
-      document.body.style.overflow = 'unset';
-      document.body.style.height = 'auto';
-    }, 5900)
-
+    return () => window.removeEventListener("load", function(event) {
+      console.log("Finish");
+    });
   }, [])
 
   useEffect(() => {

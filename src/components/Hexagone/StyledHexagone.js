@@ -1,15 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const StyledHexagone = styled.div`
         position: relative;
         width: 250px; 
         height: 144.34px;
         margin: 72.17px 2px;
-        background-image: ${({url}) => `url(${url})`};
         background-size: auto 288.6751px;
         background-position: center;
         box-shadow: 0 0 20px rgba(0,0,0,0.75);
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ${props => props.url && css`
+            background-image: ${({url}) => `url(${url})`};
+        `}
+
+        ${props => props.color && css`
+            background-color: ${({color}) => `${color}`};
+            opacity: 0.6;
+        `}
 
         &:after {
             content: "";
@@ -67,6 +78,15 @@ const StyledHexagone = styled.div`
 
             .hexBottom:after {
                 background-position: center bottom;
+            }
+
+            span {
+                z-index: 5;
+                color: white;
+                padding: 5px;
+                position: absolute;
+                text-align: center;
+                line-height: 22px;
             }
 
 `

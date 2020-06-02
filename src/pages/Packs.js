@@ -23,7 +23,7 @@ export const Packs = () => {
         } else if (i === 1) {
             setStyles({width: '66%'})
         }else if (i === 2) {
-            setStyles({width: '99%'})
+            setStyles({width: '99.5%'})
         } 
     }
 

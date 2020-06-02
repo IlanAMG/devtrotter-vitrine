@@ -13,15 +13,17 @@ import { NotFoundPage } from './pages/404';
 import { App } from './pages/App';
 //utils
 import { useScrollDirection } from './utils/useScrollDirection';
+import { Packs } from './pages/Packs';
+import { Options } from './pages/Options';
 
 const Index = () => {
   const [pageActuel, setPageActuel] = useState([true, false, false, false, false, false, false])
   const [opacityLoading, setOpacityLoading] = useState(false)
   const [loading, setLoading] = useState(false)
   const [openNav, setOpenNav] = useState(false)
+  const [location, setLocation] = useState(null)
   let direction = useRef('')
   const directionScroll = useScrollDirection()
-
 
   // toutes les ancres pour le scroll
 
@@ -51,63 +53,64 @@ const Index = () => {
   }
 
   const refInPage = () => {
-    const accueilRefY = accueil.current.getBoundingClientRect().y
-    const accueilRef = accueil.current.getBoundingClientRect().bottom
-    const quisommesnousRefY = quisommesnous.current.getBoundingClientRect().y
-    const quisommesnousRef = quisommesnous.current.getBoundingClientRect().bottom
-    const realisationsRefY = realisations.current.getBoundingClientRect().y
-    const realisationsRef = realisations.current.getBoundingClientRect().bottom
-    const nosoffresRefY = nosoffres.current.getBoundingClientRect().y
-    const nosoffresRef = nosoffres.current.getBoundingClientRect().bottom
-    const ecosystemeRefY = ecosysteme.current.getBoundingClientRect().y
-    const ecosystemeRef = ecosysteme.current.getBoundingClientRect().bottom
-    const notreequipeRefY = notreequipe.current.getBoundingClientRect().y
-    const notreequipeRef = notreequipe.current.getBoundingClientRect().bottom
-    const nouscontacterRefY = nouscontacter.current.getBoundingClientRect().y
-    const nouscontacterRef = nouscontacter.current.getBoundingClientRect().bottom
+    console.log('refInPage', location)
+    if (accueil.current !== null && location === '/') {
+      const accueilRefY = accueil.current.getBoundingClientRect().y
+      const accueilRef = accueil.current.getBoundingClientRect().bottom
+      const quisommesnousRefY = quisommesnous.current.getBoundingClientRect().y
+      const quisommesnousRef = quisommesnous.current.getBoundingClientRect().bottom
+      const realisationsRefY = realisations.current.getBoundingClientRect().y
+      const realisationsRef = realisations.current.getBoundingClientRect().bottom
+      const nosoffresRefY = nosoffres.current.getBoundingClientRect().y
+      const nosoffresRef = nosoffres.current.getBoundingClientRect().bottom
+      const ecosystemeRefY = ecosysteme.current.getBoundingClientRect().y
+      const ecosystemeRef = ecosysteme.current.getBoundingClientRect().bottom
+      const notreequipeRefY = notreequipe.current.getBoundingClientRect().y
+      const notreequipeRef = notreequipe.current.getBoundingClientRect().bottom
+      const nouscontacterRefY = nouscontacter.current.getBoundingClientRect().y
+      const nouscontacterRef = nouscontacter.current.getBoundingClientRect().bottom
 
-    const clonePageActuel = [...pageActuel]
+      const clonePageActuel = [...pageActuel]
 
-    if (accueilRef > 80 && accueilRefY < 80) {
-      clonePageActuel[0] = true
-    } else {
-      clonePageActuel[0] = false
-    }
-    if (quisommesnousRef > 80  && quisommesnousRefY < 80) {
-      clonePageActuel[1] = true
-    } else {
-      clonePageActuel[1] = false
-    }
-    if (realisationsRef > 80 && realisationsRefY < 80) {
-      clonePageActuel[2] = true
-    } else {
-      clonePageActuel[2] = false
-    }
-    if (nosoffresRef > 80 && nosoffresRefY < 80) {
-      clonePageActuel[3] = true
-    } else {
-      clonePageActuel[3] = false
-    }
-    if (ecosystemeRef > 80 && ecosystemeRefY < 80) {
-      clonePageActuel[4] = true
-    } else {
-      clonePageActuel[4] = false
-    }
-    if (notreequipeRef > 80 && notreequipeRefY < 80) {
-      clonePageActuel[5] = true
-    } else {
-      clonePageActuel[5] = false
-    }
-    if (nouscontacterRef > 80 && nouscontacterRefY < 260) {
-      clonePageActuel[6] = true
-    } else {
-      clonePageActuel[6] = false
-    }
+      if (accueilRef > 80 && accueilRefY < 80) {
+        clonePageActuel[0] = true
+      } else {
+        clonePageActuel[0] = false
+      }
+      if (quisommesnousRef > 80  && quisommesnousRefY < 80) {
+        clonePageActuel[1] = true
+      } else {
+        clonePageActuel[1] = false
+      }
+      if (realisationsRef > 80 && realisationsRefY < 80) {
+        clonePageActuel[2] = true
+      } else {
+        clonePageActuel[2] = false
+      }
+      if (nosoffresRef > 80 && nosoffresRefY < 80) {
+        clonePageActuel[3] = true
+      } else {
+        clonePageActuel[3] = false
+      }
+      if (ecosystemeRef > 80 && ecosystemeRefY < 80) {
+        clonePageActuel[4] = true
+      } else {
+        clonePageActuel[4] = false
+      }
+      if (notreequipeRef > 80 && notreequipeRefY < 80) {
+        clonePageActuel[5] = true
+      } else {
+        clonePageActuel[5] = false
+      }
+      if (nouscontacterRef > 80 && nouscontacterRefY < 260) {
+        clonePageActuel[6] = true
+      } else {
+        clonePageActuel[6] = false
+      }
 
-    setPageActuel(clonePageActuel)
+      setPageActuel(clonePageActuel)
+    }
   }
-  
-  // useEffect(hideLoader, []);
 
   useEffect(() => {
     direction.current = directionScroll
@@ -136,23 +139,30 @@ const Index = () => {
   }, [])
 
   useEffect(() => {
-    window.addEventListener('scroll', refInPage, { passive: true });
+    console.log('index', location)
+    if (location === '/') {
+      window.addEventListener('scroll', refInPage, { passive: true });
+    }
                             // eslint-disable-next-line
-  }, []);
+  }, [location]);
 
   useEffect(() => {
-    return () => {
-      window.removeEventListener('scroll', refInPage);
-    };
+    if (location === '/') {
+      return () => {
+        window.removeEventListener('scroll', refInPage);
+      };
+    }
                             // eslint-disable-next-line
   }, []);
 
   return (
-    <Context.Provider value={{ pageActuel, setPageActuel, loading, opacityLoading, direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
+    <Context.Provider value={{ setLocation, pageActuel, setPageActuel, loading, opacityLoading, direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
       <Router>
         <Switch>
           <Route exact path='/' component={App} />
           <Route path="/404" component={NotFoundPage} />
+          <Route path="/packs" component={Packs} />
+          <Route path="/options" component={Options} />
           <Redirect to="/404" />
         </Switch>
       </Router>

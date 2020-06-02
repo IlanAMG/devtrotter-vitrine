@@ -45,7 +45,8 @@ const StyledOffres = styled.section`
             align-items: center;
             cursor: pointer;
             transition: 500ms;
-            position: relative
+            position: relative;
+            text-decoration: none;
         }
         .filtre-hover {
             background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.6) 43.95%, rgba(104, 59, 205, 0.6) 99.95%);

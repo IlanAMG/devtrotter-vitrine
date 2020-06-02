@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import Context from '../utils/context';
 
@@ -13,9 +13,21 @@ import { QuiSommes } from '../components/QuiSommes/QuiSommes';
 import { Banderolle } from '../components/Banderolle/Banderolle'
 import { Footer } from '../components/Footer/Footer';
 import FlecheGoTop from '../components/FlecheGoTop';
+import { useLocation } from 'react-router-dom';
 
 export const App = () => {
-    const { loading, opacityLoading } = useContext(Context)
+    const { setLocation, loading, opacityLoading } = useContext(Context)
+    const location = useLocation()
+    
+    useEffect(() => {
+        setLocation(location.pathname)
+    }, [])
+    useEffect(() => {
+        return () => {
+            setLocation(null)
+        }
+    }, [])
+
     return (
         <div className='App'>
             {

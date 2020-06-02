@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledBtnMenu = styled.div`
     position: fixed;
-    z-index: 20;
+    z-index: 25;
     width: 35px;
     height: 62px;
     top: 10px;

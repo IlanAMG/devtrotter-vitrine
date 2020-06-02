@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import StyledOffres from './StyledOffres';
 import Context from '../../utils/context';
+import { Link } from 'react-router-dom';
 
 export const Offres = () => {
     const { direction, nosoffres } = useContext(Context)
@@ -40,20 +41,22 @@ export const Offres = () => {
                 <h1>NOS OFFRES</h1>
             </div>
             <div className='container-offres'>
-                <div 
+                <Link
+                    to='/packs' 
                     onMouseLeave={() => setHover1(false)} 
                     onMouseEnter={() => setHover1(true)} 
                     className='btn-offres'>
                     <div className='filtre-hover one'/>
                     <span>LES PACKS</span>
-                </div>
-                <div 
+                </Link>
+                <Link 
+                    to='/options'
                     onMouseLeave={() => setHover2(false)}
                     onMouseEnter={() => setHover2(true)} 
                     className='btn-offres'>
                     <div className='filtre-hover two'/>
                     <span>LES OPTIONS</span>
-                </div>
+                </Link>
             </div>
             <img style={{transform: `translateX(${bgOffres}px)`}} alt='background' src='https://i.goopics.net/xV8VW.jpg' />
         </StyledOffres>

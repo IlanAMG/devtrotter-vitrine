@@ -1,13 +1,13 @@
 import styled, { keyframes } from 'styled-components';
-// const arrow = keyframes`
-//     from,
-//     to {
-//         bottom: 15px;
-//     }
-//     50% {
-//         bottom: 35px;
-//     }
-// `
+const arrow = keyframes`
+    from,
+    to {
+        bottom: 15px;
+    }
+    50% {
+        bottom: 35px;
+    }
+`
 
 const StyledHomePage = styled.section`
 
@@ -120,7 +120,7 @@ const StyledHomePage = styled.section`
             display: flex;
             position: absolute;
             bottom: 20px;
-            ${'' /* animation: ${arrow} 3s infinite ease-out; */}
+            animation: ${arrow} 3s infinite ease-out;
             cursor: pointer;
             transition: 500ms;
         }

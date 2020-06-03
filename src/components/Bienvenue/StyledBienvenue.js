@@ -55,6 +55,7 @@ const StyledBienvenue = styled.section`
 
         video {
             position: absolute;
+            user-select: none;
         }
         
         h2 {

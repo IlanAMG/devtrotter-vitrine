@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 import Context from '../utils/context';
 import StyledPrestations from '../styles/StyledPrestations';
+import { FormContact } from '../components/FormContact/FormContact';
 
 export const Prestations = () => {
     const { setLocation } = useContext(Context)
@@ -26,10 +27,10 @@ export const Prestations = () => {
                 </svg>
             </Link>
             <img className='bg' alt='background' src='https://i.goopics.net/GKkNa.jpg' />
-            <div className='container-h1'>
+            <div className='container-h1prest'>
                 <h1>NOS PRESTATIONS</h1>
             </div>
-            <button style={openForm ? {right: '720px', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
+            <button className='btn-prest' style={openForm ? {right: '720px', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
                 {
                     openForm ?
                         <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +43,7 @@ export const Prestations = () => {
                 }
             </button>
             <section style={openForm ? {width: '720px'} : null} className='section-form'>
-
+                <FormContact title={'DEMANDER UN DEVIS'} />
             </section>
         </StyledPrestations>
     )

@@ -74,6 +74,11 @@ const StyledFooter = styled.footer`
             transform: scale(1.1);
             transition: 600ms;
         }
+        .container.right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 `
 
 export default StyledFooter

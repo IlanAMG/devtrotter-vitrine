@@ -9,13 +9,13 @@ const StyledPrestations = styled.section`
     justify-content: center;
     overflow: hidden;
 
-    .container-h1 {
+    .container-h1prest {
             width: 100vw;
             margin: 30px 0 30px 0;
             position: absolute;
             z-index: 1;
         }
-    h1 {
+    .container-h1prest h1 {
         font-size: 4.6em;
         color: white;
         text-align: center;
@@ -57,7 +57,7 @@ const StyledPrestations = styled.section`
         transition: 500ms;
     }
 
-    button {
+    .btn-prest {
         background-color: rgba(18,18,18,0.95);
         height: 50px;
         width: 50px;

@@ -4,6 +4,7 @@ import '../styles/App.css';
 
 import Context from '../utils/context';
 import StyledPacks from '../styles/StyledPacks';
+import { FormContact } from '../components/FormContact/FormContact';
 
 export const Packs = () => {
     const { setLocation } = useContext(Context)
@@ -44,7 +45,7 @@ export const Packs = () => {
                 </svg>
             </Link>
             <img className='bg' alt='background' src='https://i.goopics.net/GKkNa.jpg' />
-            <div className='container-h1'>
+            <div className='container-h1packs'>
                 <h1>NOS PACKS</h1>
             </div>
             <section className='section-videos'>
@@ -59,7 +60,7 @@ export const Packs = () => {
                     </video>
                 <div className='bar-progress'><div style={styles} className='progress'/></div>
             </section>
-            <button style={openForm ? {right: '720px', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
+            <button className='btn-packs'style={openForm ? {right: '720px', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
                 {
                     openForm ?
                         <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +73,7 @@ export const Packs = () => {
                 }
             </button>
             <section style={openForm ? {width: '720px'} : null} className='section-form'>
-
+                {openForm && <FormContact title={'DEMANDER UN DEVIS'} />}
             </section>
         </StyledPacks>
     )

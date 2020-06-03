@@ -7,6 +7,7 @@ import { IoIosMail } from 'react-icons/io'
 
 import StyledFooter from './StyledFooter';
 import Context from '../../utils/context';
+import { FormContact } from '../FormContact/FormContact'
 
 export const Footer = () => {
     const { nouscontacter } = useContext(Context)
@@ -31,6 +32,7 @@ export const Footer = () => {
             </section>
             <div className='separator' />
             <section className='container right'>
+                <FormContact title={'NOUS CONTACTER'} />
             </section>
         </StyledFooter>
     )

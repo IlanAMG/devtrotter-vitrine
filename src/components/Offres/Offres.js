@@ -4,16 +4,14 @@ import Context from '../../utils/context';
 import { Link } from 'react-router-dom';
 
 export const Offres = () => {
-    const { direction, nosoffres } = useContext(Context)
+    const { nosoffres } = useContext(Context)
     const [hover1, setHover1] = useState(false)
     const [hover2, setHover2] = useState(false)
-    const [bgOffres, setBgOffres] = useState(0)
     const [scroll, setScroll] = useState(0)
 
     const scrollBg = () => {
-        setScroll(window.pageYOffset)
+        setScroll((window.pageYOffset / 12))
     }
-
     useEffect(() => {
         window.addEventListener('scroll', scrollBg, {passive: true})
     }, [])
@@ -21,19 +19,6 @@ export const Offres = () => {
     useEffect(() => {
         return () => window.removeEventListener('scroll', scrollBg)
     }, [])
-
-    useEffect(() => {
-        if (scroll >= 1400 && scroll <= 3500) {
-            if (direction.current === 'down') {
-                setBgOffres(offres => offres - 6)
-            } else if (direction.current === 'up') {
-                setBgOffres(offres => offres + 6)
-            }
-            if (bgOffres <= -800 || bgOffres >= 800) {
-                setBgOffres(0)
-            }
-        }
-    }, [scroll])
 
     return (
         <StyledOffres ref={nosoffres} hover1={hover1} hover2={hover2}>
@@ -50,7 +35,7 @@ export const Offres = () => {
                     <span>NOS PACKS</span>
                 </Link>
                 <Link 
-                    to='/options'
+                    to='/prestations'
                     onMouseLeave={() => setHover2(false)}
                     onMouseEnter={() => setHover2(true)} 
                     className='btn-offres'>
@@ -58,7 +43,7 @@ export const Offres = () => {
                     <span>NOS PRESTATIONS</span>
                 </Link>
             </div>
-            <img style={{transform: `translateX(${bgOffres}px)`}} alt='background' src='https://i.goopics.net/xV8VW.jpg' />
+            <img style={{transform: `translateX(${scroll}px)`}} alt='background' src='https://i.goopics.net/xV8VW.jpg' />
         </StyledOffres>
     )
 }

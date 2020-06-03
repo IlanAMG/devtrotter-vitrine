@@ -12,9 +12,8 @@ import Context from './utils/context';
 import { NotFoundPage } from './pages/404';
 import { App } from './pages/App';
 //utils
-import { useScrollDirection } from './utils/useScrollDirection';
 import { Packs } from './pages/Packs';
-import { Options } from './pages/Options';
+import { Prestations } from './pages/Prestations';
 
 const Index = () => {
   const [pageActuel, setPageActuel] = useState([true, false, false, false, false, false, false])
@@ -22,8 +21,6 @@ const Index = () => {
   const [loading, setLoading] = useState(false)
   const [openNav, setOpenNav] = useState(false)
   const [location, setLocation] = useState(null)
-  let direction = useRef('')
-  const directionScroll = useScrollDirection()
 
   // toutes les ancres pour le scroll
 
@@ -113,10 +110,6 @@ const Index = () => {
   }
 
   useEffect(() => {
-    direction.current = directionScroll
-  }, [directionScroll])
-
-  useEffect(() => {
     if (loading && location === '/') {
       window.scrollTo({
         top: nosoffres.current.offsetTop
@@ -159,17 +152,17 @@ const Index = () => {
         window.removeEventListener('scroll', refInPage);
       };
     }
-                            // eslint-disable-next-line
+      //                      eslint-disable-next-line
   }, []);
 
   return (
-    <Context.Provider value={{ setLocation, pageActuel, setPageActuel, loading, opacityLoading, direction, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
+    <Context.Provider value={{ setLocation, pageActuel, setPageActuel, loading, opacityLoading, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
       <Router>
         <Switch>
           <Route exact path='/' component={App} />
           <Route path="/404" component={NotFoundPage} />
           <Route path="/packs" component={Packs} />
-          <Route path="/options" component={Options} />
+          <Route path="/prestations" component={Prestations} />
           <Redirect to="/404" />
         </Switch>
       </Router>

@@ -57,7 +57,7 @@ export const Bienvenue = () => {
             <div className='container-adjectif'>
                 <div className='adjectif' onClick={() => openAdjectif(0)}>
                     <h3>FORCE DE PROPOSITION</h3>
-                    <p style={adjectifOpen[0] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
+                    <p style={adjectifOpen[0] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
                     <hr />
                     {!adjectifOpen[0] ?
                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +71,7 @@ export const Bienvenue = () => {
                 </div>
                 <div className='adjectif' onClick={() => openAdjectif(1)}>
                     <h3>FLEXIBILITÉ</h3>
-                    <p style={adjectifOpen[1] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
+                    <p style={adjectifOpen[1] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
                     <hr />
                     {!adjectifOpen[1] ?
                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@ export const Bienvenue = () => {
                 </div>
                 <div className='adjectif' onClick={() => openAdjectif(2)}>
                     <h3>RIGUEUR</h3>
-                    <p style={adjectifOpen[2] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
+                    <p style={adjectifOpen[2] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
                     <hr />
                     {!adjectifOpen[2] ?
                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@ export const Bienvenue = () => {
                 </div>
                 <div className='adjectif' onClick={() => openAdjectif(3)}>
                     <h3>TRANSPARENCE</h3>
-                    <p style={adjectifOpen[3] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
+                    <p style={adjectifOpen[3] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
                     <hr />
                     {!adjectifOpen[3] ?
                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">

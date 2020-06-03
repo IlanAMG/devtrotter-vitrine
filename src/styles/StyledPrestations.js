@@ -6,7 +6,8 @@ const StyledPrestations = styled.section`
     z-index: 50;
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: space-around;
     overflow: hidden;
 
     .container-h1prest {
@@ -70,6 +71,80 @@ const StyledPrestations = styled.section`
         cursor: pointer;
         outline: none;
         transition: 500ms;
+    }
+
+    .wrapper-sections {
+        position: absolute;
+        bottom: 12%;
+        height: calc(100% - 240px);
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 3vw;
+    }
+
+    .container-web {
+        height: 100%;
+        border-left: 0.05em solid rgba(255, 255, 255, 0.6);
+        width: 66%;
+        padding: 0 2vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .container-design {
+        height: 100%;
+        border-left: 0.05em solid rgba(255, 255, 255, 0.6);
+        width: 33%;
+        padding: 0 2vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .container-h2 {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .container-h2 h2 {
+        color: white;
+        font-size: 36px;
+    }
+    .container-items {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 90%;
+    }
+
+    .wrapper-btn {
+        position: absolute;
+        bottom: 0;
+        height: 12%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper-btn button {
+        color: #ffffff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #494949;
+        padding: 10px;
+        border: 1px solid #ffffff !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+    }
+    .wrapper-btn button:hover {
+        color: rgb(228, 249, 255) !important;
+        background: rgba(40, 42, 125, 0.7);
+        transition: all 0.4s ease 0s;
+        border-color: rgba(40, 42, 125, 0.3) !important;
+    }
+    .wrapper-btn button:focus {
+        outline: 0 !important;
     }
 `
 

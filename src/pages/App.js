@@ -30,10 +30,10 @@ export const App = () => {
 
     return (
         <div className='App'>
-            {/* {
+            {
                 !loading &&
                 <Loading opacityLoading={opacityLoading} />
-            } */}
+            }
             <MenuNavigation />
             <HomePage />
             <Bienvenue />

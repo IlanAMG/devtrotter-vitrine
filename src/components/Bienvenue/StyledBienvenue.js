@@ -22,7 +22,7 @@ const StyledBienvenue = styled.section`
 
         .container-h1 {
             width: 60%;
-            margin: 30px 0 30px 0;
+            margin-top: 30px;
         }
         h1 {
             font-size: 4.6em;
@@ -65,27 +65,40 @@ const StyledBienvenue = styled.section`
         .container-adjectif {
             width: 90%;
             display: flex;
+            height: 150px;
             justify-content: space-between;
-            align-items: center;
-            margin: 20px 0 30px 0;
-        }
+            margin-bottom: 30px;
         .adjectif {
-            height: 100%;
+            z-index: 7;
+            cursor: pointer;
+            height: auto;
             width: 20%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             color: white;
+            transition: 500ms;
         }
+        .adjectif:hover {
+            transform: scale(1.06);
+            transition: 500ms;
+        }
+
         p {
             font-weight: 200;
         }
+        .adjectif p {
+            text-align: center;
+            transition: 300ms;
+            height: 0px;
+            overflow: hidden;
+        }
+
         hr {
-            height: 0.005em;
+            height: 0.08em;
             width: 100%;
-            background-color: white;
-            margin: 5px;
+            background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.6) 43.95%, rgba(104, 59, 205, 0.6) 99.95%);
+            margin: 8px;
         }
         h3 {
             font-size: 20px;

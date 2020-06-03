@@ -68,6 +68,7 @@ const StyledBienvenue = styled.section`
             height: 150px;
             justify-content: space-between;
             margin-bottom: 30px;
+        }
         .adjectif {
             z-index: 7;
             cursor: pointer;

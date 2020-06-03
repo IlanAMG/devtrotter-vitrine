@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import emailjs from 'emailjs-com'
 import StyledFormContact from './StyledFormContact'
 
-export const FormContact = ({ title }) => {
+export const FormContact = ({ title, value }) => {
     const initial_form = {
         user_name: "",
         user_email: "",
@@ -27,6 +27,13 @@ export const FormContact = ({ title }) => {
 
         setState(initial_form)
     }
+
+    useEffect(() => {
+        setState({
+            ...state,
+            message: value
+        })
+    }, [value])
     return (
         <StyledFormContact>
             <div className='container-h1'>

@@ -15,7 +15,6 @@ export const Prestations = () => {
     }
     
     useEffect(() => {
-        console.log('options', location.pathname)
         setLocation(location.pathname)
     }, [])
 

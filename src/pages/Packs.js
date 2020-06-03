@@ -12,6 +12,7 @@ export const Packs = () => {
     const [hover, setHover] = useState([false, true, false])
     const [styles, setStyles] = useState(null)
     const [openForm, setOpenForm] = useState(false)
+    const [valueForm, setValueForm] = useState('')
 
     const handleHover = (i) => {
         let cloneHover = [...hover]
@@ -29,7 +30,16 @@ export const Packs = () => {
         } 
     }
 
-    const handleOpenForm = () => {
+    const handleOpenForm = (i) => {
+        if (i === 0) {
+            setValueForm('Bonjour, je suis intéressé par le pack Essentiel...')
+        }
+        if (i === 1) {
+            setValueForm('Bonjour, je suis intéressé par le pack Standard...')
+        }
+        if (i === 2) {
+            setValueForm('Bonjour, je suis intéressé par le pack Complet...')
+        }
         setOpenForm(!openForm)
     }
 
@@ -49,13 +59,13 @@ export const Packs = () => {
                 <h1>NOS PACKS</h1>
             </div>
             <section className='section-videos'>
-                    <video onClick={handleOpenForm} onMouseOver={() => handleHover(0)} className={hover[0] && 'middle'} autoPlay loop muted playsinline>
+                    <video onClick={() => handleOpenForm(0)} onMouseOver={() => handleHover(0)} className={hover[0] && 'middle'} autoPlay loop muted playsinline>
                         <source data-src='/videos/ESSENTIAL.mp4' type='video/mp4' src='/videos/ESSENTIAL.mp4' />
                     </video>
-                    <video onClick={handleOpenForm} onMouseOver={() => handleHover(1)} className={hover[1] && 'middle'} autoPlay loop muted playsinline>
+                    <video onClick={() => handleOpenForm(1)} onMouseOver={() => handleHover(1)} className={hover[1] && 'middle'} autoPlay loop muted playsinline>
                         <source data-src='/videos/STANDARD.mp4' type='video/mp4' src='/videos/STANDARD.mp4' />
                     </video>
-                    <video onClick={handleOpenForm} onMouseOver={() => handleHover(2)} className={hover[2] && 'middle'} autoPlay loop muted playsinline>
+                    <video onClick={() => handleOpenForm(2)} onMouseOver={() => handleHover(2)} className={hover[2] && 'middle'} autoPlay loop muted playsinline>
                         <source data-src='/videos/COMPLET.mp4' type='video/mp4' src='/videos/COMPLET.mp4' />
                     </video>
                 <div className='bar-progress'><div style={styles} className='progress'/></div>
@@ -73,7 +83,7 @@ export const Packs = () => {
                 }
             </button>
             <section style={openForm ? {width: '720px'} : null} className='section-form'>
-                {openForm && <FormContact title={'DEMANDER UN DEVIS'} />}
+                {openForm && <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />}
             </section>
         </StyledPacks>
     )

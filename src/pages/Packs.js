@@ -10,6 +10,7 @@ export const Packs = () => {
     const location = useLocation()
     const [hover, setHover] = useState([false, true, false])
     const [styles, setStyles] = useState(null)
+    const [openForm, setOpenForm] = useState(false)
 
     const handleHover = (i) => {
         let cloneHover = [...hover]
@@ -22,9 +23,13 @@ export const Packs = () => {
             setStyles({width: '33%'})
         } else if (i === 1) {
             setStyles({width: '66%'})
-        }else if (i === 2) {
+        } else if (i === 2) {
             setStyles({width: '99.5%'})
         } 
+    }
+
+    const handleOpenForm = () => {
+        setOpenForm(!openForm)
     }
 
     useEffect(() => {
@@ -43,18 +48,30 @@ export const Packs = () => {
                 <h1>NOS PACKS</h1>
             </div>
             <section className='section-videos'>
-                    <video onMouseOver={() => handleHover(0)} className={hover[0] && 'middle'} autoPlay loop muted playsinline>
+                    <video onClick={handleOpenForm} onMouseOver={() => handleHover(0)} className={hover[0] && 'middle'} autoPlay loop muted playsinline>
                         <source data-src='/videos/ESSENTIAL.mp4' type='video/mp4' src='/videos/ESSENTIAL.mp4' />
                     </video>
-                    <video onMouseOver={() => handleHover(1)} className={hover[1] && 'middle'} autoPlay loop muted playsinline>
+                    <video onClick={handleOpenForm} onMouseOver={() => handleHover(1)} className={hover[1] && 'middle'} autoPlay loop muted playsinline>
                         <source data-src='/videos/STANDARD.mp4' type='video/mp4' src='/videos/STANDARD.mp4' />
                     </video>
-                    <video onMouseOver={() => handleHover(2)} className={hover[2] && 'middle'} autoPlay loop muted playsinline>
+                    <video onClick={handleOpenForm} onMouseOver={() => handleHover(2)} className={hover[2] && 'middle'} autoPlay loop muted playsinline>
                         <source data-src='/videos/COMPLET.mp4' type='video/mp4' src='/videos/COMPLET.mp4' />
                     </video>
                 <div className='bar-progress'><div style={styles} className='progress'/></div>
             </section>
-            <section className='section-form'>
+            <button style={openForm ? {right: '720px', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
+                {
+                    openForm ?
+                        <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.400004 0.999998L20 15.5L0.4 30" stroke="#F0F0F0"/>
+                        </svg>
+                    :
+                        <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0"/>
+                        </svg>
+                }
+            </button>
+            <section style={openForm ? {width: '720px'} : null} className='section-form'>
 
             </section>
         </StyledPacks>

@@ -37,13 +37,6 @@ const StyledPacks = styled.section`
         justify-content: center;
     }
 
-    .section-form {
-        width: 25%;
-        display: flex;
-        position: absolute;
-        display: none;
-    }
-
     video {
         max-height: 66%;
         margin: 0 10px 0 10px;
@@ -85,13 +78,39 @@ const StyledPacks = styled.section`
         top: 20px;
         left: 20px;
         height: 50px;
-        width: 100px;
+        width: 90px;
         background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.8) 23.95%, rgba(104, 59, 205, 0.8) 90.95%);
         transition: 500ms;
     }
     a:hover {
         padding-left: 10px;
         background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.8) 1.95%, rgba(104, 59, 205, 0.8) 99.95%);
+        transition: 500ms;
+    }
+
+    .section-form {
+        width: 0px;
+        display: flex;
+        position: absolute;
+        background: rgba(18,18,18,0.95);
+        right: 0;
+        height: 100%;
+        z-index: 20;
+        transition: 500ms;
+    }
+
+    button {
+        background-color: rgba(18,18,18,0.95);
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        right: 0px;
+        top: calc(50vh - 25px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
         transition: 500ms;
     }
 `

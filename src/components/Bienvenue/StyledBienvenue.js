@@ -4,8 +4,10 @@ const StyledBienvenue = styled.section`
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        background: #010006;
         overflow: hidden;
         width: 100vw;
+        min-height: 100vh;
         position: relative;
         flex-direction: column;
         -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
@@ -32,8 +34,10 @@ const StyledBienvenue = styled.section`
         .container-quisommesnous {
             width: 70%;
             align-self: center;
+            align-items: center;
+            min-height: 500px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
         }
 
         .quisommesnous-txt {
@@ -42,11 +46,15 @@ const StyledBienvenue = styled.section`
             color: white;
             text-align: justify;
         }
-        .placeholder {
-            background-color: grey;
+        .wrapper-video {
             margin: 10px;
-            height: 385px;
-            width: 50%;
+            height: 500px;
+            width: 500px;
+            position: relative;
+        }
+
+        video {
+            position: absolute;
         }
         
         h2 {

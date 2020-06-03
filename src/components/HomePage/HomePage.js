@@ -1,5 +1,5 @@
 //librairies externes
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import ReactPlayer from 'react-player'
 
 //utils
@@ -15,6 +15,7 @@ export const HomePage = () => {
     const { pageActuel, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter, scrollToRef } = useContext(Context)
     const [hoverElement, setHoverElement] = useState([false, false, false, false, false, false, false])
     const [videoRdy, setVideoRdy] = useState(false)
+    const [blink, setBlink] = useState([true, false, false])
 
     const handleHover = (i) => {
         let copyHoverElement = [...hoverElement]
@@ -27,6 +28,45 @@ export const HomePage = () => {
         copyHoverElement[i] = false
         setHoverElement(copyHoverElement)
     }
+
+    const useInterval = (callback, delay) => {
+        const savedCallback = useRef();
+        // Remember the latest callback.
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+        // Set up the interval.
+        useEffect(() => {
+            function tick() {
+                savedCallback.current();
+            }
+            if (delay !== null) {
+                let id = setInterval(tick, delay);
+                return () => clearInterval(id);
+            }
+        }, [delay]);
+    }
+
+    const onBlink = () => {
+        let cloneBlink = [...blink]
+        if (cloneBlink[0]) {
+            cloneBlink[0] = false
+            cloneBlink[1] = true
+            return setBlink(cloneBlink)
+        }
+        if (cloneBlink[1]) {
+            cloneBlink[1] = false
+            cloneBlink[2] = true
+            return setBlink(cloneBlink)
+        }
+        if (cloneBlink[2]) {
+            cloneBlink[2] = false
+            cloneBlink[0] = true
+            return setBlink(cloneBlink)
+        }
+    }
+    
+    useInterval(onBlink, 400)
 
     return (
         <StyledHomePage
@@ -163,9 +203,9 @@ export const HomePage = () => {
             </section>
 
             <svg onClick={() => scrollToRef(quisommesnous)} className='scroll' width="30" height="60" viewBox="0 0 30 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.28719 41L15.1436 59L29 41" stroke="#F0F0F0" />
-                <path d="M1.00008 21L14.8565 39L28.7129 21" stroke="#F0F0F0" />
-                <path d="M1.00008 0.999998L14.8565 19L28.7129 1" stroke="#F0F0F0" />
+                {blink[2] && <path d="M1.28719 41L15.1436 59L29 41" stroke="#F0F0F0" />}
+                {blink[1] && <path d="M1.00008 21L14.8565 39L28.7129 21" stroke="#F0F0F0" />}
+                {blink[0] && <path d="M1.00008 0.999998L14.8565 19L28.7129 1" stroke="#F0F0F0" />}
             </svg>
 
         </StyledHomePage>

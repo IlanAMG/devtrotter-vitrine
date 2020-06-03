@@ -47,7 +47,7 @@ export const Offres = () => {
                     onMouseEnter={() => setHover1(true)} 
                     className='btn-offres'>
                     <div className='filtre-hover one'/>
-                    <span>LES PACKS</span>
+                    <span>NOS PACKS</span>
                 </Link>
                 <Link 
                     to='/options'
@@ -55,7 +55,7 @@ export const Offres = () => {
                     onMouseEnter={() => setHover2(true)} 
                     className='btn-offres'>
                     <div className='filtre-hover two'/>
-                    <span>LES OPTIONS</span>
+                    <span>NOS PRESTATIONS</span>
                 </Link>
             </div>
             <img style={{transform: `translateX(${bgOffres}px)`}} alt='background' src='https://i.goopics.net/xV8VW.jpg' />

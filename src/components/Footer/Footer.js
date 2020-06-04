@@ -5,6 +5,7 @@ import { AiFillInstagram } from 'react-icons/ai'
 import { FaRegNewspaper } from 'react-icons/fa'
 import { IoIosMail } from 'react-icons/io'
 
+import bgFooter from '../../assets/bgFooter.jpg';
 import StyledFooter from './StyledFooter';
 import Context from '../../utils/context';
 import { FormContact } from '../FormContact/FormContact'
@@ -14,7 +15,7 @@ export const Footer = () => {
 
     return (
         <StyledFooter ref={nouscontacter}>
-            <img alt='background' className='bg' src='https://i.goopics.net/7KJOG.jpg' />
+            <img alt='background' className='bg' src={bgFooter} />
             <section className='container left'>
                 <div className='container-h1'>
                     <h1>DESIGNED IN THE USA<br/>CRAFTED IN FRANCE<br/>SHOWCASED TO THE WORLD</h1>

@@ -37,11 +37,7 @@ export const BtnMenu = () => {
         }
     }
 
-    const randomSpeed = (min, max) => {
-        return Math.floor(Math.random() * (max - min) + min)
-    }
-
-    useInterval(useRotate, randomSpeed(3000, 6000))
+    useInterval(useRotate, 4000)
 
     const handleOpenNav = () => {
         if (rotate === 0 || rotate === 360) {
@@ -55,16 +51,16 @@ export const BtnMenu = () => {
     }
     
     return (
-        <StyledBtnMenu
-            rotate={rotate}
-            onClick={() => handleOpenNav()}
-        >
-                <div className='wrapper-logo'>
-                    <img className='logo' alt='logo' src={logo} />
-                </div>
-                <div className={openNav ? 'wrapper-menu wrapper-croix' : 'wrapper-menu'}>
-                    <div className='ligne' />
-                </div>
-        </StyledBtnMenu>
+            <StyledBtnMenu
+                rotate={rotate}
+                onClick={() => handleOpenNav()}
+            >
+                    <div className='wrapper-logo'>
+                        <img className='logo' alt='logo' src={logo} />
+                    </div>
+                    <div className={openNav ? 'wrapper-menu wrapper-croix' : 'wrapper-menu'}>
+                        <div className='ligne' />
+                    </div>
+            </StyledBtnMenu>
     )
 }

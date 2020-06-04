@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import TrackVisibility from 'react-on-screen';
 
 import Context from '../utils/context';
 
@@ -35,13 +36,21 @@ export const App = () => {
                 <Loading opacityLoading={opacityLoading} />
             }
             <MenuNavigation />
-            <HomePage />
+            <TrackVisibility partialVisibility offset = { 600 } >
+                <HomePage />
+            </TrackVisibility>
+            <TrackVisibility partialVisibility offset = { 600 } >
             <Bienvenue />
-            <Realisations />
+            </TrackVisibility>
+            <TrackVisibility partialVisibility offset = { 600 } >
+                <Realisations />
+            </TrackVisibility>
             <Offres />
             <Ecosysteme />
             <QuiSommes />
-            <Banderolle />
+            <TrackVisibility partialVisibility offset = { 600 } >
+                {({isVisible}) => isVisible && <Banderolle />}
+            </TrackVisibility>
             <Footer />
             <FlecheGoTop />
         </div>

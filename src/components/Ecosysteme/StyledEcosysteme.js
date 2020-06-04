@@ -43,7 +43,7 @@ const StyledEcosysteme = styled.section`
             justify-content: center;
         }
 
-        svg {
+        #svg {
             z-index: 11;
         }
 

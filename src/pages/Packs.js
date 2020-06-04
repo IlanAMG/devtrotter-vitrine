@@ -5,6 +5,7 @@ import '../styles/App.css';
 import Context from '../utils/context';
 import StyledPacks from '../styles/StyledPacks';
 import { FormContact } from '../components/FormContact/FormContact';
+import bgPacks from '../assets/bgPacks.jpg'
 
 export const Packs = () => {
     const { setLocation } = useContext(Context)
@@ -54,7 +55,7 @@ export const Packs = () => {
                     <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0"/>
                 </svg>
             </Link>
-            <img className='bg' alt='background' src='https://i.goopics.net/GKkNa.jpg' />
+            <img className='bg' alt='background' src={bgPacks} />
             <div className='container-h1packs'>
                 <h1>NOS PACKS</h1>
             </div>

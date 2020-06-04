@@ -74,7 +74,7 @@ const Index = () => {
       } else {
         clonePageActuel[0] = false
       }
-      if (quisommesnousRef > 80  && quisommesnousRefY < 80) {
+      if (quisommesnousRef > 80 && quisommesnousRefY < 80) {
         clonePageActuel[1] = true
       } else {
         clonePageActuel[1] = false
@@ -99,15 +99,34 @@ const Index = () => {
       } else {
         clonePageActuel[5] = false
       }
-      if (nouscontacterRef > 80 && nouscontacterRefY < 260) {
+      if (!clonePageActuel[0] && !clonePageActuel[1] && !clonePageActuel[2] && !clonePageActuel[3] && !clonePageActuel[4] && !clonePageActuel[5]) {
         clonePageActuel[6] = true
       } else {
         clonePageActuel[6] = false
       }
-
       setPageActuel(clonePageActuel)
     }
   }
+
+  const useInterval = (callback, delay) => {
+    const savedCallback = useRef();
+    // Remember the latest callback.
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+    // Set up the interval.
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        let id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
+
+  useInterval(refInPage, 800)
 
   useEffect(() => {
     if (loading && location === '/') {
@@ -118,13 +137,13 @@ const Index = () => {
   }, [location])
 
   useEffect(() => {
-    window.addEventListener("load", function(event) {
+    window.addEventListener("load", function (event) {
       setTimeout(() => {
         setOpacityLoading(true)
       }, 3400)
       document.body.style.overflow = 'hidden';
       document.body.style.height = '100vh';
-    
+
       setTimeout(() => {
         setLoading(true)
         document.body.style.overflow = 'unset';
@@ -134,26 +153,10 @@ const Index = () => {
   }, [])
 
   useEffect(() => {
-    return () => window.removeEventListener("load", function(event) {
+    return () => window.removeEventListener("load", function (event) {
       console.log("Finish");
     });
   }, [])
-
-  useEffect(() => {
-    if (location === '/') {
-      window.addEventListener('scroll', refInPage, { passive: true });
-    }
-                            // eslint-disable-next-line
-  }, [location]);
-
-  useEffect(() => {
-    if (location === '/') {
-      return () => {
-        window.removeEventListener('scroll', refInPage);
-      };
-    }
-      //                      eslint-disable-next-line
-  }, []);
 
   return (
     <Context.Provider value={{ setLocation, pageActuel, setPageActuel, loading, opacityLoading, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
@@ -170,10 +173,10 @@ const Index = () => {
   );
 }
 
-  ReactDOM.render(
-    <React.StrictMode>
-        <Index />
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
+ReactDOM.render(
+  <React.StrictMode>
+    <Index />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 

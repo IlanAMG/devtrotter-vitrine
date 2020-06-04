@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import StyledQuiSommes from './StyledQuiSommes'
 import Context from '../../utils/context';
 import { Hexagone } from '../Hexagone/Hexagone';
+import bgEquipe from '../../assets/bgEquipe.jpg'
 
 export const QuiSommes = () => {
     const { notreequipe } = useContext(Context)
@@ -20,7 +21,7 @@ export const QuiSommes = () => {
 
     return (
         <StyledQuiSommes ref={notreequipe} >
-            <img className='bg' alt='background' src='https://i.goopics.net/5bJdd.png' />
+            <img className='bg' alt='background' src={bgEquipe} />
             <div className="container-h1">
                 <h1>NOTRE ÉQUIPE</h1>
             </div>

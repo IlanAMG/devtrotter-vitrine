@@ -1,4 +1,13 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+
+const fade = keyframes`
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+`
 
 const StyledHexagone = styled.div`
         position: relative;
@@ -24,6 +33,10 @@ const StyledHexagone = styled.div`
         `}
         ${props => props.color !== 'black' && css`
             background-color: ${({color}) => `${color}`};
+        `}
+
+        ${props => props.color === '#F0F0F0' && css`
+            animation: ${fade} 1.5s ease-out forwards;
         `}
 
         &:after {

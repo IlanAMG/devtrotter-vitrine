@@ -4,7 +4,7 @@ import Particles from 'react-particles-js';
 import StyledBienvenue from './StyledBienvenue';
 import Context from '../../utils/context';
 
-export const Bienvenue = () => {
+export const Bienvenue = ({ isVisible }) => {
     const { quisommesnous } = useContext(Context)
     const [adjectifOpen, setAdjectifOpen] = useState([false, false, false, false])
     const contextMenu = (e) => {
@@ -24,6 +24,7 @@ export const Bienvenue = () => {
 
     return (
         <StyledBienvenue ref={quisommesnous}>
+        {isVisible &&
             <Particles
                 height='100%'
                 width='50%'
@@ -40,20 +41,23 @@ export const Bienvenue = () => {
                     }
                 }}
             />
+        }
             <div className='container-h1'>
                 <h1>BIENVENUE CHEZ DEVTROTTER</h1>
             </div>
-            <div className='container-quisommesnous'>
-                <div className='quisommesnous-txt'>
-                    <h2>QUI SOMMES-NOUS ?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, similique officiis ex hic a sint consequuntur, eaque, minima animi odit ea. Aspernatur minus eius a laboriosam cum ratione excepturi consequuntur maiores ad voluptatibus, aperiam itaque quibusdam pariatur in eos, aut, dicta minima modi architecto. Veniam magni dolore, necessitatibus iure, inventore deserunt saepe odit fuga quos pariatur laudantium consequatur error vitae eaque voluptates, ea delectus eligendi debitis reprehenderit doloremque maxime quas autem architecto nobis? Amet inventore officia odio sint rerum quas, numquam asperiores quae fugiat aperiam tempora, quibusdam beatae natus officiis deserunt minima! Suscipit optio possimus, ipsam iusto dolorem autem quod deserunt obcaecati.</p>
+                <div className='container-quisommesnous'>
+                    <div className='quisommesnous-txt'>
+                        <h2>QUI SOMMES-NOUS ?</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, similique officiis ex hic a sint consequuntur, eaque, minima animi odit ea. Aspernatur minus eius a laboriosam cum ratione excepturi consequuntur maiores ad voluptatibus, aperiam itaque quibusdam pariatur in eos, aut, dicta minima modi architecto. Veniam magni dolore, necessitatibus iure, inventore deserunt saepe odit fuga quos pariatur laudantium consequatur error vitae eaque voluptates, ea delectus eligendi debitis reprehenderit doloremque maxime quas autem architecto nobis? Amet inventore officia odio sint rerum quas, numquam asperiores quae fugiat aperiam tempora, quibusdam beatae natus officiis deserunt minima! Suscipit optio possimus, ipsam iusto dolorem autem quod deserunt obcaecati.</p>
+                    </div>
+                    <div className='wrapper-video'>
+                        {isVisible &&
+                            <video onSelectStart={contextMenu} onDragStart={contextMenu} onContextMenu={contextMenu} autoPlay loop muted playsinline>
+                                <source data-src='/videos/earth.mp4' type='video/mp4' src='/videos/earth.mp4' />
+                            </video>
+                        }
+                    </div>
                 </div>
-                <div className='wrapper-video'>
-                    <video onSelectStart={contextMenu} onDragStart={contextMenu} onContextMenu={contextMenu} autoPlay loop muted playsinline>
-                        <source data-src='/videos/earth.mp4' type='video/mp4' src='/videos/earth.mp4' />
-                    </video>
-                </div>
-            </div>
             <div className='container-adjectif'>
                 <div className='adjectif' onClick={() => openAdjectif(0)}>
                     <h3>FORCE DE PROPOSITION</h3>

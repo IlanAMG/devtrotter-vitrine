@@ -2,23 +2,24 @@ import React, { useState, useEffect, useContext } from 'react'
 import StyledOffres from './StyledOffres';
 import Context from '../../utils/context';
 import { Link } from 'react-router-dom';
+import bgScroll from '../../assets/bgScroll.jpg'
 
 export const Offres = () => {
     const { nosoffres } = useContext(Context)
     const [hover1, setHover1] = useState(false)
     const [hover2, setHover2] = useState(false)
-    const [scroll, setScroll] = useState(0)
+    // const [scroll, setScroll] = useState(0)
 
-    const scrollBg = () => {
-        setScroll((window.pageYOffset / 12))
-    }
-    useEffect(() => {
-        window.addEventListener('scroll', scrollBg, {passive: true})
-    }, [])
+    // const scrollBg = () => {
+    //     setScroll((window.pageYOffset / 12))
+    // }
+    // useEffect(() => {
+    //     window.addEventListener('scroll', scrollBg, {passive: true})
+    // }, [])
 
-    useEffect(() => {
-        return () => window.removeEventListener('scroll', scrollBg)
-    }, [])
+    // useEffect(() => {
+    //     return () => window.removeEventListener('scroll', scrollBg)
+    // }, [])
 
     return (
         <StyledOffres ref={nosoffres} hover1={hover1} hover2={hover2}>
@@ -43,7 +44,7 @@ export const Offres = () => {
                     <span>NOS PRESTATIONS</span>
                 </Link>
             </div>
-            <img style={{transform: `translateX(${scroll}px)`}} alt='background' src='https://i.goopics.net/xV8VW.jpg' />
+            <img alt='background' src={bgScroll} />
         </StyledOffres>
     )
 }

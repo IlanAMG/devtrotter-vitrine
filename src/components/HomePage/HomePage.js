@@ -11,11 +11,12 @@ import StyledHomePage from './StyledHomePage';
 import { BtnMenu } from '../BtnMenu/BtnMenu'
 //images
 
-export const HomePage = () => {
+export const HomePage = ({ isVisible }) => {
     const { pageActuel, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter, scrollToRef } = useContext(Context)
     const [hoverElement, setHoverElement] = useState([false, false, false, false, false, false, false])
     const [videoRdy, setVideoRdy] = useState(false)
     const [blink, setBlink] = useState([true, false, false])
+    const [delay, setDelay] = useState(null)
 
     const handleHover = (i) => {
         let copyHoverElement = [...hoverElement]
@@ -48,6 +49,7 @@ export const HomePage = () => {
     }
 
     const onBlink = () => {
+        console.log('blink')
         let cloneBlink = [...blink]
         if (cloneBlink[0]) {
             cloneBlink[0] = false
@@ -66,7 +68,15 @@ export const HomePage = () => {
         }
     }
     
-    useInterval(onBlink, 400)
+    useInterval(onBlink, delay)
+    
+    useEffect(() => {
+        if (isVisible) {
+            setDelay(400)
+        } else {
+            setDelay(null)
+        }
+    }, [isVisible])
 
     return (
         <StyledHomePage
@@ -79,7 +89,7 @@ export const HomePage = () => {
             circle5={hoverElement[5]}
             circle6={hoverElement[6]}
         >
-            <ReactPlayer className='bg' width='130%' height='115%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={videoRdy} onReady={() => setVideoRdy(true)} loop={true} controls={false} muted={true}
+            <ReactPlayer className='bg' width='130%' height='115%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={isVisible ? videoRdy : false} onReady={() => setVideoRdy(true)} loop={true} controls={false} muted={true}
                 config={{
                     youtube: {
                         playerVars: { showinfo: 1 }

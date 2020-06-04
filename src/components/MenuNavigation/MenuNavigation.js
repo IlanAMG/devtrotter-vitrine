@@ -13,20 +13,20 @@ export const MenuNavigation = () => {
     const { openNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter } = useContext(Context)
     const [styles, setStyles] = useState({})
 
-const handleHover = (i) => {
+    const handleHover = (i) => {
         const idm = i + 'm'
         if (i > 0 && i < 6) {
             const elements = document.getElementsByClassName(i)
             Array.from(elements).forEach(element => element.beginElement())
         } else {
             const element = document.getElementById(i);
-            element.beginElement();      
+            element.beginElement();
         }
         const circle = document.getElementById(idm)
-        circle.beginElement()   
+        circle.beginElement()
     }
 
-const handleOut = (i) => {
+    const handleOut = (i) => {
         const id = i + 'bis'
         const idmbis = i + 'mbis'
         if (i > 0 && i < 6) {
@@ -34,10 +34,10 @@ const handleOut = (i) => {
             Array.from(elements).forEach(element => element.beginElement())
         } else {
             const element = document.getElementById(id);
-            element.beginElement();    
+            element.beginElement();
         }
         const circle = document.getElementById(idmbis)
-        circle.beginElement()   
+        circle.beginElement()
     }
 
     useEffect(() => {
@@ -50,7 +50,7 @@ const handleOut = (i) => {
 
     return (
         <StyledMenuNav style={styles} >
-            <img className='bg' alt='background' src='https://i.goopics.net/d37V3.jpg' />
+            <img className='bg' alt='background' src='https://i.goopics.net/X4109.jpg' />
             <div className='filtre' />
             <div className='devtrotter'>
                 <h1>DEV TROT TER</h1>
@@ -60,32 +60,32 @@ const handleOut = (i) => {
                 <div className='container-constel'>
                     <svg width="240" height="535" viewBox="0 0 13 309" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="6.6" cy="6.5" r="6.5" fill="url(#paint0_radial)">
-                            <animateMotion id='0m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze"/>
-                            <animateMotion id='0mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze"/>
+                            <animateMotion id='0m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
+                            <animateMotion id='0mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
                         <circle cx="6.5" cy="53.5" r="6.5" fill="url(#paint1_radial)">
-                            <animateMotion id='1m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze"/>
-                            <animateMotion id='1mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze"/>
+                            <animateMotion id='1m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
+                            <animateMotion id='1mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
                         <circle cx="6.5" cy="104.5" r="6.5" fill="url(#paint2_radial)">
-                            <animateMotion id='2m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze"/>
-                            <animateMotion id='2mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze"/>
+                            <animateMotion id='2m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
+                            <animateMotion id='2mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
                         <circle cx="6.5" cy="155.5" r="6.5" fill="url(#paint3_radial)">
-                            <animateMotion id='3m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze"/>
-                            <animateMotion id='3mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze"/>
+                            <animateMotion id='3m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
+                            <animateMotion id='3mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
                         <circle cx="6.5" cy="204.5" r="6.5" fill="url(#paint4_radial)">
-                            <animateMotion id='4m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze"/>
-                            <animateMotion id='4mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze"/>
+                            <animateMotion id='4m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
+                            <animateMotion id='4mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
                         <circle cx="6.5" cy="253.5" r="6.5" fill="url(#paint5_radial)">
-                            <animateMotion id='5m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze"/>
-                            <animateMotion id='5mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze"/>
+                            <animateMotion id='5m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
+                            <animateMotion id='5mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
                         <circle cx="6.5" cy="302.5" r="6.5" fill="url(#paint6_radial)">
-                            <animateMotion id='6m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze"/>
-                            <animateMotion id='6mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze"/>
+                            <animateMotion id='6m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
+                            <animateMotion id='6mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
                         <line x1='6.4791' y1="253" x2="6.4729" y2="303" stroke="#F6F2F2" stroke-width="0.945822">
                             <animate className='5' attributeName="x1" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
@@ -167,7 +167,26 @@ const handleOut = (i) => {
             </div>
             <div className='separator'></div>
             <div className='wrapper-logo'>
-                <img className='logo' alt='logo' src={logo} />
+                <svg className='logo' viewBox="0 0 74 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M55.5042 21.545L37 11.2835L55.5042 0V21.545Z" fill="#7EC4A4" />
+                    <path d="M55.5042 43.0899L37 32.8284L55.5042 21.5449V43.0899Z" fill="#277E5E" />
+                    <path d="M37 54.3653L18.5042 44.1038L37 32.8203V54.3653Z" fill="#09B5D6" />
+                    <path d="M18.5042 65.6568L0 55.3953L18.5042 44.1118V65.6568Z" fill="#0D95B0" />
+                    <path d="M55.5042 107.675L37 97.4217L55.5042 86.1299V107.675Z" fill="#753E90" />
+                    <path d="M74 96.3912L55.5042 86.1297L74 74.8462V96.3912Z" fill="#484999" />
+                    <path d="M37 119L18.5042 108.739L37 97.4468V119Z" fill="#492778" />
+                    <path d="M18.5042 108.755L0 98.4939L18.5042 87.2104V108.755Z" fill="#3E3680" />
+                    <path d="M18.5042 87.2101L0 76.9486L18.5042 65.6567V87.2101Z" fill="#56519E" />
+                    <path d="M37 11.2749L55.5042 21.5364L37 32.8199V11.2749Z" fill="#48B48C" />
+                    <path d="M37 32.8203L55.5042 43.0818L37 54.3653V32.8203Z" fill="#3EBEE4" />
+                    <path d="M18.5042 44.1118L37 54.3733L18.5042 65.6568V44.1118Z" fill="#52C2EA" />
+                    <path d="M0 76.9487L18.5042 87.2102L0 98.4937V76.9487Z" fill="#5E5CA6" />
+                    <path d="M37 97.4468L55.5042 107.717L37 119V97.4468Z" fill="#875BA2" />
+                    <path d="M18.5042 87.2104L37 97.472L18.5042 108.755V87.2104Z" fill="#6E56A0" />
+                    <path d="M55.5042 86.1299L74 96.3914L55.5042 107.675V86.1299Z" fill="#6F6FB2" />
+                    <path d="M55.5042 64.5845L74 74.846L55.5042 86.1294V64.5845Z" fill="#6E92C7" />
+                    <path d="M0 55.4038L18.5042 65.6653L0 76.9488V55.4038Z" fill="#6F81BF" />
+                </svg>
                 <div className='container-social'>
                     <a rel="noopener noreferrer" href='https://twitter.com/DevTrotter_Pro' target='_blank' ><AiOutlineTwitter className='icon' /></a>
                     <a rel="noopener noreferrer" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' target='_blank' ><AiFillYoutube className='icon' /></a>

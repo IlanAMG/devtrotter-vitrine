@@ -3,6 +3,7 @@ import { AiOutlineTwitter } from 'react-icons/ai'
 import { AiFillYoutube } from 'react-icons/ai'
 import { AiFillInstagram } from 'react-icons/ai'
 import { IoIosMail } from 'react-icons/io'
+import bgEco from '../../assets/bgEco.jpg'
 
 import logo from '../../assets/logo.png'
 
@@ -50,7 +51,7 @@ export const MenuNavigation = () => {
 
     return (
         <StyledMenuNav style={styles} >
-            <img className='bg' alt='background' src='https://i.goopics.net/X4109.jpg' />
+            <img className='bg' alt='background' src={bgEco} />
             <div className='filtre' />
             <div className='devtrotter'>
                 <h1>DEV TROT TER</h1>

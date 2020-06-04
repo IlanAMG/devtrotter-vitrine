@@ -26,7 +26,7 @@ export const QuiSommes = () => {
                 <h1>NOTRE ÉQUIPE</h1>
             </div>
             <section className='container-equipe'>
-                <Hexagone onMouseOver={() => handleHover(0)} onMouseOut={() => handleLeave(0)} url={'https://i.goopics.net/N3vlg.jpg'}>
+                <Hexagone onMouseOver={() => handleHover(0)} onMouseOut={() => handleLeave(0)} url={'https://i.imgur.com/OIosvUk.jpg'}>
                     {hover[0] && <Hexagone color={'black'} position={'absolute'}><span>Sébastien CHAPUY<br/>Développeur FullStack</span></Hexagone>}
                     {hover[0] && 
                         <Hexagone color={'#F0F0F0'} position={'absolute'} transform={'translate(-128px, 220px)'}>
@@ -38,7 +38,7 @@ export const QuiSommes = () => {
                             <span className='ici'>JE SAIS PAS QUOI METTRE ICI</span>
                         </Hexagone>}
                 </Hexagone>
-                <Hexagone onMouseOver={() => handleHover(1)} onMouseOut={() => handleLeave(1)} url={'https://i.goopics.net/bVold.jpg'}>
+                <Hexagone onMouseOver={() => handleHover(1)} onMouseOut={() => handleLeave(1)} url={'https://i.imgur.com/bodgRdU.jpg'}>
                     {hover[1] && <Hexagone color={'black'} position={'absolute'}><span>Ilan AMZALLAG<br/>Développeur FullStack</span></Hexagone>}
                     {hover[1] && 
                         <Hexagone color={'#F0F0F0'} position={'absolute'} transform={'translate(-128px, 220px)'}>
@@ -51,7 +51,7 @@ export const QuiSommes = () => {
                             <span className='ici'>JE SAIS PAS QUOI METTRE ICI</span>
                         </Hexagone>}
                 </Hexagone>
-                <Hexagone onMouseOver={() => handleHover(2)} onMouseOut={() => handleLeave(2)} url={'https://i.goopics.net/d3Rxw.jpg'}>
+                <Hexagone onMouseOver={() => handleHover(2)} onMouseOut={() => handleLeave(2)} url={'https://i.imgur.com/nn1taq6.jpg'}>
                     {hover[2] && <Hexagone color={'black'} position={'absolute'}><span>Rémi NERET<br/>UX/UI Designer</span></Hexagone>}
                     {hover[2] && 
                         <Hexagone color={'#F0F0F0'} position={'absolute'} transform={'translate(-128px, 220px)'}>

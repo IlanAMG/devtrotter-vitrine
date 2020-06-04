@@ -5,7 +5,7 @@ import Context from '../utils/context';
 import StyledPrestations from '../styles/StyledPrestations';
 import { FormContact } from '../components/FormContact/FormContact';
 import { ItemPrestation } from '../components/ItemPrestation/ItemPrestation';
-import bgScroll from '../assets/bgScroll.jpg'
+import bgPacks from '../assets/bgPacks.jpg'
 
 const optionsWeb = [
     {
@@ -215,7 +215,7 @@ export const Prestations = () => {
                     <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0"/>
                 </svg>
             </Link>
-            <img className='bg' alt='background' src={bgScroll} />
+            <img className='bg' alt='background' src={bgPacks} />
             <div className='container-h1prest'>
                 <h1>NOS PRESTATIONS</h1>
             </div>

@@ -23,6 +23,7 @@ const StyledBienvenue = styled.section`
         .container-h1 {
             width: 60%;
             margin-top: 30px;
+            z-index: 6;
         }
         h1 {
             font-size: 4.6em;
@@ -51,6 +52,7 @@ const StyledBienvenue = styled.section`
             height: 500px;
             width: 500px;
             position: relative;
+            z-index: 5;
         }
 
         video {

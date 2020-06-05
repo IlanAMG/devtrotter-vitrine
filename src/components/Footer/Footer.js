@@ -20,7 +20,7 @@ export const Footer = () => {
         <StyledFooter ref={nouscontacter}>
             <img alt='background' className='bg' src={bgFooter} />
             <section className='container left'>
-                <VisibilitySensor partialVisiblity offset={{ top: 50 }} once>
+                <VisibilitySensor partialVisiblity offset={{ bottom: -30 }} once>
                     {({ isVisible }) => (
                         <Spring
                             to={{
@@ -44,7 +44,7 @@ export const Footer = () => {
                     <a rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><AiFillInstagram className='icon' /></a>
                     <a href='mailto:devtrotter.info@gmail.com'><IoIosMail className='icon' /></a>
                 </div>
-                <VisibilitySensor partialVisiblity offset={{ top: 200 }} once>
+                <VisibilitySensor partialVisiblity offset={{ bottom: -400 }} once>
                     {({ isVisible }) => (
                         <Spring
                             to={{
@@ -60,7 +60,7 @@ export const Footer = () => {
                 </VisibilitySensor>
             </section>
             <div className='separator' />
-            <VisibilitySensor partialVisiblity offset={{ left: 100 }} once>
+            <VisibilitySensor partialVisiblity offset={{ bottom: -400 }} once>
                 {({ isVisible }) => (
                     <Spring
                         to={{

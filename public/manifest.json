@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "DevTrotter",
+  "name": "DevTrotter Studio - Développement Web & Mobile | UX/UI Design",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#472d95",
   "background_color": "#ffffff"
 }

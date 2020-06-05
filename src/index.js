@@ -50,7 +50,6 @@ const Index = () => {
   }
 
   const refInPage = () => {
-    console.log('refInPage', location)
     if (accueil.current !== null && location === '/') {
       const accueilRefY = accueil.current.getBoundingClientRect().y
       const accueilRef = accueil.current.getBoundingClientRect().bottom
@@ -64,8 +63,6 @@ const Index = () => {
       const ecosystemeRef = ecosysteme.current.getBoundingClientRect().bottom
       const notreequipeRefY = notreequipe.current.getBoundingClientRect().y
       const notreequipeRef = notreequipe.current.getBoundingClientRect().bottom
-      const nouscontacterRefY = nouscontacter.current.getBoundingClientRect().y
-      const nouscontacterRef = nouscontacter.current.getBoundingClientRect().bottom
 
       const clonePageActuel = [...pageActuel]
 
@@ -134,6 +131,7 @@ const Index = () => {
         top: nosoffres.current.offsetTop
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location])
 
   useEffect(() => {

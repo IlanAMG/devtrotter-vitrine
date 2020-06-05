@@ -1,34 +1,25 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import VSensor from "react-visibility-sensor";
 
-class VisibilitySensor extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: true,
-    };
-  }
+const VisibilitySensor = ( props ) => {
+  const [active, setActive] = useState(true)
 
-  render() {
-    const { active } = this.state;
-    const { once, children, ...theRest } = this.props;
+    const { once, children, ...theRest } = props;
     return (
       <VSensor
+        style={{ display: 'contents' }}
         active={active}
         onChange={(isVisible) =>
           once &&
           isVisible &&
-          this.setState({ active: false }, () =>
-            console.log("turned the thing off!")
-          )
+          setActive(false)
         }
         {...theRest}
       >
         {({ isVisible }) => children({ isVisible })}
       </VSensor>
     );
-  }
 }
 
 VisibilitySensor.propTypes = {

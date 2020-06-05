@@ -5,8 +5,6 @@ import { AiFillInstagram } from 'react-icons/ai'
 import { IoIosMail } from 'react-icons/io'
 import bgEco from '../../assets/bgEco.jpg'
 
-import logo from '../../assets/logo.png'
-
 import Context from '../../utils/context';
 import StyledMenuNav from './StyledMenuNav';
 
@@ -88,70 +86,70 @@ export const MenuNavigation = () => {
                             <animateMotion id='6m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />
                             <animateMotion id='6mbis' dur="0.3s" begin='indefinite' path="M40,0 0,0" fill="freeze" />
                         </circle>
-                        <line x1='6.4791' y1="253" x2="6.4729" y2="303" stroke="#F6F2F2" stroke-width="0.945822">
+                        <line x1='6.4791' y1="253" x2="6.4729" y2="303" stroke="#F6F2F2" strokeWidth="0.945822">
                             <animate className='5' attributeName="x1" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='5bis' attributeName="x1" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                             <animate id='6' attributeName="x2" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate id='6bis' attributeName="x2" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                         </line>
-                        <line x1='6.4791' y1="203" x2="6.4729" y2="253" stroke="#F6F2F2" stroke-width="0.945822">
+                        <line x1='6.4791' y1="203" x2="6.4729" y2="253" stroke="#F6F2F2" strokeWidth="0.945822">
                             <animate className='4' attributeName="x1" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='4bis' attributeName="x1" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                             <animate className='5' attributeName="x2" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='5bis' attributeName="x2" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                         </line>
-                        <line x1='6.4791' y1="156" x2="6.4729" y2="206" stroke="#F6F2F2" stroke-width="0.945822">
+                        <line x1='6.4791' y1="156" x2="6.4729" y2="206" stroke="#F6F2F2" strokeWidth="0.945822">
                             <animate className='3' attributeName="x1" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='3bis' attributeName="x1" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                             <animate className='4' attributeName="x2" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='4bis' attributeName="x2" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                         </line>
-                        <line x1='6.4791' y1="105" x2="6.4729" y2="155" stroke="#F6F2F2" stroke-width="0.945822">
+                        <line x1='6.4791' y1="105" x2="6.4729" y2="155" stroke="#F6F2F2" strokeWidth="0.945822">
                             <animate className='2' attributeName="x1" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='2bis' attributeName="x1" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                             <animate className='3' attributeName="x2" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='3bis' attributeName="x2" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                         </line>
-                        <line x1='6.4791' y1="53" x2="6.4729" y2="103" stroke="#F6F2F2" stroke-width="0.945822">
+                        <line x1='6.4791' y1="53" x2="6.4729" y2="103" stroke="#F6F2F2" strokeWidth="0.945822">
                             <animate className='1' attributeName="x1" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='1bis' attributeName="x1" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                             <animate className='2' attributeName="x2" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='2bis' attributeName="x2" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                         </line>
-                        <line x1='6.4791' y1="6" x2="6.4729" y2="56" stroke="#F6F2F2" stroke-width="0.945822">
+                        <line x1='6.4791' y1="6" x2="6.4729" y2="56" stroke="#F6F2F2" strokeWidth="0.945822">
                             <animate id='0' attributeName="x1" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate id='0bis' attributeName="x1" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                             <animate className='1' attributeName="x2" from="6.4791" begin='indefinite' to="47" dur="290ms" fill="freeze" />
                             <animate className='1bis' attributeName="x2" from="47" begin='indefinite' to="6.4791" dur="290ms" fill="freeze" />
                         </line>
                         <defs>
-                            <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 6.5) rotate(90) scale(6.5)">
-                                <stop offset="0.427083" stop-color="white" />
-                                <stop offset="1" stop-color="#F6F2F2" stop-opacity="0" />
+                            <radialGradient id="paint0_radialb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 6.5) rotate(90) scale(6.5)">
+                                <stop offset="0.427083" stopColor="white" />
+                                <stop offset="1" stopColor="#F6F2F2" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 53.5) rotate(90) scale(6.5)">
-                                <stop offset="0.427083" stop-color="white" />
-                                <stop offset="1" stop-color="#F6F2F2" stop-opacity="0" />
+                            <radialGradient id="paint1_radialb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 53.5) rotate(90) scale(6.5)">
+                                <stop offset="0.427083" stopColor="white" />
+                                <stop offset="1" stopColor="#F6F2F2" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 104.5) rotate(90) scale(6.5)">
-                                <stop offset="0.427083" stop-color="white" />
-                                <stop offset="1" stop-color="#F6F2F2" stop-opacity="0" />
+                            <radialGradient id="paint2_radialb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 104.5) rotate(90) scale(6.5)">
+                                <stop offset="0.427083" stopColor="white" />
+                                <stop offset="1" stopColor="#F6F2F2" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint3_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 155.5) rotate(90) scale(6.5)">
-                                <stop offset="0.427083" stop-color="white" />
-                                <stop offset="1" stop-color="#F6F2F2" stop-opacity="0" />
+                            <radialGradient id="paint3_radialb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 155.5) rotate(90) scale(6.5)">
+                                <stop offset="0.427083" stopColor="white" />
+                                <stop offset="1" stopColor="#F6F2F2" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint4_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 204.5) rotate(90) scale(6.5)">
-                                <stop offset="0.427083" stop-color="white" />
-                                <stop offset="1" stop-color="#F6F2F2" stop-opacity="0" />
+                            <radialGradient id="paint4_radialb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 204.5) rotate(90) scale(6.5)">
+                                <stop offset="0.427083" stopColor="white" />
+                                <stop offset="1" stopColor="#F6F2F2" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint5_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 253.5) rotate(90) scale(6.5)">
-                                <stop offset="0.427083" stop-color="white" />
-                                <stop offset="1" stop-color="#F6F2F2" stop-opacity="0" />
+                            <radialGradient id="paint5_radialb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 253.5) rotate(90) scale(6.5)">
+                                <stop offset="0.427083" stopColor="white" />
+                                <stop offset="1" stopColor="#F6F2F2" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint6_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 302.5) rotate(90) scale(6.5)">
-                                <stop offset="0.427083" stop-color="white" />
-                                <stop offset="1" stop-color="#F6F2F2" stop-opacity="0" />
+                            <radialGradient id="paint6_radialb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.5 302.5) rotate(90) scale(6.5)">
+                                <stop offset="0.427083" stopColor="white" />
+                                <stop offset="1" stopColor="#F6F2F2" stopOpacity="0" />
                             </radialGradient>
                         </defs>
                     </svg>
@@ -189,10 +187,10 @@ export const MenuNavigation = () => {
                     <path d="M0 55.4038L18.5042 65.6653L0 76.9488V55.4038Z" fill="#6F81BF" />
                 </svg>
                 <div className='container-social'>
-                    <a rel="noopener noreferrer" href='https://twitter.com/DevTrotter_Pro' target='_blank' ><AiOutlineTwitter className='icon' /></a>
-                    <a rel="noopener noreferrer" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' target='_blank' ><AiFillYoutube className='icon' /></a>
-                    <a rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><AiFillInstagram className='icon' /></a>
-                    <a href='mailto:devtrotter.info@gmail.com'><IoIosMail className='icon' /></a>
+                    <a name='twitter' rel="noopener noreferrer" href='https://twitter.com/DevTrotter_Pro' target='_blank' ><AiOutlineTwitter className='icon' /></a>
+                    <a name='youtube' rel="noopener noreferrer" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' target='_blank' ><AiFillYoutube className='icon' /></a>
+                    <a name='instagram' rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><AiFillInstagram className='icon' /></a>
+                    <a name='mail' href='mailto:devtrotter.info@gmail.com'><IoIosMail className='icon' /></a>
                 </div>
             </div>
         </StyledMenuNav>

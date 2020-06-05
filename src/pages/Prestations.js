@@ -190,6 +190,7 @@ export const Prestations = () => {
 
     useEffect(() => {
         setLocation(location.pathname)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {

@@ -33,6 +33,7 @@ export const FormContact = ({ title, value }) => {
             ...state,
             message: value
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [value])
     return (
         <StyledFormContact>
@@ -41,17 +42,17 @@ export const FormContact = ({ title, value }) => {
             </div>
             <form onSubmit={sendEmail}>
                 <div className='container-input'>
-                    <label for="user_name">NOM</label>
-                    <input onChange={e => setState({ ...state, user_name: e.target.value })} value={state.user_name} type="text" name="user_name" required />
-                    <label for="user_email">E-MAIL</label>
-                    <input onChange={e => setState({ ...state, user_email: e.target.value })} value={state.user_email} type="email" name="user_email" required />
-                    <label for="user_tel">TÉLÉPHONE</label>
-                    <input onChange={e => setState({ ...state, user_tel: e.target.value })} value={state.user_tel} type="tel" name="user_tel" />
+                    <label htmlFor="user_name">NOM</label>
+                    <input id='user_name' onChange={e => setState({ ...state, user_name: e.target.value })} value={state.user_name} type="text" name="user_name" required />
+                    <label htmlFor="user_email">E-MAIL</label>
+                    <input id='user_email' onChange={e => setState({ ...state, user_email: e.target.value })} value={state.user_email} type="email" name="user_email" required />
+                    <label htmlFor="user_tel">TÉLÉPHONE</label>
+                    <input id='user_tel' onChange={e => setState({ ...state, user_tel: e.target.value })} value={state.user_tel} type="tel" name="user_tel" />
                 </div>
-                <label for="message">MESSAGE</label>
-                <textarea onChange={e => setState({ ...state, message: e.target.value })} value={state.message} name="message" cols="30" rows="10" required></textarea>
+                <label htmlFor="message">MESSAGE</label>
+                <textarea id='message' onChange={e => setState({ ...state, message: e.target.value })} value={state.message} name="message" cols="30" rows="10" required></textarea>
                 <div className='wrapper-btn-form'>
-                    <button className='btn'>ENVOYER</button>
+                    <button name='send' className='btn'>ENVOYER</button>
                 </div>
             </form>
         </StyledFormContact>

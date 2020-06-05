@@ -22,11 +22,13 @@ export const App = () => {
     
     useEffect(() => {
         setLocation(location.pathname)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     useEffect(() => {
         return () => {
             setLocation(null)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

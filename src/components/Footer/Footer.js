@@ -38,11 +38,11 @@ export const Footer = () => {
                     )}
                 </VisibilitySensor>
                 <div className='wrapper social'>
-                    <a rel="noopener noreferrer" href='https://www.devtrotter.com/' target='_blank' ><FaRegNewspaper className='icon blog' /></a>
-                    <a rel="noopener noreferrer" href='https://twitter.com/DevTrotter_Pro' target='_blank' ><AiOutlineTwitter className='icon' /></a>
-                    <a rel="noopener noreferrer" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' target='_blank' ><AiFillYoutube className='icon' /></a>
-                    <a rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><AiFillInstagram className='icon' /></a>
-                    <a href='mailto:devtrotter.info@gmail.com'><IoIosMail className='icon' /></a>
+                    <a name='blog' rel="noopener noreferrer" href='https://www.devtrotter.com/' target='_blank' ><FaRegNewspaper className='icon blog' /></a>
+                    <a name='twitter' rel="noopener noreferrer" href='https://twitter.com/DevTrotter_Pro' target='_blank' ><AiOutlineTwitter className='icon' /></a>
+                    <a name='youtube' rel="noopener noreferrer" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' target='_blank' ><AiFillYoutube className='icon' /></a>
+                    <a name='instagram' rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><AiFillInstagram className='icon' /></a>
+                    <a name='mail' href='mailto:devtrotter.info@gmail.com'><IoIosMail className='icon' /></a>
                 </div>
                 <VisibilitySensor partialVisiblity offset={{ bottom: -400 }} once>
                     {({ isVisible }) => (

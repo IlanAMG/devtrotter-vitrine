@@ -1,4 +1,6 @@
 import React, { useContext, useState } from 'react'
+import { Spring } from "react-spring/renderprops";
+import VisibilitySensor from "../../utils/VisibilitySensor";
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { AiFillYoutube } from 'react-icons/ai'
 import { IoMdChatbubbles } from 'react-icons/io'
@@ -12,8 +14,7 @@ import Context from '../../utils/context';
 
 export const Ecosysteme = () => {
     const [styles, setStyles] = useState(null)
-    const [stylesLogo, setStylesLogo] = useState(null)
-    const [hover, setHover] = useState([{opacity: 0}, {opacity: 0}, {opacity: 0}])
+    const [hover, setHover] = useState([{ opacity: 0 }, { opacity: 0 }, { opacity: 0 }])
     const { ecosysteme } = useContext(Context)
     const height = (window.innerHeight) + 100
     const width = (window.innerWidth) + 100
@@ -38,22 +39,36 @@ export const Ecosysteme = () => {
 
     const handleHover = (i) => {
         let cloneHover = [...hover]
-        cloneHover[i] = {opacity: 1}
+        cloneHover[i] = { opacity: 1 }
         setHover(cloneHover)
     }
     const handleLeave = (i) => {
         let cloneHover = [...hover]
-        cloneHover[i] = {opacity: 0}
+        cloneHover[i] = { opacity: 0 }
         setHover(cloneHover)
     }
 
     return (
         <StyledEcosysteme ref={ecosysteme} >
             <img className='bg' alt='background' src={bgEco} />
-            <div className='container-h1'>
-                <h1>NOTRE ECOSYSTÈME</h1>
-            </div>
-            <div className='container-svg'  onMouseMove={handleRotationMove} onMouseOut={handleRotationDown} style={styles} >
+            <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
+                {({ isVisible }) => (
+                    <Spring
+                        to={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible
+                                ? "translateY(0)"
+                                : "translateY(100px)",
+                        }}>
+                        {(props) => (
+                            <div className='container-h1'>
+                                <h1 style={{ ...props }}>NOTRE ECOSYSTÈME</h1>
+                            </div>
+                        )}
+                    </Spring>
+                )}
+            </VisibilitySensor>
+            <div className='container-svg' onMouseMove={handleRotationMove} onMouseOut={handleRotationDown} style={styles} >
                 <div className='container-icons'>
                     <a rel="noopener noreferrer" href='https://twitter.com/DevTrotter_Pro' target='_blank' ><AiOutlineTwitter className='icon twitter' /></a>
                     <a rel="noopener noreferrer" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' target='_blank' ><AiFillYoutube className='icon ytb' /></a>
@@ -65,24 +80,24 @@ export const Ecosysteme = () => {
                     <span style={hover[1]} className='formation-span'>Formations en cours de développement</span>
                     <a rel="noopener noreferrer" href='https://www.instagram.com/dev.trotter/' target='_blank' ><GrInstagram className='icon insta' /></a>
                     <svg className='logo' width="22%" viewBox="0 0 74 119" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M55.5042 21.545L37 11.2835L55.5042 0V21.545Z" fill="#7EC4A4"/>
-                    <path d="M55.5042 43.0899L37 32.8284L55.5042 21.5449V43.0899Z" fill="#277E5E"/>
-                    <path d="M37 54.3653L18.5042 44.1038L37 32.8203V54.3653Z" fill="#09B5D6"/>
-                    <path d="M18.5042 65.6568L0 55.3953L18.5042 44.1118V65.6568Z" fill="#0D95B0"/>
-                    <path d="M55.5042 107.675L37 97.4217L55.5042 86.1299V107.675Z" fill="#753E90"/>
-                    <path d="M74 96.3912L55.5042 86.1297L74 74.8462V96.3912Z" fill="#484999"/>
-                    <path d="M37 119L18.5042 108.739L37 97.4468V119Z" fill="#492778"/>
-                    <path d="M18.5042 108.755L0 98.4939L18.5042 87.2104V108.755Z" fill="#3E3680"/>
-                    <path d="M18.5042 87.2101L0 76.9486L18.5042 65.6567V87.2101Z" fill="#56519E"/>
-                    <path d="M37 11.2749L55.5042 21.5364L37 32.8199V11.2749Z" fill="#48B48C"/>
-                    <path d="M37 32.8203L55.5042 43.0818L37 54.3653V32.8203Z" fill="#3EBEE4"/>
-                    <path d="M18.5042 44.1118L37 54.3733L18.5042 65.6568V44.1118Z" fill="#52C2EA"/>
-                    <path d="M0 76.9487L18.5042 87.2102L0 98.4937V76.9487Z" fill="#5E5CA6"/>
-                    <path d="M37 97.4468L55.5042 107.717L37 119V97.4468Z" fill="#875BA2"/>
-                    <path d="M18.5042 87.2104L37 97.472L18.5042 108.755V87.2104Z" fill="#6E56A0"/>
-                    <path d="M55.5042 86.1299L74 96.3914L55.5042 107.675V86.1299Z" fill="#6F6FB2"/>
-                    <path d="M55.5042 64.5845L74 74.846L55.5042 86.1294V64.5845Z" fill="#6E92C7"/>
-                    <path d="M0 55.4038L18.5042 65.6653L0 76.9488V55.4038Z" fill="#6F81BF"/>
+                        <path d="M55.5042 21.545L37 11.2835L55.5042 0V21.545Z" fill="#7EC4A4" />
+                        <path d="M55.5042 43.0899L37 32.8284L55.5042 21.5449V43.0899Z" fill="#277E5E" />
+                        <path d="M37 54.3653L18.5042 44.1038L37 32.8203V54.3653Z" fill="#09B5D6" />
+                        <path d="M18.5042 65.6568L0 55.3953L18.5042 44.1118V65.6568Z" fill="#0D95B0" />
+                        <path d="M55.5042 107.675L37 97.4217L55.5042 86.1299V107.675Z" fill="#753E90" />
+                        <path d="M74 96.3912L55.5042 86.1297L74 74.8462V96.3912Z" fill="#484999" />
+                        <path d="M37 119L18.5042 108.739L37 97.4468V119Z" fill="#492778" />
+                        <path d="M18.5042 108.755L0 98.4939L18.5042 87.2104V108.755Z" fill="#3E3680" />
+                        <path d="M18.5042 87.2101L0 76.9486L18.5042 65.6567V87.2101Z" fill="#56519E" />
+                        <path d="M37 11.2749L55.5042 21.5364L37 32.8199V11.2749Z" fill="#48B48C" />
+                        <path d="M37 32.8203L55.5042 43.0818L37 54.3653V32.8203Z" fill="#3EBEE4" />
+                        <path d="M18.5042 44.1118L37 54.3733L18.5042 65.6568V44.1118Z" fill="#52C2EA" />
+                        <path d="M0 76.9487L18.5042 87.2102L0 98.4937V76.9487Z" fill="#5E5CA6" />
+                        <path d="M37 97.4468L55.5042 107.717L37 119V97.4468Z" fill="#875BA2" />
+                        <path d="M18.5042 87.2104L37 97.472L18.5042 108.755V87.2104Z" fill="#6E56A0" />
+                        <path d="M55.5042 86.1299L74 96.3914L55.5042 107.675V86.1299Z" fill="#6F6FB2" />
+                        <path d="M55.5042 64.5845L74 74.846L55.5042 86.1294V64.5845Z" fill="#6E92C7" />
+                        <path d="M0 55.4038L18.5042 65.6653L0 76.9488V55.4038Z" fill="#6F81BF" />
                     </svg>
 
                     <svg id='svg' width="808" height="510" viewBox="0 0 898 567" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -9,6 +9,7 @@ const StyledFooter = styled.footer`
     z-index: 6;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
         img {
             position: absolute;

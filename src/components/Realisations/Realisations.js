@@ -1,4 +1,7 @@
 import React, { useState, useContext } from 'react'
+import { Spring } from "react-spring/renderprops";
+import VisibilitySensor from "../../utils/VisibilitySensor";
+
 import Context from '../../utils/context';
 import StyledRealisations from './StyledRealisations';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -31,25 +34,39 @@ export const Realisations = ({ isVisible }) => {
 
     return (
         <StyledRealisations ref={realisations} >
-            <div className='container-h1'>
-                <h1>RÉALISATIONS</h1>
-            </div>
+            <VisibilitySensor partialVisiblity offset={{ bottom: 400 }}>
+                {({ isVisible }) => (
+                    <Spring
+                        to={{
+                            opacity: isVisible ? 0 : 1,
+                            transform: isVisible
+                                ? "translateY(-100px)"
+                                : "translateY(0)",
+                        }}>
+                        {(props) => (
+                            <div style={{ ...props }} className='container-h1'>
+                                <h1>RÉALISATIONS</h1>
+                            </div>
+                        )}
+                    </Spring>
+                )}
+            </VisibilitySensor>
             <section className='caroussel'>
                 {
                     isVisible &&
                     <Carousel stopOnHover={false} infiniteLoop={true} autoPlay={true} transitionTime={250} swipeScrollTolerance={50} swipeable={true} emulateTouch={true} >
                         <a rel="noopener noreferrer" href='https://www.devtrotter.com' target='_blank' >
-                            <div className='wrapper-img'>    
+                            <div className='wrapper-img'>
                                 <img alt='carousel' src={carousel1} />
                             </div>
                         </a>
                         <a rel="noopener noreferrer" href='https://whatslike-app.herokuapp.com/' target='_blank' >
-                            <div className='wrapper-img'>    
+                            <div className='wrapper-img'>
                                 <img alt='carousel' src={carousel2} />
                             </div>
                         </a>
                         <a rel="noopener noreferrer" href='https://yamiquinton.com/' target='_blank' >
-                            <div className='wrapper-img'>    
+                            <div className='wrapper-img'>
                                 <img alt='carousel' src={carousel3} />
                             </div>
                         </a>
@@ -57,7 +74,7 @@ export const Realisations = ({ isVisible }) => {
                             <img alt='carousel' src={carousel4} />
                         </div>
                         <a rel="noopener noreferrer" href='https://ilanamzallag.com/' target='_blank' >
-                            <div className='wrapper-img'>    
+                            <div className='wrapper-img'>
                                 <img alt='carousel' src={carousel5} />
                             </div>
                         </a>
@@ -65,34 +82,34 @@ export const Realisations = ({ isVisible }) => {
                 }
             </section>
             <section className='categories'>
-                <div className='img'  onMouseOver={(e) => handleHover(e, 0)} onMouseLeave={() => handleLeave(0)}>
+                <div className='img' onMouseOver={(e) => handleHover(e, 0)} onMouseLeave={() => handleLeave(0)}>
                     <img className={hover[0] && 'scale'} alt='ecommerce' src={real1} />
                     <div className={!hover[0] ? 'filtre-hover' : 'filtre-hover on'} >
-                         <p>E-COMMERCE</p>
+                        <p>E-COMMERCE</p>
                     </div>
                 </div>
                 <div className='img' onMouseOver={(e) => handleHover(e, 1)} onMouseLeave={() => handleLeave(1)}>
                     <img className={hover[1] && 'scale'} alt='application' src={real2} />
                     <div className={!hover[1] ? 'filtre-hover' : 'filtre-hover on'}>
-                         <p>APPLICATION</p>
+                        <p>APPLICATION</p>
                     </div>
                 </div>
-                <div className='img' onMouseOver={(e) => handleHover(e, 2)}  onMouseLeave={() => handleLeave(2)}>
+                <div className='img' onMouseOver={(e) => handleHover(e, 2)} onMouseLeave={() => handleLeave(2)}>
                     <img className={hover[2] && 'scale'} alt='blog' src={real3} />
                     <div className={!hover[2] ? 'filtre-hover' : 'filtre-hover on'} >
-                         <p>BLOG</p>
+                        <p>BLOG</p>
                     </div>
                 </div>
                 <div className='img' onMouseOver={(e) => handleHover(e, 3)} onMouseLeave={() => handleLeave(3)}>
                     <img className={hover[3] && 'scale'} alt='sitevitrine' src={real4} />
                     <div className={!hover[3] ? 'filtre-hover' : 'filtre-hover on'}>
-                         <p>SITE VITRINE</p>
+                        <p>SITE VITRINE</p>
                     </div>
                 </div>
                 <div className='img' onMouseOver={(e) => handleHover(e, 4)} onMouseLeave={() => handleLeave(4)}>
                     <img className={hover[4] && 'scale'} alt='socialnetwork' src={real5} />
                     <div className={!hover[4] ? 'filtre-hover' : 'filtre-hover on'} >
-                         <p>RESEAU SOCIAL</p>
+                        <p>RESEAU SOCIAL</p>
                     </div>
                 </div>
             </section>

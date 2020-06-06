@@ -44,7 +44,8 @@ const StyledHomePage = styled.section`
         .bgPic {
             align-self: center;
             position: fixed;
-            height: 100vh;
+            width: 100vw;
+            min-height: 100vh;
             z-index: 1;
             top: 0;
         }

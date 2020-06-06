@@ -115,6 +115,42 @@ const StyledMenuNav = styled.section`
             transition: 500ms;
             cursor: pointer;
         }
+
+        @media screen and (max-width: 1300px) {
+            ul > li {
+                font-size: 21px !important;
+            }
+            .container-constel svg {
+                left: -80px !important;
+            }
+        }
+        @media screen and (max-width: 1150px) {
+            ul > li {
+                font-size: 21px !important;
+            }
+            .container-constel svg {
+                left: -80px !important;
+            }
+            .devtrotter h1 {
+                font-size: 110px !important;
+                line-height: 90px !important;
+            }
+        }
+        @media screen and (max-width: 1030px) {
+            .devtrotter h1 {
+                font-size: 90px !important;
+                line-height: 75px !important;
+            }
+        }
+        @media screen and (max-width: 930px) {
+            ul > li {
+                font-size: 19px !important;
+            }
+            .container-constel svg {
+                left: -85px !important;
+            }
+        }
+
         ul > li:hover {
             margin-left: 70px;
             transition: 500ms;

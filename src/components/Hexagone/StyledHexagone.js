@@ -25,6 +25,9 @@ const StyledHexagone = styled.div`
 
         ${props => props.url && css`
             background-image: ${({url}) => `url(${url})`};
+            .wrapper-hexa {
+                z-index: -1 !important;
+            }
         `}
 
         ${props => props.color === 'black' && css`
@@ -49,6 +52,15 @@ const StyledHexagone = styled.div`
             z-index: 2;
             background: inherit;
         }
+
+        @media screen and (max-width: 1000px) {
+            ${props => props.color === 'black' && css`
+                background-color: ${({color}) => `${color}`};
+                opacity: 0.8;
+                z-index: 2;
+                transform: translate(101.5%, -152.6%) !important;
+            `}
+    }
 
             .hexTop,
             .hexBottom {

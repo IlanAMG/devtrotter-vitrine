@@ -20,21 +20,30 @@ export const Ecosysteme = () => {
     const width = (window.innerWidth) + 100
 
     const handleRotationMove = e => {
-        const xVal = e.clientX
-        const yVal = e.clientY
-        const yRotation = -50 * ((xVal - width / 2) / width)
-        const xRotation = 50 * ((yVal - height / 2) / height)
-        setStyles({
-            transform: `perspective(700px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`,
-            transition: '0ms'
-        })
+        if (window.innerWidth >= 1180) {
+            const xVal = e.clientX
+            const yVal = e.clientY
+            const yRotation = -50 * ((xVal - width / 2) / width)
+            const xRotation = 50 * ((yVal - height / 2) / height)
+            setStyles({
+                transform: `perspective(700px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`,
+                transition: '0ms'
+            })
+        } else {
+            setStyles({
+                transform: `rotateX(${0}deg) rotateY(${0}deg)`,
+                transition: '1000ms'
+            })
+        }
     }
 
     const handleRotationDown = () => {
-        setStyles({
-            transform: `perspective(700px) scale(1.1) rotateX(${0}deg) rotateY(${0}deg)`,
-            transition: '1000ms'
-        })
+        if (window.innerWidth >= 1180) {
+            setStyles({
+                transform: `perspective(700px) scale(1.1) rotateX(${0}deg) rotateY(${0}deg)`,
+                transition: '1000ms'
+            })
+        } 
     }
 
     const handleHover = (i) => {

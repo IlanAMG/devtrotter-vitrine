@@ -80,6 +80,18 @@ const StyledFooter = styled.footer`
             align-items: center;
             justify-content: center;
         }
+
+        @media screen and (max-width: 1250px) {
+            .container.right section {
+                padding: 18px !important;
+            }
+        }
+        @media screen and (max-width: 970px) {
+            .icon {
+                width: 36px;
+                height: 36px;
+            }
+        }
 `
 
 export default StyledFooter

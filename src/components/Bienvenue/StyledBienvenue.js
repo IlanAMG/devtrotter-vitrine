@@ -91,7 +91,6 @@ const StyledBienvenue = styled.section`
             .adjectif p {
                 margin: 10px;
                 font-size: 12px;
-                height: 105px !important;
             }
         }
 

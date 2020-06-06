@@ -4,6 +4,7 @@ const StyledEcosysteme = styled.section`
     height: 100vh;
     min-height: 800px !important;
     width: 100vw;
+    max-height: 1080px !important;
     position: relative;
     display: flex;
     align-items: center;

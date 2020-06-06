@@ -5,6 +5,7 @@ const StyledOffres = styled.section`
     height: 669px;
     width: 100vw;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
     -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);

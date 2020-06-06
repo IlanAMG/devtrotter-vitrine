@@ -92,7 +92,7 @@ const Index = ( props ) => {
       } else {
         clonePageActuel[4] = false
       }
-      if (notreequipeRef > 80 && notreequipeRefY < 80) {
+      if (notreequipeRef > 150 && notreequipeRefY < 80) {
         clonePageActuel[5] = true
       } else {
         clonePageActuel[5] = false

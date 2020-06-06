@@ -12,16 +12,10 @@ const StyledEcosysteme = styled.section`
     flex-direction: column;
     min-height: 100vh;
 
-        .bg {
-            position: absolute;
-            z-index: -1;
-            min-width: 100%;
-            min-height: 100vh;
-            opacity: 0.5;
-        }
         .container-h1 {
             width: 60%;
             margin-top: 30px;
+            z-index: 2;
         }
         h1 {
             font-size: 4.6em;

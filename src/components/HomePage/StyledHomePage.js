@@ -28,11 +28,23 @@ const StyledHomePage = styled.section`
             height: calc(130vw * 0.5628205128205128);
         }
   }
+
+        iframe {
+            position: fixed;
+            z-index: -1;
+        }
+
         .bg {
             position: absolute;
             pointer-events: none;
             top: calc(-15vw * 0.5628205128205128);
             left: 0;
+        }
+        .bgPic {
+            position: fixed;
+            z-index: 1;
+            min-height: 100vh;
+            min-width: 100vw;
         }
 
 

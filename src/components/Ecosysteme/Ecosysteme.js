@@ -7,7 +7,6 @@ import { IoMdChatbubbles } from 'react-icons/io'
 import { FaRegNewspaper } from 'react-icons/fa'
 import { MdSchool } from 'react-icons/md'
 import { GrInstagram } from 'react-icons/gr'
-import bgEco from '../../assets/bgEco.jpg'
 
 import StyledEcosysteme from './StyledEcosysteme'
 import Context from '../../utils/context';
@@ -59,7 +58,6 @@ export const Ecosysteme = () => {
 
     return (
         <StyledEcosysteme ref={ecosysteme} >
-            <img className='bg' alt='background' src={bgEco} />
             <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
                 {({ isVisible }) => (
                     <Spring

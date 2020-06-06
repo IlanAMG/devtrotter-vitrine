@@ -8,9 +8,10 @@ const marquee = keyframes`
 const StyledBanderolle = styled.section`
     height: 130px;
     width: 100vw;
-    background-color: #f0f0f0;
+    background-color: transparent;
     overflow: hidden;
     position: relative;
+    z-index: 2;
 
         .marquee-inner {
             width: 200%;
@@ -24,7 +25,7 @@ const StyledBanderolle = styled.section`
         h1 {
             font-style: italic;
             font-size: 60px;
-            color: #545454;
+            color: white;
             white-space:nowrap;
             position: absolute;
             float: left;

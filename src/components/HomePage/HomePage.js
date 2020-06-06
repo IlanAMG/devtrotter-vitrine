@@ -10,6 +10,7 @@ import StyledHomePage from './StyledHomePage';
 //components
 import { BtnMenu } from '../BtnMenu/BtnMenu'
 //images
+import bgEco from '../../assets/bgEco.jpg'
 
 export const HomePage = ({ isVisible }) => {
     const { pageActuel, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter, scrollToRef } = useContext(Context)
@@ -95,6 +96,7 @@ export const HomePage = ({ isVisible }) => {
                         },
                     }}
                 />
+            {!isVisible && <img className='bgPic' alt='bg' src={bgEco} />}
             <BtnMenu />
             <span>FR</span>
             <div className='container-constel'>

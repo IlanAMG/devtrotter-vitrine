@@ -11,6 +11,7 @@ const StyledQuiSommes = styled.section`
     background-color: #121212;
     -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
     z-index: 7;
+    overflow: hidden;
 
     @media screen and (max-width: 1000px) {
         height: 990px;

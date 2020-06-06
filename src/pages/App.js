@@ -33,10 +33,10 @@ export const App = () => {
 
     return (
         <div className='App'>
-            {
+            {/* {
                 !loading &&
                 <Loading opacityLoading={opacityLoading} />
-            }
+            } */}
             <MenuNavigation />
             <TrackVisibility partialVisibility offset = { 600 } >
                 <HomePage />

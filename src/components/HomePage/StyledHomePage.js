@@ -20,7 +20,7 @@ const StyledHomePage = styled.section`
     min-width: 100vw;
     max-height: 100vh;
     position: relative;
-    overflow: hidden;
+    ${'' /* overflow: hidden; */}
 
     @media (min-width:300px) {
         height: calc(100vw * 0.5628205128205128);
@@ -40,11 +40,13 @@ const StyledHomePage = styled.section`
             top: calc(-15vw * 0.5628205128205128);
             left: 0;
         }
+        
         .bgPic {
+            align-self: center;
             position: fixed;
+            height: 100vh;
             z-index: 1;
-            min-height: 100vh;
-            min-width: 100vw;
+            top: 0;
         }
 
 

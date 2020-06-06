@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const StyledEcosysteme = styled.section`
     height: 100vh;
+    min-height: 800px !important;
     width: 100vw;
     position: relative;
     display: flex;

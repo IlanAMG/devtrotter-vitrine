@@ -178,4 +178,63 @@ left: 30px;
 z-index: 10000;
 }
 
+/* //////////////////////////////////////////// */
+    /* //////////// PAGE 404 ////////////// */
+/* //////////////////////////////////////////// */
 
+.pageError {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.pageError svg {
+  width: 145px;
+  z-index: 1;
+}
+
+.pageError h1 {
+  color: white;
+  font-size: 220px;
+  font-family: 'Lato', sans-serif;
+  z-index: 1;
+}
+
+.pageError a {
+  color: rgb(226, 226, 226);
+  font-family: 'Lato', sans-serif;
+  transition: 400ms;
+  text-decoration: none;
+  padding: 20px;
+  z-index: 1;
+}
+.pageError a:hover {
+  color: white;
+  transform: scale(1.06);
+  font-family: 'Lato', sans-serif;
+  transition: 400ms;
+}
+
+@media (max-width:1150px) {
+  p {
+      font-size: 14px !important;
+  }
+  h1 {
+      font-size: 3.9em !important;
+      line-height: 61px !important;
+  }
+  h3 {
+      font-size: 14px !important;
+      text-align: center !important;
+  }
+  .container-offres span {
+    font-size: 26px !important;
+  }
+  footer h1 {
+    font-size: 38px !important;
+  }
+}

@@ -4,8 +4,9 @@ const StyledQuiSommes = styled.section`
     display: flex;
     position: relative;
     justify-content: center;
-    min-height: 100vh;
-    min-width: 100vw;
+    min-height: 800px !important;
+    width: 100vw;
+    height: 100vh;
     background-color: #121212;
     -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
     z-index: 7;

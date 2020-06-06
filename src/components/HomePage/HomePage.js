@@ -87,14 +87,14 @@ export const HomePage = ({ isVisible }) => {
             circle4={hoverElement[4]}
             circle5={hoverElement[5]}
             circle6={hoverElement[6]}
-        >
-            <ReactPlayer className='bg' width='130%' height='115%' url="https://www.youtube.com/embed/WCedDOwe85E" playing={isVisible ? videoRdy : false} onReady={() => setVideoRdy(true)} loop={true} controls={false} muted={true}
-                config={{
-                    youtube: {
-                        playerVars: { showinfo: 1 }
-                    },
-                }}
-            />
+        >   
+                <ReactPlayer width='100%' height= '110%' className='bg' url="https://www.youtube.com/embed/WCedDOwe85E" playing={isVisible ? videoRdy : false} onReady={() => setVideoRdy(true)} loop={true} controls={false} muted={true}
+                    config={{
+                        youtube: {
+                            playerVars: { showInfo: 1 },
+                        },
+                    }}
+                />
             <BtnMenu />
             <span>FR</span>
             <div className='container-constel'>

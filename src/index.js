@@ -15,12 +15,13 @@ import { App } from './pages/App';
 import { Packs } from './pages/Packs';
 import { Prestations } from './pages/Prestations';
 
-const Index = () => {
+const Index = ( props ) => {
   const [pageActuel, setPageActuel] = useState([true, false, false, false, false, false, false])
   const [opacityLoading, setOpacityLoading] = useState(false)
   const [loading, setLoading] = useState(false)
   const [openNav, setOpenNav] = useState(false)
   const [location, setLocation] = useState(null)
+  const [prevLocation, setPrevLocation] = useState(null)
 
   // toutes les ancres pour le scroll
 
@@ -126,28 +127,28 @@ const Index = () => {
   useInterval(refInPage, 800)
 
   useEffect(() => {
-    if (loading && location === '/') {
+    if (loading && location === '/' && prevLocation !== '/404') {
       window.scrollTo({
         top: nosoffres.current.offsetTop
       })
-    }
+    } 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location])
+  }, [location, prevLocation])
 
   useEffect(() => {
-    window.addEventListener("load", function (event) {
-      setTimeout(() => {
-        setOpacityLoading(true)
-      }, 3400)
-      document.body.style.overflow = 'hidden';
-      document.body.style.height = '100vh';
-
-      setTimeout(() => {
-        setLoading(true)
-        document.body.style.overflow = 'unset';
-        document.body.style.height = 'auto';
-      }, 3900)
-    });
+      window.addEventListener("load", function (event) {
+        setTimeout(() => {
+          setOpacityLoading(true)
+        }, 3400)
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
+  
+        setTimeout(() => {
+          setLoading(true)
+          document.body.style.overflow = 'unset';
+          document.body.style.height = 'auto';
+        }, 3900)
+      });
   }, [])
 
   useEffect(() => {
@@ -157,7 +158,7 @@ const Index = () => {
   }, [])
 
   return (
-    <Context.Provider value={{ setLocation, pageActuel, setPageActuel, loading, opacityLoading, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
+    <Context.Provider value={{ setPrevLocation, setLoading, setOpacityLoading, setLocation, pageActuel, setPageActuel, loading, opacityLoading, openNav, setOpenNav, scrollToRef, accueil, quisommesnous, realisations, nosoffres, ecosysteme, notreequipe, nouscontacter }}>
       <Router>
         <Switch>
           <Route exact path='/' component={App} />

@@ -7,18 +7,11 @@ const StyledBienvenue = styled.section`
         background: #010006;
         overflow: hidden;
         width: 100vw;
-        min-height: 100vh;
+        min-width: 100vw;
         position: relative;
         flex-direction: column;
         -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
         z-index: 6;
-
-        img {
-            position: absolute;
-            z-index: -1;
-            height: 120%;
-            right: 0;
-        }
 
         .container-h1 {
             width: 60%;
@@ -33,7 +26,8 @@ const StyledBienvenue = styled.section`
         }
 
         .container-quisommesnous {
-            width: 70%;
+            width: 100%;
+            padding: 0 5%;
             align-self: center;
             align-items: center;
             min-height: 500px;
@@ -43,8 +37,11 @@ const StyledBienvenue = styled.section`
 
         .quisommesnous-txt {
             width: 50%;
-            height: 100%;
+            padding: 30px 0;
             color: white;
+        }
+
+        .quisommesnous-txt p {
             text-align: justify;
         }
         .wrapper-video {
@@ -67,10 +64,37 @@ const StyledBienvenue = styled.section`
         .container-adjectif {
             width: 90%;
             display: flex;
-            height: 150px;
+            height: 220px;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin: 30px 0 10px 0;
         }
+        @media (max-width:1150px) {
+            .container-adjectif {
+                width: 98%;
+            }
+            p {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 3.9em;
+                line-height: 58px;
+            }
+            h3 {
+                font-size: 14px;
+                text-align: center;
+            }
+            .adjectif p {
+                margin: 10px;
+            }
+        }
+        @media (max-width:880px) {
+            .adjectif p {
+                margin: 10px;
+                font-size: 12px;
+                height: 105px !important;
+            }
+        }
+
         .adjectif {
             z-index: 7;
             cursor: pointer;

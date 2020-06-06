@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const StyledRealisations = styled.section`
     display: flex;
     align-items: center;
-    height: 100vh;
     width: 100vw;
     position: relative;
     flex-direction: column;
@@ -25,47 +24,38 @@ const StyledRealisations = styled.section`
         }
 
         .caroussel {
-            width: 100%;
-            height: 60%;
-            position: relative;
-            background-color: #B3B2EB;
+            max-height: 500px;
+
+            overflow: hidden;
         }
 
-        .slider-wrapper {
-            height: 100%;
+        .control-arrow {
+            display: none;
         }
-
-        .wrapper-img {
-            jusitfy-content: center;
-            display: flex;
-            align-items: center;
-            position: relative;
-            height: 60vh;
-            cursor: pointer;
-        }
-        img {
-            position: absolute;
-        }
-
-        .carousel-root {
-            height: 100%;
-        }
-        .carousel.carousel-slider {
-            height: 100%;
-        }
-        .carousel.carousel-slider .control-arrow{
-            padding: 0 30px 0 30px !important ;
-            z-index: 20 !important;
-            background-color: rgba(0,0,0,0.3)
+        .carousel-status {
+            display: none;
         }
 
         .dot {
-            width: 14px !important;
-            height: 14px !important;
+            width: 16px !important;
+            height: 16px !important;
         }
+
+        .wrapper-img {
+            max-height: 500px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper-img img {
+            height: 100%;
+        }
+
         .thumbs-wrapper.axis-vertical {
             display: none;
         }
+
 
         .categories {
             width: 100%;
@@ -75,7 +65,6 @@ const StyledRealisations = styled.section`
         .carousel button {
             display:none;
         }
-
         .img {
             height: 100%;
             width: 20%;
@@ -91,10 +80,8 @@ const StyledRealisations = styled.section`
         .img img, .scale {
             pointer-events: none;
         }
-
-        img {
+        .categories img {
             width: 21vw;
-            min-height: 51vh;
             z-index: 2;
             transition: 500ms;
         }
@@ -102,7 +89,6 @@ const StyledRealisations = styled.section`
             transform: scale(1.1);
             transition: 500ms;
         }
-
         .filtre-hover {
             width: 100%;
             height: 0%;
@@ -116,7 +102,6 @@ const StyledRealisations = styled.section`
             font-size: 28px;
             transition: 500ms;
         }
-
         .filtre-hover.on {
             background-color: rgba(0,0,0,0.6);
             opacity: 1;
@@ -125,7 +110,16 @@ const StyledRealisations = styled.section`
             z-index: 6;
             transition: 500ms;
         }
+       
+        .filtre-hover.on p {
+            text-align: center;
+        }
 
+        @media (max-width:1020px) {
+            p {
+                font-size: 15px;
+            }
+        }
 `
 
 export default StyledRealisations

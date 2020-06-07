@@ -28,7 +28,7 @@ const FlecheGoTop = () => {
 
     return (
         <div>
-            <button onClick={handleGoTop} id="cRetour" className={!isVisible ? "cInvisible" : "cVisible"} />
+            <button aria-label='fleche' name='fleche' onClick={handleGoTop} id="cRetour" className={!isVisible ? "cInvisible" : "cVisible"} />
         </div>
     )
 }

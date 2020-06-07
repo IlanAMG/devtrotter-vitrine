@@ -8,6 +8,7 @@ const arrow = keyframes`
         bottom: 35px;
     }
 `
+
 const StyledHomePage = styled.section`
 
     @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
@@ -16,15 +17,39 @@ const StyledHomePage = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+    min-width: 100vw;
+    max-height: 100vh;
     position: relative;
+    ${'' /* overflow: hidden; */}
+
+    @media (min-width:300px) {
+        height: calc(100vw * 0.5628205128205128);
+        iframe {
+            height: calc(130vw * 0.5628205128205128);
+        }
+  }
+
+        iframe {
+            position: fixed;
+            z-index: -1;
+        }
 
         .bg {
             position: absolute;
             pointer-events: none;
+            top: calc(-15vw * 0.5628205128205128);
+            left: 0;
         }
+        
+        .bgPic {
+            align-self: center;
+            position: fixed;
+            width: 100vw;
+            min-height: 100vh;
+            z-index: 1;
+            top: 0;
+        }
+
 
         .container-constel {
             position: fixed;

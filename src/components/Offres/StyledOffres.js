@@ -5,6 +5,7 @@ const StyledOffres = styled.section`
     height: 669px;
     width: 100vw;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
     -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
@@ -45,7 +46,8 @@ const StyledOffres = styled.section`
             align-items: center;
             cursor: pointer;
             transition: 500ms;
-            position: relative
+            position: relative;
+            text-decoration: none;
         }
         .filtre-hover {
             background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.6) 43.95%, rgba(104, 59, 205, 0.6) 99.95%);

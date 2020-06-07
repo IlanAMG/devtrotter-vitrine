@@ -1,31 +1,35 @@
 import styled, {keyframes} from 'styled-components'
 
-const defilement = keyframes`
-    from,
-    to {
-        left: -150vw;
-    }
-    50% {
-        left: 3vw;
-    }
+const marquee = keyframes`
+    0% { left: 0; }
+    100% { left: -177.5%; }
 `
 
 const StyledBanderolle = styled.section`
-    height: 150px;
-    width: 3000px;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
+    height: 130px;
+    width: 100vw;
+    background-color: transparent;
+    overflow: hidden;
     position: relative;
+    z-index: 2;
+
+        .marquee-inner {
+            width: 200%;
+            position: absolute;
+            animation: ${marquee} 10s linear infinite;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
 
         h1 {
             font-style: italic;
-            font-size: 80px;
-            color: #545454;
+            font-size: 60px;
+            color: white;
             white-space:nowrap;
             position: absolute;
-            animation: ${defilement} 20s infinite linear;
-            left: 0;
+            float: left;
+            width: 50%:
         }
 `
 

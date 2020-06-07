@@ -1,64 +1,165 @@
-import React, { useState, useEffect, useContext } from 'react'
-import StyledBienvenue from './StyledBienvenue';
+import React, { useContext, useState } from 'react'
+import Particles from 'react-particles-js';
+import { Spring } from "react-spring/renderprops";
+import VisibilitySensor from "../../utils/VisibilitySensor";
 
+import StyledBienvenue from './StyledBienvenue';
 import Context from '../../utils/context';
 
-export const Bienvenue = () => {
+export const Bienvenue = ({ isVisible }) => {
     const { quisommesnous } = useContext(Context)
-    const [scroll, setScroll] = useState(0)
-
-    const scrollBg = () => {
-        if (window.pageYOffset <= 2500 && window.pageYOffset !== 0 && window.innerWidth <= 2000) {
-            setScroll((window.pageYOffset / 5))
-        } else {
-            setScroll(0)
-        }
+    const [adjectifOpen, setAdjectifOpen] = useState([false, false, false, false])
+    const contextMenu = (e) => {
+        e.preventDefault();
+        return false
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', scrollBg, {passive: true})
-    }, [])
+    const openAdjectif = (i) => {
+        const cloneAdjectifOpen = [...adjectifOpen]
+        if (cloneAdjectifOpen[i]) {
+            cloneAdjectifOpen[i] = false
+        } else {
+            cloneAdjectifOpen[i] = true
+        }
+        setAdjectifOpen(cloneAdjectifOpen)
+    }
 
-    useEffect(() => {
-        return () => window.removeEventListener('scroll', scrollBg)
-    }, [])
-    
     return (
         <StyledBienvenue ref={quisommesnous}>
-            <img style={{transform: `translateX(${scroll}px)`}} alt='background' src='https://i.goopics.net/o2p2n.jpg' />
-            <div className='container-h1'>
-                <h1>BIENVENUE CHEZ DEVTROTTER</h1>
-            </div>
+            {isVisible &&
+                <Particles
+                    height='100%'
+                    width='50%'
+                    style={{ position: 'absolute', left: 0 }}
+                    params={{
+                        particles: {
+                            number: {
+                                value: 100,
+                                density: {
+                                    enable: true,
+                                    value_area: 1000
+                                }
+                            }
+                        }
+                    }}
+                />
+            }
+            <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
+                {({ isVisible }) => (
+                    <Spring
+                        to={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible
+                                ? "translateY(0)"
+                                : "translateY(100px)",
+                        }}>
+                        {(props) => (
+                            <div className='container-h1'>
+                                <h1 style={{ ...props }}>BIENVENUE CHEZ DEVTROTTER</h1>
+                            </div>
+                        )}
+                    </Spring>
+                )}
+            </VisibilitySensor>
             <div className='container-quisommesnous'>
-                <div className='quisommesnous-txt'>
-                    <h2>QUI SOMMES-NOUS ?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, similique officiis ex hic a sint consequuntur, eaque, minima animi odit ea. Aspernatur minus eius a laboriosam cum ratione excepturi consequuntur maiores ad voluptatibus, aperiam itaque quibusdam pariatur in eos, aut, dicta minima modi architecto. Veniam magni dolore, necessitatibus iure, inventore deserunt saepe odit fuga quos pariatur laudantium consequatur error vitae eaque voluptates, ea delectus eligendi debitis reprehenderit doloremque maxime quas autem architecto nobis? Amet inventore officia odio sint rerum quas, numquam asperiores quae fugiat aperiam tempora, quibusdam beatae natus officiis deserunt minima! Suscipit optio possimus, ipsam iusto dolorem autem quod deserunt obcaecati, enim laborum eaque fuga! Est quia maxime deleniti, animi facere eum fugit dicta modi debitis eligendi. Laboriosam esse placeat quidem minima? Exercitationem corporis tempora blanditiis adipisci iure corrupti ipsam dolore libero nulla, numquam saepe asperiores amet sed minima doloribus. Vel repellat ipsum eum temporibus quasi.</p>
-                </div>
-                <div className='placeholder'></div>
-            </div>
-            <div className='container-adjectif'>
-                <div className='adjectif'>
-                    <h3>FORCE DE PROPOSITION</h3>
-                    <hr/>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
-                </div>
-                <div className='adjectif'>
-                    <h3>FLEXIBILITÉ</h3>
-                    <hr/>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
-                </div>
-                <div className='adjectif'>
-                    <h3>RIGUEUR</h3>
-                    <hr/>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
-                </div>
-                <div className='adjectif'>
-                    <h3>TRANSPARENCE</h3>
-                    <hr/>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iure, cum suscipit dolorum optio distinctio a?</p>
+                <VisibilitySensor partialVisiblity once offset={{ bottom: -150 }}>
+                    {({ isVisible }) => (
+                        <Spring
+                            to={{
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible
+                                    ? "translateX(0)"
+                                    : "translateX(-60px)",
+                            }}>
+                            {(props) => (
+                                <div className='quisommesnous-txt'>
+                                    <h2 style={{ ...props }}>QUI SOMMES-NOUS ?</h2>
+                                    <p style={{ ...props }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, similique officiis ex hic a sint consequuntur, eaque, minima animi odit ea. Aspernatur minus eius a laboriosam cum ratione excepturi consequuntur maiores ad voluptatibus, aperiam itaque quibusdam pariatur in eos, aut, dicta minima modi architecto. Veniam magni dolore, necessitatibus iure, inventore deserunt saepe odit fuga quos pariatur laudantium consequatur error vitae eaque voluptates, ea delectus eligendi debitis reprehenderit doloremque maxime quas autem architecto nobis? Amet inventore officia odio sint rerum quas, numquam asperiores quae fugiat aperiam tempora, quibusdam beatae natus officiis deserunt minima! Suscipit optio possimus, ipsam iusto dolorem autem quod deserunt obcaecati.</p>
+                                </div>
+                            )}
+                        </Spring>
+                    )}
+                </VisibilitySensor>
+                <div className='wrapper-video'>
+                    {isVisible &&
+                        <video onSelectStart={contextMenu} onDragStart={contextMenu} onContextMenu={contextMenu} autoPlay loop muted playsinline>
+                            <source data-src='/videos/earth.mp4' type='video/mp4' src='/videos/earth.mp4' />
+                        </video>
+                    }
                 </div>
             </div>
-
+            <VisibilitySensor partialVisiblity offset={{ bottom: -300 }} once>
+                {({ isVisible }) => (
+                    <Spring
+                        to={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible
+                                ? "translateY(0)"
+                                : "translateY(100px)",
+                        }}>
+                        {(props) => (
+                            <div style={{ ...props }} className='container-adjectif'>
+                                <div className='adjectif' onClick={() => openAdjectif(0)}>
+                                    <h3>FORCE DE PROPOSITION</h3>
+                                    <p style={adjectifOpen[0] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <hr />
+                                    {!adjectifOpen[0] ?
+                                        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.171 1.00002L8.08944 9.24661L0.99996 1.0068" stroke="#F0F0F0" />
+                                        </svg>
+                                        :
+                                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.00191 9.24662L8.08744 1.00342L15.173 9.24662" stroke="#F0F0F0" />
+                                        </svg>
+                                    }
+                                </div>
+                                <div className='adjectif' onClick={() => openAdjectif(1)}>
+                                    <h3>FLEXIBILITÉ</h3>
+                                    <p style={adjectifOpen[1] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <hr />
+                                    {!adjectifOpen[1] ?
+                                        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.171 1.00002L8.08944 9.24661L0.99996 1.0068" stroke="#F0F0F0" />
+                                        </svg>
+                                        :
+                                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.00191 9.24662L8.08744 1.00342L15.173 9.24662" stroke="#F0F0F0" />
+                                        </svg>
+                                    }
+                                </div>
+                                <div className='adjectif' onClick={() => openAdjectif(2)}>
+                                    <h3>RIGUEUR</h3>
+                                    <p style={adjectifOpen[2] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <hr />
+                                    {!adjectifOpen[2] ?
+                                        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.171 1.00002L8.08944 9.24661L0.99996 1.0068" stroke="#F0F0F0" />
+                                        </svg>
+                                        :
+                                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.00191 9.24662L8.08744 1.00342L15.173 9.24662" stroke="#F0F0F0" />
+                                        </svg>
+                                    }
+                                </div>
+                                <div className='adjectif' onClick={() => openAdjectif(3)}>
+                                    <h3>TRANSPARENCE</h3>
+                                    <p style={adjectifOpen[3] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <hr />
+                                    {!adjectifOpen[3] ?
+                                        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.171 1.00002L8.08944 9.24661L0.99996 1.0068" stroke="#F0F0F0" />
+                                        </svg>
+                                        :
+                                        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.00191 9.24662L8.08744 1.00342L15.173 9.24662" stroke="#F0F0F0" />
+                                        </svg>
+                                    }
+                                </div>
+                            </div>
+                        )}
+                    </Spring>
+                )}
+            </VisibilitySensor>
         </StyledBienvenue>
     )
 }

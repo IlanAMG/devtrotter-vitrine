@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import StyledLoading from '../styles/StyledLoading'
 
 export const Loading = ({ opacityLoading}) => {

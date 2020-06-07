@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import TrackVisibility from 'react-on-screen';
 
 import Context from '../utils/context';
 
@@ -13,9 +14,23 @@ import { QuiSommes } from '../components/QuiSommes/QuiSommes';
 import { Banderolle } from '../components/Banderolle/Banderolle'
 import { Footer } from '../components/Footer/Footer';
 import FlecheGoTop from '../components/FlecheGoTop';
+import { useLocation } from 'react-router-dom';
 
 export const App = () => {
-    const { loading, opacityLoading } = useContext(Context)
+    const { setLocation, loading, opacityLoading } = useContext(Context)
+    const location = useLocation()
+    
+    useEffect(() => {
+        setLocation(location.pathname)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+    useEffect(() => {
+        return () => {
+            setLocation(null)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
         <div className='App'>
             {
@@ -23,13 +38,21 @@ export const App = () => {
                 <Loading opacityLoading={opacityLoading} />
             }
             <MenuNavigation />
-            <HomePage />
+            <TrackVisibility partialVisibility offset = { 600 } >
+                <HomePage />
+            </TrackVisibility>
+            <TrackVisibility partialVisibility offset = { 600 } >
             <Bienvenue />
-            <Realisations />
+            </TrackVisibility>
+            <TrackVisibility partialVisibility offset = { 600 } >
+                <Realisations />
+            </TrackVisibility>
             <Offres />
             <Ecosysteme />
             <QuiSommes />
-            <Banderolle />
+            <TrackVisibility partialVisibility offset = { 600 } >
+                {({isVisible}) => isVisible && <Banderolle />}
+            </TrackVisibility>
             <Footer />
             <FlecheGoTop />
         </div>

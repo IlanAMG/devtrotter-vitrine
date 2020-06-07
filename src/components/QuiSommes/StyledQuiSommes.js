@@ -4,12 +4,32 @@ const StyledQuiSommes = styled.section`
     display: flex;
     position: relative;
     justify-content: center;
-    min-height: 100vh;
-    min-width: 100vw;
+    min-height: 800px !important;
+    max-height: 1080px !important;
+    width: 100vw;
+    height: 100vh;
     background-color: #121212;
     -webkit-box-shadow: 0px 3px 56px 4px rgba(0,0,0,0.85);
     z-index: 7;
+    overflow: hidden;
 
+    @media screen and (max-width: 1000px) {
+        height: 990px;
+            .container-equipe {
+                margin-bottom: 230px;
+            }
+            .container-equipe .wrapper-hexa:nth-child(1) {
+                transform: translateX(50%) !important;
+                z-index: 1;
+            }
+            .container-equipe .wrapper-hexa:nth-child(2) {
+                transform: translateX(50%) !important;
+                z-index: 1;
+            }
+            .container-equipe .wrapper-hexa:nth-child(3) {
+                transform: translate(-100%, 76.3%) !important;
+            }
+    }
 
         .container-h1 {
             width: 100vw;
@@ -26,7 +46,6 @@ const StyledQuiSommes = styled.section`
         .bg {
             width: 100%;
             position: absolute;
-            height: 100%;
             z-index: -1;
         }
 
@@ -36,7 +55,12 @@ const StyledQuiSommes = styled.section`
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
+            align-self: center;
+            position: relative;
+        }
+
+        .ici {
+            color: black;
         }
 `
 

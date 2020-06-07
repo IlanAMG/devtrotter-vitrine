@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 const StyledEcosysteme = styled.section`
     height: 100vh;
+    min-height: 800px !important;
     width: 100vw;
+    max-height: 1080px !important;
     position: relative;
     display: flex;
     align-items: center;
@@ -10,16 +12,10 @@ const StyledEcosysteme = styled.section`
     flex-direction: column;
     min-height: 100vh;
 
-        .bg {
-            position: absolute;
-            z-index: -1;
-            min-width: 100%;
-            min-height: 100vh;
-            opacity: 0.5;
-        }
         .container-h1 {
             width: 60%;
             margin-top: 30px;
+            z-index: 2;
         }
         h1 {
             font-size: 4.6em;
@@ -43,7 +39,7 @@ const StyledEcosysteme = styled.section`
             justify-content: center;
         }
 
-        svg {
+        #svg {
             z-index: 11;
         }
 

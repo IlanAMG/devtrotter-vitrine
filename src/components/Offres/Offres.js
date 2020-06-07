@@ -1,61 +1,85 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
+import { Spring } from "react-spring/renderprops";
+import VisibilitySensor from "../../utils/VisibilitySensor";
+
 import StyledOffres from './StyledOffres';
 import Context from '../../utils/context';
+import { Link } from 'react-router-dom';
+import bgScroll from '../../assets/bgScroll.jpg'
 
 export const Offres = () => {
-    const { direction, nosoffres } = useContext(Context)
+    const { nosoffres } = useContext(Context)
     const [hover1, setHover1] = useState(false)
     const [hover2, setHover2] = useState(false)
-    const [bgOffres, setBgOffres] = useState(0)
-    const [scroll, setScroll] = useState(0)
-
-    const scrollBg = () => {
-        setScroll(window.pageYOffset)
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', scrollBg, {passive: true})
-    }, [])
-
-    useEffect(() => {
-        return () => window.removeEventListener('scroll', scrollBg)
-    }, [])
-
-    useEffect(() => {
-        if (scroll >= 1400 && scroll <= 3500) {
-            if (direction.current === 'down') {
-                setBgOffres(offres => offres - 6)
-            } else if (direction.current === 'up') {
-                setBgOffres(offres => offres + 6)
-            }
-            if (bgOffres <= -800 || bgOffres >= 800) {
-                setBgOffres(0)
-            }
-        }
-    }, [scroll])
 
     return (
         <StyledOffres ref={nosoffres} hover1={hover1} hover2={hover2}>
-            <div className='container-h1'>
-                <h1>NOS OFFRES</h1>
-            </div>
+            <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
+                {({ isVisible }) => (
+                    <Spring
+                        to={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible
+                                ? "translateY(0)"
+                                : "translateY(100px)",
+                        }}>
+                        {(props) => (
+                            <div className='container-h1'>
+                                <h1 style={{ ...props }}>NOS OFFRES</h1>
+                            </div>
+                        )}
+                    </Spring>
+                )}
+            </VisibilitySensor>
             <div className='container-offres'>
-                <div 
-                    onMouseLeave={() => setHover1(false)} 
-                    onMouseEnter={() => setHover1(true)} 
-                    className='btn-offres'>
-                    <div className='filtre-hover one'/>
-                    <span>LES PACKS</span>
-                </div>
-                <div 
-                    onMouseLeave={() => setHover2(false)}
-                    onMouseEnter={() => setHover2(true)} 
-                    className='btn-offres'>
-                    <div className='filtre-hover two'/>
-                    <span>LES OPTIONS</span>
-                </div>
+                <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
+                    {({ isVisible }) => (
+                        <Spring
+                            to={{
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible
+                                    ? "translateX(0)"
+                                    : "translateX(-50px)",
+                            }}>
+                            {(props) => (
+                                <Link
+                                    style={{ ...props }}
+                                    to='/packs'
+                                    onMouseLeave={() => setHover1(false)}
+                                    onMouseEnter={() => setHover1(true)}
+                                    className='btn-offres'>
+                                    <div className='filtre-hover one' />
+                                    <span>NOS PACKS</span>
+                                </Link>
+                            )}
+                        </Spring>
+                    )}
+                </VisibilitySensor>
+                <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
+                    {({ isVisible }) => (
+                        <Spring
+                            to={{
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible
+                                    ? "translateX(0)"
+                                    : "translateX(-50px)",
+                            }}>
+                            {(props) => (
+                                <Link
+                                    style={{ ...props }}
+                                    to='/prestations'
+                                    onMouseLeave={() => setHover2(false)}
+                                    onMouseEnter={() => setHover2(true)}
+                                    className='btn-offres'>
+                                    <div className='filtre-hover two' />
+                                    <span>NOS PRESTATIONS</span>
+                                </Link>
+                            )}
+                        </Spring>
+                    )}
+                </VisibilitySensor>
             </div>
-            <img style={{transform: `translateX(${bgOffres}px)`}} alt='background' src='https://i.goopics.net/xV8VW.jpg' />
+            <img alt='background' src={bgScroll} />
         </StyledOffres>
     )
 }

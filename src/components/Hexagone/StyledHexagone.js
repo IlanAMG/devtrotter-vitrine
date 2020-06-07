@@ -1,15 +1,46 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+
+const fade = keyframes`
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+`
 
 const StyledHexagone = styled.div`
         position: relative;
         width: 250px; 
         height: 144.34px;
         margin: 72.17px 2px;
-        background-image: ${({url}) => `url(${url})`};
         background-size: auto 288.6751px;
         background-position: center;
         box-shadow: 0 0 20px rgba(0,0,0,0.75);
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        ${props => props.url && css`
+            background-image: ${({url}) => `url(${url})`};
+            .wrapper-hexa {
+                z-index: -1 !important;
+            }
+        `}
+
+        ${props => props.color === 'black' && css`
+            background-color: ${({color}) => `${color}`};
+            opacity: 0.8;
+        `}
+        ${props => props.color !== 'black' && css`
+            background-color: ${({color}) => `${color}`};
+        `}
+
+        ${props => props.color === '#F0F0F0' && css`
+            animation: ${fade} 1.5s ease-out forwards;
+        `}
 
         &:after {
             content: "";
@@ -21,6 +52,15 @@ const StyledHexagone = styled.div`
             z-index: 2;
             background: inherit;
         }
+
+        @media screen and (max-width: 1000px) {
+            ${props => props.color === 'black' && css`
+                background-color: ${({color}) => `${color}`};
+                opacity: 0.8;
+                z-index: 2;
+                transform: translate(101.5%, -152.6%) !important;
+            `}
+    }
 
             .hexTop,
             .hexBottom {
@@ -67,6 +107,35 @@ const StyledHexagone = styled.div`
 
             .hexBottom:after {
                 background-position: center bottom;
+            }
+
+            span {
+                z-index: 5;
+                color: white;
+                padding: 5px;
+                position: absolute;
+                text-align: center;
+                line-height: 22px;
+            }
+
+            a {
+                color: white;
+                z-index: 6;
+                padding: 8px 15px 8px 15px; 
+                text-align: center;
+                line-height: 22px;
+                font-size: 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 10px;
+                background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.8) 43.95%, rgba(104, 59, 205, 0.8) 99.95%);
+                transition: 500ms;
+                -webkit-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.58);
+            }
+            a:hover {
+                transform: scale(1.1);
+                background: linear-gradient(89.81deg, rgba(40, 42, 125, 1) 100%, rgba(104, 59, 205, 1) 99.95%);
+                transition: 500ms;
             }
 
 `

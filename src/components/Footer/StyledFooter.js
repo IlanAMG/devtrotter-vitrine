@@ -9,6 +9,7 @@ const StyledFooter = styled.footer`
     z-index: 6;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
         img {
             position: absolute;
@@ -73,6 +74,23 @@ const StyledFooter = styled.footer`
             opacity: 1;
             transform: scale(1.1);
             transition: 600ms;
+        }
+        .container.right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 1250px) {
+            .container.right section {
+                padding: 18px !important;
+            }
+        }
+        @media screen and (max-width: 970px) {
+            .icon {
+                width: 36px;
+                height: 36px;
+            }
         }
 `
 

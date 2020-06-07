@@ -88,7 +88,8 @@ export const HomePage = ({ isVisible }) => {
             circle4={hoverElement[4]}
             circle5={hoverElement[5]}
             circle6={hoverElement[6]}
-        >   
+        >       
+            {window.innerWidth >= 970 ?
                 <ReactPlayer width='100%' height= '110%' className='bg' url="https://www.youtube.com/embed/WCedDOwe85E" playing={isVisible ? videoRdy : false} onReady={() => setVideoRdy(true)} loop={true} controls={false} muted={true}
                     config={{
                         youtube: {
@@ -96,9 +97,13 @@ export const HomePage = ({ isVisible }) => {
                         },
                     }}
                 />
+                :
+                <img className='bgPic' alt='bg' src={bgEco} />
+            }
             {!isVisible && <img className='bgPic' alt='bg' src={bgEco} />}
             <BtnMenu />
             <span>FR</span>
+            {window.innerWidth >= 880 &&
             <div className='container-constel'>
                 <div onClick={() => scrollToRef(accueil)} className='btn btn1' onMouseOver={() => handleHover(0)} onMouseOut={() => handleOut(0)} />
                 <div onClick={() => scrollToRef(quisommesnous)} className='btn btn2' onMouseOver={() => handleHover(1)} onMouseOut={() => handleOut(1)} />
@@ -204,6 +209,7 @@ export const HomePage = ({ isVisible }) => {
                     </defs>
                 </svg>
             </div>
+            }
             <section className='container-titres'>
                 <div className='wrapper-h3'>
                     <h3>VOTRE VISION ÉVEILLE NOTRE SAVOIR-FAIRE</h3>

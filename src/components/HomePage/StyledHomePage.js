@@ -22,12 +22,60 @@ const StyledHomePage = styled.section`
     position: relative;
     ${'' /* overflow: hidden; */}
 
-    @media (min-width:300px) {
-        height: calc(100vw * 0.5628205128205128);
-        iframe {
-            height: calc(130vw * 0.5628205128205128);
+        @media (min-width:970px) {
+            height: calc(100vw * 0.5628205128205128);
+            iframe {
+                height: calc(130vw * 0.5628205128205128);
+            }
         }
-  }
+
+        @media screen and (max-width: 970px) {
+            height: 100vh !important;
+            width: 100vw;
+        }
+        @media screen and (max-width: 830px) {
+            .container-titres {
+                width: 90% !important;
+            }
+            .container-titres h1 {
+                font-size: 3.4em !important;
+            }
+            .container-titres h3 {
+                font-size: 16px !important;
+            }
+            .wrapper-h3 {
+                margin-left: 15% !important;
+            }
+        }
+        @media screen and (max-width: 630px) {
+            .container-titres {
+                width: 90% !important;
+            }
+            .container-titres h1 {
+                font-size: 2.6em !important;
+            }
+            .container-titres h3 {
+                font-size: 12px !important;
+            }
+            .container-titres h2 {
+                font-size: 12px !important;
+            }
+            .wrapper-h3 {
+                margin-left: 14% !important;
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            .wrapper-h3 {
+                margin-left: 12% !important;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .wrapper-h3 {
+                align-self: center !important;
+                margin-left: 0px !important;
+            }
+        }
 
         iframe {
             position: fixed;
@@ -44,12 +92,16 @@ const StyledHomePage = styled.section`
         .bgPic {
             align-self: center;
             position: fixed;
-            width: 100vw;
             min-height: 100vh;
             z-index: 1;
             top: 0;
+            max-height: calc(110vw * 0.5625) !important;
+            width: auto !important;
+            bottom: 0;
+            right: 0;
+            left: -30vw;
         }
-
+        
 
         .container-constel {
             position: fixed;
@@ -102,6 +154,7 @@ const StyledHomePage = styled.section`
         .container-titres h1 {
             color: #FFFFFF;
             font-size: 4.4em;
+            text-align: center;
         }
         .container-titres h2, h3 {
             color: #FFFFFF;
@@ -113,7 +166,7 @@ const StyledHomePage = styled.section`
             display: flex;
             flex-direction: column;
             align-self: start;
-            margin-left: 170px;
+            margin-left: 20%;
         }
         .separator-h3 {
             margin-top: 5px;

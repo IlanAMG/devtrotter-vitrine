@@ -31,7 +31,7 @@ const StyledHomePage = styled.section`
 
         @media screen and (max-width: 970px) {
             height: 100vh !important;
-            width: 100vw;
+            width: 100vw;  
         }
         @media screen and (max-width: 830px) {
             .container-titres {
@@ -88,8 +88,17 @@ const StyledHomePage = styled.section`
             top: calc(-15vw * 0.5628205128205128);
             left: 0;
         }
-        
+
         .bgPic {
+            align-self: center;
+            position: fixed;
+            width: 100vw;
+            min-height: 100vh;
+            z-index: 1;
+            top: 0;
+        }
+        
+        .bgPic2 {
             align-self: center;
             position: fixed;
             min-height: 100vh;
@@ -101,7 +110,6 @@ const StyledHomePage = styled.section`
             right: 0;
             left: -30vw;
         }
-        
 
         .container-constel {
             position: fixed;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Particles from 'react-particles-js';
 import { Spring } from "react-spring/renderprops";
 import VisibilitySensor from "../../utils/VisibilitySensor";
@@ -9,6 +9,7 @@ import Context from '../../utils/context';
 export const Bienvenue = ({ isVisible }) => {
     const { quisommesnous } = useContext(Context)
     const [adjectifOpen, setAdjectifOpen] = useState([false, false, false, false])
+    const [heightOnglet, setHeightOnglet] = useState('125px')
     const contextMenu = (e) => {
         e.preventDefault();
         return false
@@ -24,13 +25,21 @@ export const Bienvenue = ({ isVisible }) => {
         setAdjectifOpen(cloneAdjectifOpen)
     }
 
+    useEffect(() => {
+        if (window.innerWidth >= 750) {
+            setHeightOnglet('125px')
+        } else {
+            setHeightOnglet('50px') 
+        }
+    }, [window.innerWidth])
+
     return (
         <StyledBienvenue ref={quisommesnous}>
             {isVisible &&
                 <Particles
-                    height='100%'
-                    width='50%'
-                    style={{ position: 'absolute', left: 0 }}
+                    height={window.innerWidth >= 750 ? '100%' : '50%'}
+                    width={window.innerWidth >= 750 ? '50%' : '100%'}
+                    style={{ position: 'absolute', left: 0, bottom: 0 }}
                     params={{
                         particles: {
                             number: {
@@ -101,7 +110,7 @@ export const Bienvenue = ({ isVisible }) => {
                             <div style={{ ...props }} className='container-adjectif'>
                                 <div className='adjectif' onClick={() => openAdjectif(0)}>
                                     <h3>FORCE DE PROPOSITION</h3>
-                                    <p style={adjectifOpen[0] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <p style={adjectifOpen[0] ? { transition: '300ms', height: heightOnglet} : null}>Comptez sur notre créativité pour vous proposer continuellement de nouvelles préconisations.</p>
                                     <hr />
                                     {!adjectifOpen[0] ?
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +124,7 @@ export const Bienvenue = ({ isVisible }) => {
                                 </div>
                                 <div className='adjectif' onClick={() => openAdjectif(1)}>
                                     <h3>FLEXIBILITÉ</h3>
-                                    <p style={adjectifOpen[1] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <p style={adjectifOpen[1] ? { transition: '300ms', height: heightOnglet } : null}>Chaque entreprise à son propre contexte, nous nous adaptons afin que la création de votre site web se passe pour le mieux.</p>
                                     <hr />
                                     {!adjectifOpen[1] ?
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +138,7 @@ export const Bienvenue = ({ isVisible }) => {
                                 </div>
                                 <div className='adjectif' onClick={() => openAdjectif(2)}>
                                     <h3>RIGUEUR</h3>
-                                    <p style={adjectifOpen[2] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <p style={adjectifOpen[2] ? { transition: '300ms', height: heightOnglet } : null}>Nous nous investissons dans votre projet afin de comprendre au mieux votre contexte et vous proposer la solution la plus pertinente pour vous.</p>
                                     <hr />
                                     {!adjectifOpen[2] ?
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +152,7 @@ export const Bienvenue = ({ isVisible }) => {
                                 </div>
                                 <div className='adjectif' onClick={() => openAdjectif(3)}>
                                     <h3>TRANSPARENCE</h3>
-                                    <p style={adjectifOpen[3] ? { transition: '300ms', height: '125px' } : null}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laborum ea ad id quod eaque sapiente molestias sed omnis accusantium modi dolor iur.</p>
+                                    <p style={adjectifOpen[3] ? { transition: '300ms', height: heightOnglet } : null}>Que ce soit dans nos préconisations ou dans nos devis, nous portons une grande importance à la transparence, source d'une collaboration réussie.</p>
                                     <hr />
                                     {!adjectifOpen[3] ?
                                         <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">

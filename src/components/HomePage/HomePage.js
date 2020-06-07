@@ -103,7 +103,7 @@ export const HomePage = ({ isVisible }) => {
             {!isVisible && window.innerWidth >= window.innerHeight && <img className='bgPic' alt='bg' src={bgEco} />}
             <BtnMenu />
             <span>FR</span>
-            {window.innerWidth >= 880 &&
+            {window.innerWidth >= 970 &&
             <div className='container-constel'>
                 <div onClick={() => scrollToRef(accueil)} className='btn btn1' onMouseOver={() => handleHover(0)} onMouseOut={() => handleOut(0)} />
                 <div onClick={() => scrollToRef(quisommesnous)} className='btn btn2' onMouseOver={() => handleHover(1)} onMouseOut={() => handleOut(1)} />

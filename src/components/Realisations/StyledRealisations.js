@@ -7,6 +7,7 @@ const StyledRealisations = styled.section`
     position: relative;
     flex-direction: column;
     z-index: 5;
+    overflow: hidden;
 
         .container-h1 {
             width: 60%;
@@ -39,6 +40,7 @@ const StyledRealisations = styled.section`
         .dot {
             width: 16px !important;
             height: 16px !important;
+            outline: none;
         }
 
         .wrapper-img {
@@ -113,6 +115,16 @@ const StyledRealisations = styled.section`
        
         .filtre-hover.on p {
             text-align: center;
+        }
+
+        .wrapper-img .filtre-hover.on p {
+            font-size: 28px !important;
+        }
+        .wrapper-img .filtre-hover.on {
+            transition: 0ms !important;
+        }
+        .wrapper-img .filtre-hover {
+            transition: 0ms !important;
         }
 
         @media (max-width:1020px) {

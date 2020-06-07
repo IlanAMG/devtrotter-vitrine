@@ -81,38 +81,75 @@ export const Realisations = ({ isVisible }) => {
                     </Carousel>
                 }
             </section>
-            <section className='categories'>
-                <div className='img' onMouseOver={(e) => handleHover(e, 0)} onMouseLeave={() => handleLeave(0)}>
-                    <img className={hover[0] ? 'scale' : null} alt='ecommerce' src={real1} />
-                    <div className={!hover[0] ? 'filtre-hover' : 'filtre-hover on'} >
-                        <p>E-COMMERCE</p>
+            {window.innerWidth >= 750 && isVisible ?
+                <section className='categories'>
+                    <div className='img' onMouseOver={(e) => handleHover(e, 0)} onMouseLeave={() => handleLeave(0)}>
+                        <img className={hover[0] ? 'scale' : null} alt='ecommerce' src={real1} />
+                        <div className={!hover[0] ? 'filtre-hover' : 'filtre-hover on'} >
+                            <p>E-COMMERCE</p>
+                        </div>
                     </div>
-                </div>
-                <div className='img' onMouseOver={(e) => handleHover(e, 1)} onMouseLeave={() => handleLeave(1)}>
-                    <img className={hover[1] ? 'scale' : null} alt='application' src={real2} />
-                    <div className={!hover[1] ? 'filtre-hover' : 'filtre-hover on'}>
-                        <p>APPLICATION</p>
+                    <div className='img' onMouseOver={(e) => handleHover(e, 1)} onMouseLeave={() => handleLeave(1)}>
+                        <img className={hover[1] ? 'scale' : null} alt='application' src={real2} />
+                        <div className={!hover[1] ? 'filtre-hover' : 'filtre-hover on'}>
+                            <p>APPLICATION</p>
+                        </div>
                     </div>
-                </div>
-                <div className='img' onMouseOver={(e) => handleHover(e, 2)} onMouseLeave={() => handleLeave(2)}>
-                    <img className={hover[2] ? 'scale' : null} alt='blog' src={real3} />
-                    <div className={!hover[2] ? 'filtre-hover' : 'filtre-hover on'} >
-                        <p>BLOG</p>
+                    <div className='img' onMouseOver={(e) => handleHover(e, 2)} onMouseLeave={() => handleLeave(2)}>
+                        <img className={hover[2] ? 'scale' : null} alt='blog' src={real3} />
+                        <div className={!hover[2] ? 'filtre-hover' : 'filtre-hover on'} >
+                            <p>BLOG</p>
+                        </div>
                     </div>
-                </div>
-                <div className='img' onMouseOver={(e) => handleHover(e, 3)} onMouseLeave={() => handleLeave(3)}>
-                    <img className={hover[3] ? 'scale' : null} alt='sitevitrine' src={real4} />
-                    <div className={!hover[3] ? 'filtre-hover' : 'filtre-hover on'}>
-                        <p>SITE VITRINE</p>
+                    <div className='img' onMouseOver={(e) => handleHover(e, 3)} onMouseLeave={() => handleLeave(3)}>
+                        <img className={hover[3] ? 'scale' : null} alt='sitevitrine' src={real4} />
+                        <div className={!hover[3] ? 'filtre-hover' : 'filtre-hover on'}>
+                            <p>SITE VITRINE</p>
+                        </div>
                     </div>
-                </div>
-                <div className='img' onMouseOver={(e) => handleHover(e, 4)} onMouseLeave={() => handleLeave(4)}>
-                    <img className={hover[4] ? 'scale' : null} alt='socialnetwork' src={real5} />
-                    <div className={!hover[4] ? 'filtre-hover' : 'filtre-hover on'} >
-                        <p>RESEAU SOCIAL</p>
+                    <div className='img' onMouseOver={(e) => handleHover(e, 4)} onMouseLeave={() => handleLeave(4)}>
+                        <img className={hover[4] ? 'scale' : null} alt='socialnetwork' src={real5} />
+                        <div className={!hover[4] ? 'filtre-hover' : 'filtre-hover on'} >
+                            <p>RESEAU SOCIAL</p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                :
+                isVisible &&
+                <Carousel stopOnHover={false} infiniteLoop={true} autoPlay={true} transitionTime={250} swipeScrollTolerance={50} swipeable={true} emulateTouch={true} >
+                    <div className='wrapper-img' onMouseOver={(e) => handleHover(e, 0)} onMouseLeave={() => handleLeave(0)}>
+                        <img className={hover[0] ? 'scale' : null} alt='sitevitrine' src={real1} />
+                        <div className={!hover[0] ? 'filtre-hover' : 'filtre-hover on'} >
+                            <p>E-COMMERCE</p>
+                        </div>
+                    </div>
+                    <div className='wrapper-img' onMouseOver={(e) => handleHover(e, 1)} onMouseLeave={() => handleLeave(1)}>
+                        <img className={hover[1] ? 'scale' : null} alt='sitevitrine' src={real2} />
+                        <div className={!hover[1] ? 'filtre-hover' : 'filtre-hover on'} >
+                            <p>APPLICATION</p>
+                        </div>
+                    </div>
+                    <div className='wrapper-img' onMouseOver={(e) => handleHover(e, 2)} onMouseLeave={() => handleLeave(2)}>
+                        <img className={hover[2] ? 'scale' : null} alt='sitevitrine' src={real3} />
+                        <div className={!hover[2] ? 'filtre-hover' : 'filtre-hover on'} >
+                            <p>BLOG</p>
+                        </div>
+                    </div>
+                    <div className='wrapper-img' onMouseOver={(e) => handleHover(e, 3)} onMouseLeave={() => handleLeave(3)}>
+                        <img className={hover[3] ? 'scale' : null} alt='sitevitrine' src={real4} />
+                        <div className={!hover[3] ? 'filtre-hover' : 'filtre-hover on'}>
+                            <p>SITE VITRINE</p>
+                        </div>
+                    </div>
+
+                    <div className='wrapper-img' onMouseOver={(e) => handleHover(e, 4)} onMouseLeave={() => handleLeave(4)}>
+                        <img className={hover[4] ? 'scale' : null} alt='sitevitrine' src={real5} />
+                        <div className={!hover[4] ? 'filtre-hover' : 'filtre-hover on'} >
+                            <p>RESEAU SOCIAL</p>
+                        </div>
+                    </div>
+                </Carousel>
+            }
         </StyledRealisations>
     )
 }

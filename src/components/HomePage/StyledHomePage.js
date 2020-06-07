@@ -20,7 +20,7 @@ const StyledHomePage = styled.section`
     min-width: 100vw;
     max-height: 100vh;
     position: relative;
-    ${'' /* overflow: hidden; */}
+    overflow-X: hidden;
 
         @media (min-width:970px) {
             height: calc(100vw * 0.5628205128205128);

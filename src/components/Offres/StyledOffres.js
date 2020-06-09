@@ -49,6 +49,14 @@ const StyledOffres = styled.section`
             position: relative;
             text-decoration: none;
         }
+
+        @media screen and (max-width: 600px) {
+            .btn-offres {
+                width: 95%;
+                height: 145px;
+            }
+        }
+
         .filtre-hover {
             background: linear-gradient(89.81deg, rgba(40, 42, 125, 0.6) 43.95%, rgba(104, 59, 205, 0.6) 99.95%);
             transition: 500ms;

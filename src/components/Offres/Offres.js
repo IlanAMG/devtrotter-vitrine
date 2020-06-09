@@ -34,48 +34,90 @@ export const Offres = () => {
             <div className='container-offres'>
                 <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
                     {({ isVisible }) => (
-                        <Spring
-                            to={{
-                                opacity: isVisible ? 1 : 0,
-                                transform: isVisible
-                                    ? "translateX(0)"
-                                    : "translateX(-50px)",
-                            }}>
-                            {(props) => (
-                                <Link
-                                    style={{ ...props }}
-                                    to='/packs'
-                                    onMouseLeave={() => setHover1(false)}
-                                    onMouseEnter={() => setHover1(true)}
-                                    className='btn-offres'>
-                                    <div className='filtre-hover one' />
-                                    <span>NOS PACKS</span>
-                                </Link>
-                            )}
-                        </Spring>
+                        window.innerWidth > 650 ?
+                            <Spring
+                                to={{
+                                    opacity: isVisible ? 1 : 0,
+                                    transform: isVisible
+                                        ? "translateX(0)"
+                                        : "translateX(-50px)",
+                                }}>
+                                {(props) => (
+                                    <Link
+                                        style={{ ...props }}
+                                        to='/packs'
+                                        onMouseLeave={() => setHover1(false)}
+                                        onMouseEnter={() => setHover1(true)}
+                                        className='btn-offres'>
+                                        <div className='filtre-hover one' />
+                                        <span>NOS PACKS</span>
+                                    </Link>
+                                )}
+                            </Spring>
+                            :
+                            <Spring
+                                to={{
+                                    opacity: isVisible ? 1 : 0,
+                                    transform: isVisible
+                                        ? "translateY(0)"
+                                        : "translateY(100px)",
+                                }}>
+                                {(props) => (
+                                    <Link
+                                        style={{ ...props }}
+                                        to='/packs'
+                                        onMouseLeave={() => setHover1(false)}
+                                        onMouseEnter={() => setHover1(true)}
+                                        className='btn-offres'>
+                                        <div className='filtre-hover one' />
+                                        <span>NOS PACKS</span>
+                                    </Link>
+                                )}
+                            </Spring>
                     )}
                 </VisibilitySensor>
                 <VisibilitySensor partialVisiblity offset={{ top: -100 }} once>
                     {({ isVisible }) => (
-                        <Spring
-                            to={{
-                                opacity: isVisible ? 1 : 0,
-                                transform: isVisible
-                                    ? "translateX(0)"
-                                    : "translateX(-50px)",
-                            }}>
-                            {(props) => (
-                                <Link
-                                    style={{ ...props }}
-                                    to='/prestations'
-                                    onMouseLeave={() => setHover2(false)}
-                                    onMouseEnter={() => setHover2(true)}
-                                    className='btn-offres'>
-                                    <div className='filtre-hover two' />
-                                    <span>NOS PRESTATIONS</span>
-                                </Link>
-                            )}
-                        </Spring>
+                        window.innerWidth > 650 ?
+                            <Spring
+                                to={{
+                                    opacity: isVisible ? 1 : 0,
+                                    transform: isVisible
+                                        ? "translateX(0)"
+                                        : "translateX(-50px)",
+                                }}>
+                                {(props) => (
+                                    <Link
+                                        style={{ ...props }}
+                                        to='/prestations'
+                                        onMouseLeave={() => setHover2(false)}
+                                        onMouseEnter={() => setHover2(true)}
+                                        className='btn-offres'>
+                                        <div className='filtre-hover two' />
+                                        <span>NOS PRESTATIONS</span>
+                                    </Link>
+                                )}
+                            </Spring>
+                            :
+                            <Spring
+                                to={{
+                                    opacity: isVisible ? 1 : 0,
+                                    transform: isVisible
+                                        ? "translateY(0)"
+                                        : "translateY(100px)",
+                                }}>
+                                {(props) => (
+                                    <Link
+                                        style={{ ...props }}
+                                        to='/prestations'
+                                        onMouseLeave={() => setHover2(false)}
+                                        onMouseEnter={() => setHover2(true)}
+                                        className='btn-offres'>
+                                        <div className='filtre-hover two' />
+                                        <span>NOS PRESTATIONS</span>
+                                    </Link>
+                                )}
+                            </Spring>
                     )}
                 </VisibilitySensor>
             </div>

@@ -23,19 +23,25 @@ const StyledHexagone = styled.div`
         justify-content: center;
         flex-direction: column;
 
-        ${props => props.url && css`
+        ${props => props.url !== undefined && css`
             background-image: ${({url}) => `url(${url})`};
             .wrapper-hexa {
-                z-index: -1 !important;
+                z-index: -1;
             }
         `}
 
         ${props => props.color === 'black' && css`
             background-color: ${({color}) => `${color}`};
             opacity: 0.8;
+            .wrapper-hexa {
+                z-index: 5 !important;
+            }
         `}
         ${props => props.color !== 'black' && css`
             background-color: ${({color}) => `${color}`};
+            .wrapper-hexa {
+                z-index: 5 !important;
+            }
         `}
 
         ${props => props.color === '#F0F0F0' && css`

@@ -246,7 +246,16 @@ z-index: 10000;
   }
 }
 
+@media screen and (max-width:750px) {
+  .container-h1 {
+      width: 80% !important;
+  }
+}
+
 @media screen and (max-width:450px) {
+  .container-h1 {
+      width: 90% !important;
+  }
   .container-h1 h1 {
       font-size: 2.7em !important;
   }

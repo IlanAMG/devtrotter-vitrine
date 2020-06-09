@@ -17,6 +17,7 @@ const StyledPacks = styled.section`
             min-width: 170.72px !important;
             width: 20% !important;
             margin: 0 5px 0 5px !important;
+            width: auto;
         }
 
         video.middle {
@@ -24,7 +25,7 @@ const StyledPacks = styled.section`
             max-width: 600px !important;
             min-height: 515.19px !important;
             min-width: 341.44px !important;
-            width: 40% !important;
+            width: auto;
         }
     }
     @media screen and (max-width: 890px) {
@@ -107,7 +108,7 @@ const StyledPacks = styled.section`
 
         .section-videos {
             padding-top: 50px;
-            width: 97%;
+            width: 100%;
             display: flex;
             height: 100vh;
             position: relative;
@@ -124,14 +125,13 @@ const StyledPacks = styled.section`
             cursor: pointer;
             transition: 300ms;
             max-width: 342px;
-            width: 30%;
+            position: relative;
         }
 
         video.middle {
             max-height: 75%;
             transition: 300ms;
             max-width: 387px;
-            width: 33%;
             max-width: 387px;
         }
 
@@ -203,6 +203,41 @@ const StyledPacks = styled.section`
             display: flex; 
             align-items: center;
             justify-content: center;
+        }
+        .container-direction {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+        .container-direction svg {
+            cursor: pointer;
+            width: 30px;
+        }
+
+        @media screen and (max-width: 710px) {
+            .container-direction {
+                display: flex !important;
+            } 
+            .container-direction .next {
+                position: absolute;
+                right: 0;
+            }
+            .container-direction .prev {
+                position: absolute;
+                left: 0;
+            }
+
+            video.middle {
+                max-height: 83% !important;
+                max-width: 600px !important;
+                min-height: 385.19px !important;
+                min-width: 311.44px !important;
+                width: 35% !important;
+            }
         }
 `
 

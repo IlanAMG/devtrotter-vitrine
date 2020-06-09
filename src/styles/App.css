@@ -227,6 +227,9 @@ z-index: 10000;
       font-size: 3.9em !important;
       line-height: 61px !important;
   }
+  section .container-h1 h1 {
+    font-size: 2.6em !important;
+  }
   h3 {
       font-size: 14px;
       text-align: center !important;
@@ -234,7 +237,7 @@ z-index: 10000;
   .container-offres span {
     font-size: 26px !important;
   }
-  footer h1 {
+  footer .container-h1 h1 {
     font-size: 38px !important;
   }
 }
@@ -243,6 +246,17 @@ z-index: 10000;
   
   .container-h1 h1 {
       font-size: 3.2em !important;
+  }
+}
+
+@media screen and (max-width:780px) {
+  footer .container-h1 {
+    height: 62% !important;
+  }
+  footer .container-h1 h1 {
+    line-height: 42px !important;
+    padding-bottom: 10px;
+    font-size: 28px !important;
   }
 }
 
@@ -262,4 +276,10 @@ z-index: 10000;
   h2 {
       font-size: 28px !important;
   }
+}
+@media screen and (max-width: 390px) {
+  footer .container-h1 h1 {
+    line-height: 39px !important;
+    font-size: 23px !important;
+  }  
 }

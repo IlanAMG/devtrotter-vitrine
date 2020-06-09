@@ -25,7 +25,7 @@ const StyledPrestations = styled.section`
     .bg {
         position: absolute;
         z-index: -1;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     a {

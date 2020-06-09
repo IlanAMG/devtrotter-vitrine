@@ -208,6 +208,7 @@ const StyledHomePage = styled.section`
             animation: ${arrow} 3s infinite ease-out;
             cursor: pointer;
             transition: 500ms;
+            z-index: 12;
         }
         .scroll:hover {
             transform: scale(1.08);

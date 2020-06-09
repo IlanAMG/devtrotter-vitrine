@@ -92,6 +92,37 @@ const StyledFooter = styled.footer`
                 height: 36px;
             }
         }
+        @media screen and (max-width: 780px) {
+            flex-direction: column-reverse;
+            height: auto;
+            .container {
+                height: auto;
+                width: 100%;
+            }
+            img {
+                height: 100%;
+            }
+            .container.left {
+                height: 350px;
+                width: 100%;
+                padding: 15px;
+                align-items: center;
+            }
+            .separator {
+                width: 85%;
+                height: 0.05em;
+            }
+            .wrapper.social {
+                padding-bottom: 15px;
+            }
+            small {
+                margin-bottom: 15px;
+            }
+            .icon {
+                margin: 0 12px 0 12px !important;
+            }
+        }
+
 `
 
 export default StyledFooter

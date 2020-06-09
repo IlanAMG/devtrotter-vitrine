@@ -72,21 +72,48 @@ export const Packs = () => {
                     </video>
                 <div className='bar-progress'><div style={styles} className='progress'/></div>
             </section>
-            <button className='btn-packs'style={openForm ? {right: '720px', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
-                {
-                    openForm ?
-                        <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.400004 0.999998L20 15.5L0.4 30" stroke="#F0F0F0"/>
-                        </svg>
-                    :
-                        <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0"/>
-                        </svg>
-                }
-            </button>
-            <section style={openForm ? {width: '720px'} : null} className='section-form'>
-                {openForm && <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />}
-            </section>
+            { window.innerWidth > 710 &&
+            <>
+                <button className='btn-packs' style={openForm ? {right: '60%', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
+                    {
+                        openForm && window.innerWidth > 710 &&
+                            <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.400004 0.999998L20 15.5L0.4 30" stroke="#F0F0F0"/>
+                            </svg>
+                    }
+                    {
+                        !openForm && window.innerWidth > 710 &&
+                            <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0"/>
+                            </svg>
+                    }
+                </button>
+                <section style={openForm ? {width: '60%'} : null} className='section-form'>
+                    {openForm && <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />}
+                </section>
+            </>
+            }
+            { window.innerWidth <= 710 &&
+            <>
+                <button className='btn-packs' style={openForm ? {bottom: '90%', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
+                    {
+                        openForm && window.innerWidth <= 710 &&
+                            <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.0002 0.856443L14.8566 18.8564L28.713 0.856445" stroke="#F0F0F0"/>
+                            </svg>
+                    }
+                    {
+                        !openForm && window.innerWidth <= 710 &&
+                            <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28.7129 18.8564L14.8565 0.856445L1.00012 18.8564" stroke="#F0F0F0"/>
+                            </svg>
+                    }
+                </button>
+                <section style={openForm ? {height: '90%'} : null} className='section-form'>
+                    {openForm && <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />}
+                </section>
+            </>
+            }
         </StyledPacks>
     )
 }

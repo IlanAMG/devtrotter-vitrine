@@ -52,7 +52,7 @@ export const QuiSommes = () => {
                         </Hexagone>}
                     {hover[0] && window.innerWidth >= 510 &&
                         <Hexagone color={'#F0F0F0'} position={'absolute'} transform={'translate(127px, 220px)'}>
-                            <span className='ici'>JE SAIS PAS QUOI METTRE ICI</span>
+                            <span className='ici'>- Expérience : 1 an<br/><br/>-  Spécialités : PHP | SQL | Config serveur<br/><br/><small>Un bon site web est toujours en construction.</small></span>
                         </Hexagone>}
                 </Hexagone>
                 <Hexagone onMouseOver={() => handleHover(1)} onMouseOut={() => handleLeave(1)} url={'https://i.imgur.com/bodgRdU.jpg'}>
@@ -65,7 +65,7 @@ export const QuiSommes = () => {
                         </Hexagone>}
                     {hover[1] && window.innerWidth >= 510 &&
                         <Hexagone color={'#F0F0F0'} position={'absolute'} transform={'translate(127px, 220px)'}>
-                            <span className='ici'>JE SAIS PAS QUOI METTRE ICI</span>
+                            <span className='ici'>- Expérience : 1 an<br/><br/>-  Spécialités : React.js | Node.js | noSQL<br/><br/><small>Ton meilleur professeur, c’est ta dernière erreur.</small></span>
                         </Hexagone>}
                 </Hexagone>
                 <Hexagone onMouseOver={() => handleHover(2)} onMouseOut={() => handleLeave(2)} url={'https://i.imgur.com/nn1taq6.jpg'}>
@@ -76,7 +76,7 @@ export const QuiSommes = () => {
                         </Hexagone>}
                     {hover[2] && window.innerWidth >= 510 &&
                         <Hexagone color={'#F0F0F0'} position={'absolute'} transform={'translate(127px, 220px)'}>
-                            <span className='ici'>JE SAIS PAS QUOI METTRE ICI</span>
+                            <span className='ici'>- Expérience : 3 ans<br/><br/>-  Spécialités : Création d'identité | Suite Adobe | Figma<br/><br/><small>La meilleure des publicités est un client satisfait.</small></span>
                         </Hexagone>}
                 </Hexagone>
             </section>

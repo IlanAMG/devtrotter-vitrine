@@ -13,6 +13,10 @@ const StyledQuiSommes = styled.section`
     z-index: 7;
     overflow: hidden;
 
+    small {
+        font-style: italic;
+    }
+
     @media screen and (max-width: 1000px) {
         height: 990px;
             .container-equipe {

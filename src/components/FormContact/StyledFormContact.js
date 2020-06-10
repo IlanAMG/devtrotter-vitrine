@@ -7,6 +7,7 @@ const StyledFormContact = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: scroll;
 
         .container-h1 {
             width: 80%;

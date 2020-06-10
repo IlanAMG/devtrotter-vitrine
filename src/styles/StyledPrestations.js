@@ -2,13 +2,110 @@ import styled from 'styled-components'
 
 const StyledPrestations = styled.section`
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 50;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: space-around;
     overflow: hidden;
+        @media screen and (max-width: 890px) {
+            .container-h1 {
+                width: 80%;
+                display: flex; 
+                align-items: center;
+                justify-content: center;
+            }
+            .section-form section .container-h1 h1 {
+                width: 100%;
+                white-space: normal !important;
+            }
+
+            .section-form section {
+                padding: 15px !important;
+            }
+        }
+        @media screen and (max-width: 910px) {
+            .wrapper-sections {
+                position: relative !important;
+                margin-top: 150px;
+                width: 100%;
+                display: flex;
+                -webkit-box-pack: space-around;
+                -webkit-justify-content: space-around;
+                -ms-flex-pack: space-around;
+                flex-direction: column;
+                padding: 0 1vw !important;
+                z-index: 10;
+            }
+            .wrapper-sections h2 {
+                margin-left: 15px !important;
+            }
+            .wrapper-sections .container-web {
+                padding-right: 0 !important;
+                height: 600px;
+                width: 100%;
+                border-left: none;
+                border-bottom: 0.05em solid rgba(255, 255, 255, 0.6);
+                margin-bottom: 20px;
+            }
+            .wrapper-sections .container-design {
+                padding-right: 0 !important;
+                height: 300px;
+                width: 100%;
+                margin-bottom: 150px;
+                border-left: none;
+            }
+        }
+
+        @media screen and (max-width: 710px) {
+            .container-h1prest h1 {
+                font-size: 28px !important;
+            }
+            .btn-prest {
+                bottom: 0;
+                right: calc(50vw - 25px) !important;
+                top: auto !important;
+                z-index: 16 !important;
+            }
+            .section-form {
+                width: 100vw !important;
+                bottom: 0 !important;
+                right: auto !important;
+                top: auto !important;
+                height: 0px;
+                min-height: 0% !important;
+            }
+            .section-form label {
+                margin-top: 5px !important;
+            }
+            .section-form .container-input {
+                padding-top: 5px !important;
+            }
+            a {
+                padding-left: 15px !important;
+                top: 15px !important;
+                left: 15px !important;
+                height: 40px !important;
+                width: 60px !important;
+            }
+        }
+        @media screen and (max-width: 570px) {
+            .wrapper-sections .container-web {
+                height: 1200px;
+            }
+            .wrapper-sections .container-design {
+                height: 600px;
+            }
+            .bg {
+                height: 100%;
+                left: 0 !important;
+                position: absolute;
+            }
+            .container-items p {
+                font-size: 18px !important;
+            }
+        }
 
     .container-h1prest {
             width: 100vw;
@@ -50,10 +147,10 @@ const StyledPrestations = styled.section`
     .section-form {
         width: 0px;
         display: flex;
-        position: absolute;
+        position: fixed;
         background: rgba(18,18,18,0.95);
         right: 0;
-        height: 100%;
+        min-height: 100vh;
         z-index: 20;
         transition: 500ms;
     }
@@ -62,7 +159,7 @@ const StyledPrestations = styled.section`
         background-color: rgba(18,18,18,0.95);
         height: 50px;
         width: 50px;
-        position: absolute;
+        position: fixed;
         right: 0px;
         top: calc(50vh - 25px);
         display: flex;
@@ -71,6 +168,7 @@ const StyledPrestations = styled.section`
         cursor: pointer;
         outline: none;
         transition: 500ms;
+        z-index: 10;
     }
 
     .wrapper-sections {
@@ -81,6 +179,7 @@ const StyledPrestations = styled.section`
         display: flex;
         justify-content: space-around;
         padding: 0 3vw;
+        z-index: 10;
     }
 
     .container-web {
@@ -121,6 +220,7 @@ const StyledPrestations = styled.section`
         bottom: 0;
         height: 12%;
         width: 100%;
+        z-index: 15;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -146,6 +246,13 @@ const StyledPrestations = styled.section`
     .wrapper-btn button:focus {
         outline: 0 !important;
     }
+    .container-h1 {
+        width: 100%;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+    }
+    
 `
 
 export default StyledPrestations

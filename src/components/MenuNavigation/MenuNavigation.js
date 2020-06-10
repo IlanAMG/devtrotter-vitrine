@@ -56,7 +56,7 @@ export const MenuNavigation = () => {
             </div>
             <div className='separator'></div>
             <div className='nav'>
-                <div className='container-constel'>
+                <div className='container-constelnav'>
                     <svg width="240" height="535" viewBox="0 0 13 309" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="6.6" cy="6.5" r="6.5" fill="url(#paint0_radial)">
                             <animateMotion id='0m' dur="0.3s" begin='indefinite' path="M0,0 40,0" fill="freeze" />

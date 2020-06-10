@@ -137,7 +137,7 @@ export const Packs = () => {
             }
             {window.innerWidth <= 710 &&
                 <>
-                    <button className='btn-packs' style={openForm ? { bottom: '90%', transform: 'translate(180deg)' } : null} onClick={handleOpenForm}>
+                    <button className='btn-packs' style={openForm ? { bottom: '90vh', transform: 'translate(180deg)' } : null} onClick={handleOpenForm}>
                         {
                             openForm && window.innerWidth <= 710 &&
                             <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +151,7 @@ export const Packs = () => {
                             </svg>
                         }
                     </button>
-                    <section style={openForm ? { height: '90%' } : null} className='section-form'>
+                    <section style={openForm ? { height: '90vh' } : null} className='section-form'>
                         {openForm && <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />}
                     </section>
                 </>

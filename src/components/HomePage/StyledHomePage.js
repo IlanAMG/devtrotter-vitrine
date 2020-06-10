@@ -108,7 +108,6 @@ const StyledHomePage = styled.section`
             width: auto !important;
             bottom: 0;
             right: 0;
-            left: -30vw;
         }
 
         .container-constel {
@@ -118,6 +117,12 @@ const StyledHomePage = styled.section`
             height: 435px;
             display: flex;
             align-items: center;
+        }
+
+        @media screen and (max-width: 970px) {
+            .container-constel #svg {
+                display: none !important;
+            }
         }
 
         .btn {

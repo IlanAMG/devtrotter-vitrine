@@ -160,10 +160,10 @@ export const Prestations = () => {
             } else {
                 const cloneChecked = [...prestaChecked]
                 const index = cloneChecked.indexOf(clonePrestaWeb[i].name);
-                    if (index >= 0) {
-                        cloneChecked.splice(index, 1);
-                        setPrestaChecked(cloneChecked)
-                    }
+                if (index >= 0) {
+                    cloneChecked.splice(index, 1);
+                    setPrestaChecked(cloneChecked)
+                }
             }
             return setPrestaWeb(clonePrestaWeb)
         }
@@ -179,14 +179,14 @@ export const Prestations = () => {
             } else {
                 const cloneChecked = [...prestaChecked]
                 const index = cloneChecked.indexOf(clonePrestaDesign[i].name);
-                    if (index >= 0) {
-                        cloneChecked.splice(index, 1);
-                        setPrestaChecked(cloneChecked)
-                    }
+                if (index >= 0) {
+                    cloneChecked.splice(index, 1);
+                    setPrestaChecked(cloneChecked)
+                }
             }
             return setPrestaDesign(clonePrestaDesign)
         }
-    }    
+    }
 
     useEffect(() => {
         setLocation(location.pathname)
@@ -213,7 +213,7 @@ export const Prestations = () => {
         <StyledPrestations>
             <Link to='/'>
                 <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0"/>
+                    <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0" />
                 </svg>
             </Link>
             <img className='bg' alt='background' src={bgPacks} />
@@ -246,21 +246,48 @@ export const Prestations = () => {
                     </div>
                 </section>
             </section>
-            <button className='btn-prest' style={openForm ? {right: '720px', transform: 'translate(180deg)'} : null} onClick={handleOpenForm}>
-                {
-                    openForm ?
-                        <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.400004 0.999998L20 15.5L0.4 30" stroke="#F0F0F0"/>
-                        </svg>
-                    :
-                        <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0"/>
-                        </svg>
-                }
-            </button>
-            <section style={openForm ? {width: '720px'} : null} className='section-form'>
-                <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />
-            </section>
+            {window.innerWidth > 710 &&
+                <>
+                    <button className='btn-prest' style={openForm ? { right: '60%', transform: 'translate(180deg)' } : null} onClick={handleOpenForm}>
+                        {
+                            openForm && window.innerWidth > 710 &&
+                            <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.400004 0.999998L20 15.5L0.4 30" stroke="#F0F0F0" />
+                            </svg>
+                        }
+                        {
+                            !openForm && window.innerWidth > 710 &&
+                            <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0571 1.00001L1 15.5L20.0571 30" stroke="#F0F0F0" />
+                            </svg>
+                        }
+                    </button>
+                    <section style={openForm ? { width: '60%' } : null} className='section-form'>
+                        {openForm && <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />}
+                    </section>
+                </>
+            }
+            {window.innerWidth <= 710 &&
+                <>
+                    <button className='btn-prest' style={openForm ? { bottom: '90%', transform: 'translate(180deg)' } : null} onClick={handleOpenForm}>
+                        {
+                            openForm && window.innerWidth <= 710 &&
+                            <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.0002 0.856443L14.8566 18.8564L28.713 0.856445" stroke="#F0F0F0" />
+                            </svg>
+                        }
+                        {
+                            !openForm && window.innerWidth <= 710 &&
+                            <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28.7129 18.8564L14.8565 0.856445L1.00012 18.8564" stroke="#F0F0F0" />
+                            </svg>
+                        }
+                    </button>
+                    <section style={openForm ? { height: '90%' } : null} className='section-form'>
+                        {openForm && <FormContact title={'DEMANDER UN DEVIS'} value={valueForm} />}
+                    </section>
+                </>
+            }
             <div className='wrapper-btn'>
                 <button onClick={handleOpenForm}>DEMANDER UN DEVIS</button>
             </div>

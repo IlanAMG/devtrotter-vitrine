@@ -16,19 +16,21 @@ const StyledMenuNav = styled.section`
     
 
         .bg {
-            width: 100%;
             position: absolute;
             opacity: 0.99;
-            height: 100%;
+            min-height: 100%;
             transition: opacity 1s;
         }
         .filtre {
-            background: linear-gradient(180deg, rgba(34, 52, 77, 0.96) 27.78%, rgba(0, 0, 0, 0.92) 133.32%, rgba(27, 31, 54, 0) 133.33%);
+            background: black;
             width: 100%;
             height: 100%;
-            position: absolute;
-            opacity: 0.6;
-            transition: 500ms;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0.45;
+            transition: 20ms;
         }
 
         div {
@@ -55,11 +57,34 @@ const StyledMenuNav = styled.section`
             height: 600px;
             position: relative
         }
-        .container-constel {
+        .container-constelnav {
             position: absolute;
             left: 0;
             height: 100%;
         }
+        @media screen and (max-width: 970px) {
+            .nav .container-constelnav svg {
+                display: none;
+            }
+            .nav {
+                width: 80%;
+            }
+            .nav li {
+                font-size: 35px !important;
+            }
+        }
+        @media screen and (max-width: 560px) {
+            .nav li {
+                font-size: 25px !important;
+            }
+        }
+        @media screen and (max-width: 430px) {
+            .nav li {
+                font-size: 19px !important;
+            }
+        }
+
+
         .wrapper-logo {
             width: 32%;
             height: 480px;
@@ -76,7 +101,7 @@ const StyledMenuNav = styled.section`
         .separator {
             height: 480px;
             width: 0.05em;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.6);
             z-index: 11;
         }
         .container-social {
@@ -120,7 +145,7 @@ const StyledMenuNav = styled.section`
             ul > li {
                 font-size: 21px !important;
             }
-            .container-constel svg {
+            .container-constelnav svg {
                 left: -80px !important;
             }
         }
@@ -128,7 +153,7 @@ const StyledMenuNav = styled.section`
             ul > li {
                 font-size: 21px !important;
             }
-            .container-constel svg {
+            .container-constelnav svg {
                 left: -80px !important;
             }
             .devtrotter h1 {
@@ -146,8 +171,16 @@ const StyledMenuNav = styled.section`
             ul > li {
                 font-size: 19px !important;
             }
-            .container-constel svg {
+            .container-constelnav svg {
                 left: -85px !important;
+            }
+        }
+        @media screen and (max-width: 970px) {
+            .wrapper-logo {
+                display: none;
+            }
+            .devtrotter {
+                display: none;
             }
         }
 
@@ -155,7 +188,7 @@ const StyledMenuNav = styled.section`
             margin-left: 70px;
             transition: 500ms;
         }
-        .container-constel svg {
+        .container-constelnav svg {
             position: absolute;
             left: -60px;
             pointer-events: none;

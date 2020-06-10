@@ -52,6 +52,7 @@ export const HomePage = ({ isVisible }) => {
                 <img className={window.innerWidth >= window.innerHeight && window.innerWidth >= 970 ? 'bgPic' : 'bgPic2'} alt='bg' src={bgEco} />
             }
             {!isVisible && window.innerWidth >= window.innerHeight && <img className='bgPic' alt='bg' src={bgEco} />}
+            {!isVisible && window.innerWidth === 1024 && window.innerHeight === 1366 && <img className='bgPic2' alt='bg' src={bgEco} />}
             <BtnMenu />
             <span>FR</span>
             {window.innerWidth >= 970 &&

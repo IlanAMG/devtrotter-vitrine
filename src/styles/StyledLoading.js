@@ -23,6 +23,16 @@ const StyledLoading = styled.div`
     align-items: center;
     justify-content: center;
     transition: opacity 500ms;
+    flex-direction: column;
+
+      p {
+        color: white;
+        font-size: 19px;
+        padding: 50px;
+        font-style: italic;
+        text-align: center;
+        opacity: 0.5;
+      }
 
     ${props => props.finish && css`
         animation: ${fade} 500ms linear forwards;

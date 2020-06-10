@@ -1,4 +1,7 @@
 import React from 'react'
+import { Spring } from "react-spring/renderprops";
+import VisibilitySensor from "../utils/VisibilitySensor";
+
 import StyledLoading from '../styles/StyledLoading'
 
 export const Loading = ({ opacityLoading}) => {
@@ -79,6 +82,21 @@ export const Loading = ({ opacityLoading}) => {
                     {/* 8 */}
                 </path>
             </svg>
+            <VisibilitySensor partialVisiblity offset={{ top: -100 }} intervalDelay={1000} delayedCall once>
+                {({ isVisible }) => (
+                    <Spring
+                        to={{
+                            opacity: isVisible ? 0.55 : 0,
+                            transform: isVisible
+                                ? "translateY(0)"
+                                : "translateY(100px)",
+                        }}>
+                        {(props) => (
+                            <p style={{ ...props }}>Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.</p>
+                        )}
+                    </Spring>
+                )}
+            </VisibilitySensor>
         </StyledLoading>
     )
 }

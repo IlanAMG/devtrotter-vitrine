@@ -11,6 +11,7 @@ import carousel2 from '../../assets/carousel2.jpg'
 import carousel3 from '../../assets/carousel3.jpg'
 import carousel4 from '../../assets/carousel4.jpg'
 import carousel5 from '../../assets/carousel5.jpg'
+import carousel6 from '../../assets/carousel6.jpg'
 import real1 from '../../assets/real1.jpg'
 import real2 from '../../assets/real2.jpg'
 import real3 from '../../assets/real3.jpg'
@@ -73,9 +74,14 @@ export const Realisations = ({ isVisible }) => {
                         <div className='wrapper-img-caroussel'>
                             <img alt='carousel' src={carousel4} />
                         </div>
-                        <a rel="noopener noreferrer" href='https://ilanamzallag.com/' target='_blank' >
+                        <a rel="noopener noreferrer" href='https://www.ilanamzallag.com/' target='_blank' >
                             <div className='wrapper-img-caroussel'>
                                 <img alt='carousel' src={carousel5} />
+                            </div>
+                        </a>
+                        <a rel="noopener noreferrer" href='https://www.yamiquinton.com/' target='_blank' >
+                            <div className='wrapper-img-caroussel'>
+                                <img alt='carousel' src={carousel6} />
                             </div>
                         </a>
                     </Carousel>

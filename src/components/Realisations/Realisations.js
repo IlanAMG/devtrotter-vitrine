@@ -55,17 +55,17 @@ export const Realisations = ({ isVisible }) => {
                 {
                     isVisible &&
                     <Carousel stopOnHover={false} infiniteLoop={true} autoPlay={true} transitionTime={250} swipeScrollTolerance={50} swipeable={true} emulateTouch={true} >
-                        <a rel="noopener noreferrer" href='https://www.devtrotter.com' target='_blank' >
+                        <a rel="noopener noreferrer" href='https://www.alexiamzallag.com/' target='_blank' >
                             <div className='wrapper-img-caroussel'>
                                 <img alt='carousel' src={carousel1} />
                             </div>
                         </a>
-                        <a rel="noopener noreferrer" href='https://whatslike-app.herokuapp.com/' target='_blank' >
+                        <a rel="noopener noreferrer" href='https://www.fontvie.com/' target='_blank' >
                             <div className='wrapper-img-caroussel'>
                                 <img alt='carousel' src={carousel2} />
                             </div>
                         </a>
-                        <a rel="noopener noreferrer" href='https://yamiquinton.com/' target='_blank' >
+                        <a rel="noopener noreferrer" href='https://www.blog.devtrotter.com/' target='_blank' >
                             <div className='wrapper-img-caroussel'>
                                 <img alt='carousel' src={carousel3} />
                             </div>

@@ -26,21 +26,18 @@ const StyledRealisations = styled.section`
 
         @media screen and (max-width: 650px) {
             .caroussel {
-                max-height: 600px !important;
+                max-height: calc(100vw * 0.5625) !important;
             }
             .wrapper-img-caroussel {
-                max-height: 600px !important;
-                min-height: 500px !important;
+                max-height: calc(100vw * 0.5625) !important;
             }
             .wrapper-img-caroussel img {
-                max-height: calc(110vw * 0.5625) !important;
-                width: auto !important;
-                min-height: 100vh;
+                max-height: calc(100vw * 0.5625) !important;
             }
         }
 
         .caroussel {
-            max-height: 500px;
+            max-height: calc(95vw * 0.5628205128205128);
 
             overflow: hidden;
         }
@@ -59,8 +56,7 @@ const StyledRealisations = styled.section`
         }
 
         .wrapper-img-caroussel {
-            max-height: 500px;
-            min-height: 300px;
+            max-height: calc(95vw * 0.5628205128205128);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -69,8 +65,7 @@ const StyledRealisations = styled.section`
             height: 100%;
         }
         .wrapper-img {
-            max-height: 500px;
-            min-height: 300px;
+            max-height: calc(95vw * 0.5628205128205128);
             display: flex;
             align-items: center;
             justify-content: center;

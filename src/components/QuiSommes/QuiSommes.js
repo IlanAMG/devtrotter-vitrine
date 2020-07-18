@@ -55,7 +55,7 @@ export const QuiSommes = () => {
                             <span className='ici'>-  Spécialités : PHP | SQL | Config serveur<br/><br/><small>Un bon site web est toujours en construction.</small></span>
                         </Hexagone>}
                 </Hexagone>
-                <Hexagone onMouseOver={() => handleHover(1)} onMouseOut={() => handleLeave(1)} url={'https://i.imgur.com/TdWaODW.jpg'}>
+                <Hexagone onMouseOver={() => handleHover(1)} onMouseOut={() => handleLeave(1)} url={'https://i.imgur.com/A2TZCVg.jpg'}>
                     {hover[1] &&<Hexagone color={'black'} position={'absolute'}><span>Ilan AMZALLAG<br />Développeur FullStack</span></Hexagone>}
                     {hover[1] && window.innerWidth >= 510 &&    
                         <Hexagone color={'#F0F0F0'} position={'absolute'} transform={'translate(-128px, 220px)'}>

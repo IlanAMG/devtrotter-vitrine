@@ -29,7 +29,7 @@ const StyledBanderolle = styled.section`
             white-space:nowrap;
             position: absolute;
             float: left;
-            width: 50%:
+            width: 50%;
         }
 `
 

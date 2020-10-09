@@ -12,6 +12,8 @@ import carousel3 from '../../assets/carousel3.jpg'
 import carousel4 from '../../assets/carousel4.jpg'
 import carousel5 from '../../assets/carousel5.jpg'
 import carousel6 from '../../assets/carousel6.jpg'
+import carousel7 from '../../assets/carousel7.jpg'
+import carousel8 from '../../assets/carousel8.jpg'
 import real1 from '../../assets/real1.jpg'
 import real2 from '../../assets/real2.jpg'
 import real3 from '../../assets/real3.jpg'
@@ -64,6 +66,16 @@ export const Realisations = ({ isVisible }) => {
                         <a rel="noopener noreferrer" href='https://www.fontvie.com/' target='_blank' >
                             <div className='wrapper-img-caroussel'>
                                 <img alt='carousel' src={carousel2} />
+                            </div>
+                        </a>
+                        <a rel="noopener noreferrer" href='https://www.labocoach.com/' target='_blank' >
+                            <div className='wrapper-img-caroussel'>
+                                <img alt='carousel' src={carousel7} />
+                            </div>
+                        </a>
+                        <a rel="noopener noreferrer" href='https://www.yourlifecard.com/' target='_blank' >
+                            <div className='wrapper-img-caroussel'>
+                                <img alt='carousel' src={carousel8} />
                             </div>
                         </a>
                         <a rel="noopener noreferrer" href='https://www.blog.devtrotter.com/' target='_blank' >
